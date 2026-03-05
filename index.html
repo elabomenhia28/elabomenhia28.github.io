@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ardi Control – Security & CCTV Operator</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Inter modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f4f7fc;
+            color: #1e2b37;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        /* container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* navbar */
+        .navbar {
+            background-color: #0b1a2a;
+            color: white;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #00b4d8;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover {
+            color: #00b4d8;
+        }
+        /* tombol */
+        .btn {
+            display: inline-block;
+            background-color: #00b4d8;
+            color: #0b1a2a;
+            font-weight: 600;
+            padding: 12px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: 0.25s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 8px 16px rgba(0,180,216,0.2);
+        }
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #00b4d8;
+            color: white;
+            box-shadow: none;
+            margin-left: 16px;
+        }
+        .btn-outline:hover {
+            background-color: #00b4d8;
+            color: #0b1a2a;
+        }
+        .btn:hover {
+            background-color: #0096b0;
+            transform: translateY(-3px);
+        }
+        /* hero section */
+        .hero {
+            background: linear-gradient(95deg, #0b1a2a 30%, #0f2a3b 100%), url('https://images.unsplash.com/photo-1557597774-9d2736059fa6?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+            background-blend-mode: overlay;
+            color: white;
+            padding: 80px 0 100px;
+            position: relative;
+        }
+        .hero .container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1 1 400px;
+        }
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-content .sub {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #b3e5fc;
+        }
+        .hero-buttons {
+            margin-top: 20px;
+        }
+        .hero-image {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+        .profile-photo {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 30px;
+            border: 4px solid #00b4d8;
+            box-shadow: 0 30px 30px -10px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+        .profile-photo:hover {
+            transform: scale(1.02);
+        }
+        /* section umum */
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #0b1a2a;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70%;
+            height: 4px;
+            background: #00b4d8;
+            margin-top: 8px;
+            border-radius: 4px;
+        }
+        /* about */
+        .about-grid {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .about-img {
+            flex: 1 1 280px;
+        }
+        .about-img img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 20px 30px -5px rgba(0,0,0,0.2);
+            border: 3px solid white;
+        }
+        .about-text {
+            flex: 2 1 400px;
+            font-size: 1.15rem;
+            background: white;
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
+        }
+        .about-text p {
+            margin-bottom: 16px;
+        }
+        /* skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .skill-card {
+            background: white;
+            padding: 24px 12px;
+            border-radius: 28px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 15px 25px -10px rgba(0,80,100,0.1);
+            transition: all 0.2s;
+            border: 1px solid #dee7ed;
+        }
+        .skill-card i {
+            font-size: 2.5rem;
+            color: #00b4d8;
+            margin-bottom: 15px;
+        }
+        .skill-card:hover {
+            transform: translateY(-6px);
+            border-color: #00b4d8;
+        }
+        /* timeline pengalaman */
+        .timeline {
+            margin-top: 50px;
+            position: relative;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: #b0c4d9;
+            border-radius: 4px;
+        }
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 60px;
+        }
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: #00b4d8;
+            border: 4px solid white;
+            border-radius: 50%;
+            position: absolute;
+            left: 12px;
+            top: 5px;
+            z-index: 2;
+        }
+        .timeline-content {
+            background: white;
+            padding: 24px 28px;
+            border-radius: 28px;
+            width: 100%;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        .timeline-content .place {
+            font-weight: 600;
+            color: #00b4d8;
+            margin-bottom: 10px;
+        }
+        /* sertifikasi */
+        .sertif-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .sertif-card {
+            background: white;
+            padding: 24px;
+            border-radius: 24px;
+            box-shadow: 0 15px 20px -10px rgba(0,0,0,0.1);
+            border-left: 6px solid #00b4d8;
+            transition: 0.2s;
+        }
+        .sertif-card i {
+            font-size: 2rem;
+            color: #0077b6;
+            margin-right: 15px;
+        }
+        .sertif-card .title {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .sertif-card .issuer {
+            color: #2d4b65;
+            margin-top: 8px;
+        }
+        /* galeri (sertifikat preview) */
+        /* Container gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Item gallery */
+.gallery-item {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+/* Efek hover */
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Gambar */
+.gallery-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+/* Zoom saat hover */
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Text bawah gambar */
+.gallery-item p {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+        }
+        /* kontak form */
+        .contact-grid {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .contact-info {
+            flex: 1 1 250px;
+            background: white;
+            border-radius: 32px;
+            padding: 40px 30px;
+        }
+        .contact-info i {
+            font-size: 2rem;
+            color: #00b4d8;
+            width: 50px;
+        }
+        .contact-info p {
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        .contact-form {
+            flex: 2 1 400px;
+            background: white;
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: 0 20px 30px -5px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 40px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        .form-group textarea {
+            border-radius: 28px;
+            resize: vertical;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #00b4d8;
+            box-shadow: 0 0 0 3px rgba(0,180,216,0.2);
+        }
+        .btn-submit {
+            background: #0b1a2a;
+            color: white;
+            border: none;
+            padding: 16px 36px;
+            border-radius: 40px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-submit:hover {
+            background: #00b4d8;
+            color: #0b1a2a;
+        }
+        /* footer */
+        .footer {
+            background: #0b1a2a;
+            color: #a0b8cc;
+            text-align: center;
+            padding: 40px;
+            font-size: 0.95rem;
+        }
+        /* wa float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            line-height: 60px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 99;
+            transition: 0.2s;
+        }
+        .whatsapp-float:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+        }
+        img.placeholder-img {
+            background: #2e5266;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">ELA BO<span>MEN HIA</span></div>
+            <div class="nav-links">
+                <a href="#home">Beranda</a>
+                <a href="#about">Tentang</a>
+                <a href="#skills">Keahlian</a>
+                <a href="#experience">Pengalaman</a>
+                <a href="#certification">Sertifikasi</a>
+                <a href="#gallery">Galeri</a>
+                <a href="#contact">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Beranda) -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>SECURITY GUARD OPERATOR CCTV CONTROL ROOM</h1>
+                <div class="sub">“Monitoring with Precision, Protecting with Integrity”</div>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn">Tentang Saya</a>
+                    <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- FOTO PROFIL utama -->
+                <img src="Security-a.Png" alt="Profile Security Officer" class="profile-photo" onerror="this.src='https://via.placeholder.com/400x400?text=Foto+Profil'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Saya -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div class="about-grid">
+                <div class="about-img">
+                    <!-- FOTO TENTANG SAYA (berbeda) -->
+                    <img src="security-b.jpg" alt="Tentang saya - operator CCTV" onerror="this.src='https://via.placeholder.com/600x400?text=Control+Room'">
+                </div>
+                <div class="about-text">
+                    <p>Saya <strong>ELA BOMEN HIA</strong>, saya adalah Profesional keamanan dengan pengalaman lebih dari 2 tahun sebagai Security Operator CCTV Control Room, terbiasa melakukan pengawasan area, patroli, dan pengoperasian sistem CCTV untuk memastikan lingkungan kerja aman dan kondusif. Terampil dalam pelaporan kejadian, administrasi tim keamanan, serta mendukung operasional posko dan lobby untuk pengaturan akses tamu. Memiliki komitmen tinggi dalam menjaga keamanan, ketertiban, dan kenyamanan lingkungan kerja secara menyeluruh..</p>
+                    <p>Sertifikasi Gada Pratama dan berbagai pelatihan internasional memperkuat kompetensi saya di bidang pengawasan elektronik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keahlian (Skills) -->
+    <section id="skills" style="background-color: #eef3f8;">
+        <div class="container">
+            <h2 class="section-title">Keahlian</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fas fa-video"></i> CCTV Monitoring</div>
+                <div class="skill-card"><i class="fas fa-clipboard-list"></i> Incident Reporting</div>
+                <div class="skill-card"><i class="fas fa-lock"></i> Access Control</div>
+                <div class="skill-card"><i class="fas fa-phone-alt"></i> Emergency Response</div>
+                <div class="skill-card"><i class="fas fa-broadcast-tower"></i> Communication</div>
+                <div class="skill-card"><i class="fas fa-eye"></i> Security Risk Observation</div>
+                <div class="skill-card"><i class="fas fa-file-excel"></i> Excel, Word, PPT</div>
+                <div class="skill-card"><i class="fas fa-cube"></i> SketchUp 3D</div>
+                <div class="skill-card"><i class="fas fa-edit"></i> CAPCUT Video Editing</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengalaman Kerja (timeline) -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Pengalaman Kerja</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Security Guard | Security Operator CCTV Control Room</h3>
+                        <div class="place">PT SIGAP PRIMA ASTREA</div>
+                          <div class="place">PT ASTRA DAIHATSU MOTOR | 2023 - 2025</div>
+                        <p>1. Melakukan pemantauan terhadap lebih dari 30 unit kamera CCTV yang terhubung dengan sistem monitoring di ruang Control Room untuk memastikan seluruh area perusahaan dalam kondisi aman dan terkendali.</p><p>Melaksanakan pengawasan CCTV secara terus-menerus selama jam kerja (shift) guna memonitor aktivitas di area perusahaan dan memastikan tidak terjadi pelanggaran terhadap prosedur keamanan.</p><p>2. Mengidentifikasi dan mengawasi setiap aktivitas yang mencurigakan, tidak wajar, atau berpotensi menimbulkan gangguan keamanan melalui monitor CCTV, serta segera melaporkan kepada atasan atau petugas keamanan di lapangan untuk tindakan lanjutan.</p><p>3. Mengoperasikan seluruh perangkat sistem keamanan, termasuk CCTV, DVR/NVR, monitor pengawasan, dan perangkat pendukung lainnya sesuai dengan Standar Operasional Prosedur (SOP) yang berlaku.</p><p></p>4. Membuat dan mengisi laporan kejadian (Incident Report) secara lengkap dan akurat apabila terjadi pelanggaran keamanan, kecelakaan kerja, gangguan operasional, atau aktivitas mencurigakan yang terpantau melalui CCTV.</p><p>5. Mengontrol dan memantau akses keluar masuk area perusahaan melalui sistem kamera pengawas guna memastikan hanya pihak yang berwenang yang dapat mengakses area tertentu.</p><p>6. Menyimpan, mengelola, dan melakukan pencadangan rekaman CCTV dengan baik sebagai bahan dokumentasi dan bukti pendukung untuk kebutuhan investigasi apabila terjadi suatu kejadian.</p><p>7. Melakukan koordinasi aktif dengan petugas security di lapangan apabila terdeteksi kejadian darurat, potensi gangguan keamanan, atau situasi yang memerlukan tindakan cepat.</p><p>8. Melakukan pemantauan khusus pada area-area yang dianggap rawan, seperti pintu masuk dan keluar, area parkir, gudang penyimpanan, area produksi, serta area terbatas lainnya yang memiliki tingkat risiko lebih tinggi.</p><p>9. Melaporkan secara segera kepada tim teknisi atau bagian terkait apabila ditemukan kerusakan, gangguan, atau ketidaknormalan pada perangkat CCTV maupun sistem keamanan lainnya.</p><p>10. Memastikan seluruh kamera CCTV berfungsi dengan baik selama shift bertugas, termasuk memastikan tampilan kamera jelas, sudut pandang sesuai, dan sistem rekaman berjalan normal.</p><p>11. Memberikan dukungan (support) sebagai petugas cadangan (backup) untuk Posko Utama apabila diperlukan dalam kondisi tertentu.</p><p>12. Memberikan dukungan (backup) kepada petugas lobby dalam hal pengawasan keamanan maupun pengaturan tamu apabila diperlukan.</p><p>13. Membantu pelaksanaan administrasi internal divisi security, termasuk pencatatan laporan, dokumentasi kejadian, dan pengarsipan data keamanan.</p><p>14. Melaksanakan proses serah terima tugas kepada petugas CCTV pada pergantian shift secara jelas, detail, dan terstruktur, termasuk menyampaikan informasi kejadian, kondisi sistem, serta hal-hal penting yang perlu ditindaklanjuti.</p><p>15. Menjaga komunikasi yang baik dengan seluruh tim keamanan, baik di Control Room maupun di lapangan, guna mendukung terciptanya lingkungan kerja yang aman, tertib, dan kondusif bagi seluruh karyawan dan aset perusahaan..</p>
+                    </div>
+    </section>
+
+    <!-- Sertifikasi -->
+    <section id="certification" style="background-color: #eef3f8;">
+        <div class="container">
+            <h2 class="section-title">Sertifikasi</h2>
+            <div class="sertif-grid">
+                <div class="sertif-card"><i class="fas fa-certificate"></i> <span class="title">Gada Pratama</span> <div class="issuer">PT SIGAP PRIMA ASTREA</div></div>
+                <div class="sertif-card"><i class="fas fa-certificate"></i> <span class="title">Security Guarding, CCTV, Door Supervision</span> <div class="issuer">Alison (International)</div></div>
+                <div class="sertif-card"><i class="fas fa-certificate"></i> <span class="title">CCTV System</span> <div class="issuer">Mind Luster</div></div>
+                <div class="sertif-card"><i class="fas fa-certificate"></i> <span class="title">SketchUp: How To Start Modeling Simple 3D Objects</span> <div class="issuer">Coursera</div></div>
+                <div class="sertif-card"><i class="fas fa-certificate"></i> <span class="title">Capcut Desktop Editor Essentials</span> <div class="issuer">Mind Luster</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri (Sertifikat preview) -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Galeri sertifikasi</h2>
+            <div class="gallery">
+              <div class="gallery">
+
+<div class="gallery-item">
+    <a href="GP-sigap.png" target="_blank">
+        <img src="GP-sigap.png" alt="Sertifikat Gada Pratama">
+    </a>
+    <p>PT SIGAP PRIMA ASTREA</p>
+</div>
+
+<div class="gallery-item">
+    <a href="Alison.png" target="_blank">
+        <img src="Alison.png" alt="Alison certificate">
+    </a>
+    <p>Alison</p>
+</div>
+
+<div class="gallery-item">
+    <a href="Mind Luster-CCTV Sistem.jpg" target="_blank">
+        <img src="Mind Luster-CCTV Sistem.jpg" alt="Mind Luster">
+    </a>
+    <p>Mind Luster</p>
+</div>
+
+<div class="gallery-item">
+    <a href="Coursera.png" target="_blank">
+        <img src="Coursera.png" alt="SketchUp">
+    </a>
+    <p>Coursera</p>
+</div>
+
+<div class="gallery-item">
+    <a href="Mind Luster-Capcut.jpg" target="_blank">
+        <img src="Mind Luster-Capcut.jpg" alt="Capcut">
+    </a>
+    <p>Mind Luster</p>
+</div>
+
+</div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="contact" style="background-color: #eef3f8;">
+        <div class="container">
+            <h2 class="section-title">Kontak Saya</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p><i class="fas fa-phone-alt"></i> +62 022 4696 4391</p>
+                    <p><i class="fab fa-whatsapp"></i> +62 022 4696 4391</p>
+                    <p><i class="fas fa-envelope"></i> elabomenhia28@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Karawang, Indonesia</p>
+                </div>
+                <div class="contact-form"><form action="https://formsubmit.co/elabomenhia28@gmail.com" method="POST">
+                  <div class="form-group"><input type="text" name="name" placeholder="Nama Lengkap" required></div><div class="form-group"><input type="email" name="email" placeholder="Email" required></div><div class="form-group"><textarea name="message" rows="4" placeholder="Pesan Anda..." required></textarea></div><button type="submit" class="btn-submit">Kirim Pesan</button></form>
+                  </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 ELA BOMEN HIA – Security Operator CCTV Control Room. All rights reserved.</p>
+            <p style="margin-top: 10px;">“Monitoring with Precision, Protecting with Integrity”</p>
+        </div>
+    </footer>
+
+    <!-- Tombol WhatsApp melayang -->
+    <a href="https://wa.me/6282246964391" class="whatsapp-float" target="_blank" title="Hubungi via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- sedikit placeholder untuk background hero lebih hidup (bisa diabaikan) -->
+</body>
+</html>
