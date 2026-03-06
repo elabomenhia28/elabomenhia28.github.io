@@ -2,621 +2,1749 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ardi Control – Security & CCTV Operator</title>
-    <!-- Font Awesome 6 (free) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Ela Bomen Hia · Security & CCTV Specialist</title>
+    
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts: Inter modern -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts: Inter + Clash Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
+        /* ========== RESET & VARIABLES ========== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            font-family: "Inter", sans-serif;
-            background-color: #f4f7fc;
-            color: #1e2b37;
-            line-height: 1.5;
+
+        html {
             scroll-behavior: smooth;
+            font-size: 16px;
         }
-        /* container */
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --text-primary: #0a1929;
+            --text-secondary: #475569;
+            --accent-primary: #2563eb;
+            --accent-secondary: #3b82f6;
+            --accent-glow: rgba(37, 99, 235, 0.15);
+            --border-color: #e2e8f0;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --navbar-bg: rgba(255, 255, 255, 0.95);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(37, 99, 235, 0.1);
+            --glow-color: rgba(37, 99, 235, 0.3);
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent-primary: #3b82f6;
+            --accent-secondary: #60a5fa;
+            --accent-glow: rgba(59, 130, 246, 0.2);
+            --border-color: #334155;
+            --card-bg: rgba(30, 41, 59, 0.9);
+            --navbar-bg: rgba(15, 23, 42, 0.95);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 20px 25px -5px rgba(59, 130, 246, 0.2);
+            --glow-color: rgba(59, 130, 246, 0.3);
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        /* ========== CONTAINER & GRID SYSTEM ========== */
         .container {
-            max-width: 1200px;
+            width: 100%;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 2rem;
         }
-        /* navbar */
-        .navbar {
-            background-color: #0b1a2a;
-            color: white;
-            padding: 16px 0;
-            position: sticky;
+
+        @media (min-width: 640px) {
+            .container { padding: 0 2.5rem; }
+        }
+        @media (min-width: 1024px) {
+            .container { padding: 0 3rem; }
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+        @media (min-width: 768px) { section { padding: 6rem 0; } }
+        @media (min-width: 1280px) { section { padding: 7rem 0; } }
+
+        /* ========== TYPOGRAPHY ========== */
+        h1, h2, h3, h4 {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.75rem;
+            left: 0;
+            width: 5rem;
+            height: 0.25rem;
+            background: linear-gradient(90deg, var(--accent-primary), transparent);
+            border-radius: 0.25rem;
+            transition: width 0.3s ease;
+        }
+
+        .section-title:hover {
+            transform: translateX(10px);
+            letter-spacing: 1px;
+        }
+        .section-title:hover::after { width: 8rem; }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px var(--glow-color); }
+            50% { box-shadow: 0 0 20px var(--glow-color); }
+            100% { box-shadow: 0 0 5px var(--glow-color); }
+        }
+        @keyframes ripple {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(4); opacity: 0; }
+        }
+
+        /* ========== LOADING SCREEN ========== */
+        #loading-screen {
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        .loading-content {
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+        .loading-logo {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 800;
+            font-family: 'Clash Display', sans-serif;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .progress-bar {
+            width: min(300px, 70vw);
+            height: 4px;
+            background: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            transition: width 2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        /* ========== PARTICLES ========== */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.25rem 0;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        .navbar.scrolled {
+            background: var(--navbar-bg);
+            backdrop-filter: blur(12px);
+            padding: 0.75rem 0;
+            box-shadow: var(--shadow-sm);
         }
         .navbar .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
         }
+
         .logo {
-            font-size: 1.7rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-size: 1.75rem;
+            font-weight: 800;
+            font-family: 'Clash Display', sans-serif;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
-        .logo span {
-            color: #00b4d8;
+        .logo:hover {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 0 10px var(--accent-glow));
+            animation: pulse 1s infinite;
         }
+        .logo:active { transform: scale(0.95); }
+
         .nav-links {
             display: flex;
-            gap: 32px;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
         }
         .nav-links a {
-            color: #e0e0e0;
+            color: var(--text-primary);
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-            font-size: 1rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            transition: width 0.3s ease;
         }
         .nav-links a:hover {
-            color: #00b4d8;
+            transform: translateY(-2px);
+            color: var(--accent-primary);
         }
-        /* tombol */
-        .btn {
-            display: inline-block;
-            background-color: #00b4d8;
-            color: #0b1a2a;
-            font-weight: 600;
-            padding: 12px 32px;
-            border-radius: 40px;
-            text-decoration: none;
-            transition: 0.25s;
-            border: none;
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:active { transform: translateY(0); }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-left: 1rem;
+        }
+        .theme-toggle, .lang-toggle {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            padding: 0.5rem 1rem;
             cursor: pointer;
-            font-size: 1rem;
-            box-shadow: 0 8px 16px rgba(0,180,216,0.2);
-        }
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid #00b4d8;
-            color: white;
-            box-shadow: none;
-            margin-left: 16px;
-        }
-        .btn-outline:hover {
-            background-color: #00b4d8;
-            color: #0b1a2a;
-        }
-        .btn:hover {
-            background-color: #0096b0;
-            transform: translateY(-3px);
-        }
-        /* hero section */
-        .hero {
-            background: linear-gradient(95deg, #0b1a2a 30%, #0f2a3b 100%), url('https://images.unsplash.com/photo-1557597774-9d2736059fa6?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
-            background-blend-mode: overlay;
-            color: white;
-            padding: 80px 0 100px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
             position: relative;
+            overflow: hidden;
+        }
+        .theme-toggle:hover, .lang-toggle:hover {
+            background: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .theme-toggle:hover i, .lang-toggle:hover i {
+            animation: spin 0.6s ease;
+        }
+        .theme-toggle:active, .lang-toggle:active {
+            transform: translateY(0);
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            padding: 6rem 0 4rem;
         }
         .hero .container {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
             align-items: center;
-            gap: 50px;
+        }
+        .hero-content { max-width: 600px; }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(8px);
+            animation: float 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .hero-badge:hover {
+            transform: scale(1.05);
+            background: var(--accent-primary);
+            color: white;
+            animation: pulse 1s infinite;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .hero h1:hover {
+            transform: skewX(-2deg);
+            text-shadow: 0 0 20px var(--accent-glow);
+            letter-spacing: 1px;
+        }
+
+        .typed-text {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            min-height: 4rem;
+        }
+
+        .hero-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
             flex-wrap: wrap;
         }
-        .hero-content {
-            flex: 1 1 400px;
+
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
         }
-        .hero-content h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+            z-index: 0;
         }
-        .hero-content .sub {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 30px;
-            color: #b3e5fc;
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
         }
-        .hero-buttons {
-            margin-top: 20px;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            z-index: 1;
         }
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 20px 30px -10px var(--accent-primary);
+            animation: pulse 1s infinite;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        .btn-outline:hover {
+            border-color: var(--accent-primary);
+            background: var(--card-bg);
+            transform: translateY(-3px);
+        }
+
+        /* Foto Profil */
         .hero-image {
-            flex: 1 1 300px;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .profile-frame {
+            position: relative;
+            width: min(380px, 90%);
+            aspect-ratio: 1;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            padding: 6px;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: var(--shadow-lg);
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+        .profile-frame:hover {
+            animation: pulse 1s ease-in-out infinite;
+            transform: scale(1.02) rotate(5deg);
+            border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+            box-shadow: 0 30px 40px -15px var(--accent-primary);
+        }
+        .profile-frame:active {
+            transform: scale(0.98);
         }
         .profile-photo {
-            width: 280px;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 30px;
-            border: 4px solid #00b4d8;
-            box-shadow: 0 30px 30px -10px rgba(0,0,0,0.5);
-            transition: transform 0.3s;
-        }
-        .profile-photo:hover {
-            transform: scale(1.02);
-        }
-        /* section umum */
-        section {
-            padding: 80px 0;
-        }
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #0b1a2a;
-            position: relative;
-            display: inline-block;
-        }
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 70%;
-            height: 4px;
-            background: #00b4d8;
-            margin-top: 8px;
-            border-radius: 4px;
-        }
-        /* about */
-        .about-grid {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-        .about-img {
-            flex: 1 1 280px;
-        }
-        .about-img img {
             width: 100%;
-            border-radius: 30px;
-            box-shadow: 0 20px 30px -5px rgba(0,0,0,0.2);
-            border: 3px solid white;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            border: 3px solid var(--bg-secondary);
+            transition: all 0.5s ease;
+        }
+        .profile-frame:hover .profile-photo {
+            border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+            filter: brightness(1.05);
+        }
+
+        /* ========== STATISTICS ========== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+            transition: left 0.5s ease;
+        }
+        .stat-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+        .stat-item:hover::before {
+            left: 100%;
+        }
+        .stat-item:active {
+            transform: translateY(-5px) scale(0.98);
+        }
+        .stat-number {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .stat-item:hover .stat-number {
+            transform: scale(1.1);
+            color: var(--accent-secondary);
+        }
+        .stat-label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        .stat-item:hover .stat-label {
+            color: var(--text-primary);
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .about-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 2rem;
+            border: 4px solid var(--border-color);
+            box-shadow: var(--shadow-lg);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+        .about-image img:hover {
+            transform: scale(1.02) rotate(1deg);
+            box-shadow: 0 30px 40px -15px var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+        .about-image img:active {
+            transform: scale(0.98);
+        }
+        .about-content {
+            max-width: 550px;
         }
         .about-text {
-            flex: 2 1 400px;
-            font-size: 1.15rem;
-            background: white;
-            padding: 40px;
-            border-radius: 40px;
-            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            padding: 1rem;
+            border-radius: 1rem;
         }
-        .about-text p {
-            margin-bottom: 16px;
+        .about-text:hover {
+            background: var(--card-bg);
+            transform: translateX(10px);
+            box-shadow: var(--shadow-sm);
+            color: var(--text-primary);
         }
-        /* skills */
+        .about-text strong {
+            color: var(--accent-primary);
+        }
+
+        /* ========== SKILLS ========== */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
         }
         .skill-card {
-            background: white;
-            padding: 24px 12px;
-            border-radius: 28px;
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            padding: 1.5rem 1rem;
             text-align: center;
-            font-weight: 600;
-            box-shadow: 0 15px 25px -10px rgba(0,80,100,0.1);
-            transition: all 0.2s;
-            border: 1px solid #dee7ed;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, var(--accent-glow), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+        .skill-card:hover::before {
+            opacity: 0.3;
+        }
+        .skill-card:active {
+            transform: translateY(-5px) scale(0.98);
         }
         .skill-card i {
             font-size: 2.5rem;
-            color: #00b4d8;
-            margin-bottom: 15px;
+            color: var(--accent-primary);
+            transition: all 0.5s ease;
+            display: inline-block;
         }
-        .skill-card:hover {
-            transform: translateY(-6px);
-            border-color: #00b4d8;
+        .skill-card:hover i {
+            transform: scale(1.2) rotate(360deg);
+            color: var(--accent-secondary);
         }
-        /* timeline pengalaman */
+        .skill-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .skill-card:hover h3 {
+            transform: scale(1.05);
+            letter-spacing: 0.5px;
+        }
+
+        /* ========== TIMELINE ========== */
         .timeline {
-            margin-top: 50px;
             position: relative;
+            padding: 1rem 0;
         }
         .timeline::before {
             content: '';
             position: absolute;
-            left: 20px;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background: #b0c4d9;
-            border-radius: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: calc(100% - 2rem);
+            background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 3px;
+            top: 1rem;
         }
         .timeline-item {
             display: flex;
-            margin-bottom: 40px;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 3rem;
             position: relative;
-            padding-left: 60px;
         }
-        .timeline-dot {
-            width: 20px;
-            height: 20px;
-            background: #00b4d8;
-            border: 4px solid white;
-            border-radius: 50%;
-            position: absolute;
-            left: 12px;
-            top: 5px;
-            z-index: 2;
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
         }
         .timeline-content {
-            background: white;
-            padding: 24px 28px;
-            border-radius: 28px;
-            width: 100%;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            width: 45%;
+            padding: 2rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            position: relative;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        .timeline-content:hover {
+            transform: scale(1.02) translateX(10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+        .timeline-content:active {
+            transform: scale(0.98) translateX(5px);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1rem;
+            height: 1rem;
+            background: var(--accent-primary);
+            border: 3px solid var(--bg-primary);
+            border-radius: 50%;
+            z-index: 3;
+            top: 1.5rem;
+            animation: pulse 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+        .timeline-item:hover .timeline-dot {
+            transform: translateX(-50%) scale(1.5);
+            background: var(--accent-secondary);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+        .timeline-date {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .timeline-content:hover .timeline-date {
+            transform: translateX(5px);
+            color: var(--accent-secondary);
         }
         .timeline-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
         }
-        .timeline-content .place {
+        .timeline-content:hover h3 {
+            color: var(--accent-primary);
+        }
+        .company {
             font-weight: 600;
-            color: #00b4d8;
-            margin-bottom: 10px;
-        }
-        /* sertifikasi */
-        .sertif-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-        }
-        .sertif-card {
-            background: white;
-            padding: 24px;
-            border-radius: 24px;
-            box-shadow: 0 15px 20px -10px rgba(0,0,0,0.1);
-            border-left: 6px solid #00b4d8;
-            transition: 0.2s;
-        }
-        .sertif-card i {
-            font-size: 2rem;
-            color: #0077b6;
-            margin-right: 15px;
-        }
-        .sertif-card .title {
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-        .sertif-card .issuer {
-            color: #2d4b65;
-            margin-top: 8px;
-        }
-        /* galeri (sertifikat preview) */
-        /* Container gallery */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Item gallery */
-.gallery-item {
-    background: #ffffff;
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-/* Efek hover */
-.gallery-item:hover {
-    transform: translateY(-5px);
-}
-
-/* Gambar */
-.gallery-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-/* Zoom saat hover */
-.gallery-item img:hover {
-    transform: scale(1.05);
-}
-
-/* Text bawah gambar */
-.gallery-item p {
-    padding: 10px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-}
-        }
-        /* kontak form */
-        .contact-grid {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-        .contact-info {
-            flex: 1 1 250px;
-            background: white;
-            border-radius: 32px;
-            padding: 40px 30px;
-        }
-        .contact-info i {
-            font-size: 2rem;
-            color: #00b4d8;
-            width: 50px;
-        }
-        .contact-info p {
-            margin: 20px 0;
-            font-size: 1.1rem;
-        }
-        .contact-form {
-            flex: 2 1 400px;
-            background: white;
-            border-radius: 32px;
-            padding: 40px;
-            box-shadow: 0 20px 30px -5px rgba(0,0,0,0.1);
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 16px 20px;
-            border: 1px solid #cbd5e1;
-            border-radius: 40px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: 0.2s;
-        }
-        .form-group textarea {
-            border-radius: 28px;
-            resize: vertical;
-        }
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: #00b4d8;
-            box-shadow: 0 0 0 3px rgba(0,180,216,0.2);
-        }
-        .btn-submit {
-            background: #0b1a2a;
-            color: white;
-            border: none;
-            padding: 16px 36px;
-            border-radius: 40px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .btn-submit:hover {
-            background: #00b4d8;
-            color: #0b1a2a;
-        }
-        /* footer */
-        .footer {
-            background: #0b1a2a;
-            color: #a0b8cc;
-            text-align: center;
-            padding: 40px;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
             font-size: 0.95rem;
         }
-        /* wa float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            line-height: 60px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            z-index: 99;
-            transition: 0.2s;
+        .experience-list {
+            list-style: none;
+            margin-top: 1rem;
         }
-        .whatsapp-float:hover {
-            background: #128C7E;
+        .experience-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        .experience-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            transition: all 0.3s ease;
+        }
+        .timeline-content:hover .experience-list li {
+            transform: translateX(5px);
+            color: var(--text-primary);
+        }
+        .timeline-content:hover .experience-list li::before {
+            transform: scale(1.2);
+            color: var(--accent-secondary);
+        }
+
+        /* ========== GALLERY ========== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 1;
+            border: 2px solid var(--border-color);
+            transition: all 0.4s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+        .gallery-item:active {
+            transform: translateY(-5px) scale(0.98);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
             transform: scale(1.1);
         }
-        img.placeholder-img {
-            background: #2e5266;
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        .gallery-overlay h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease 0.1s;
+        }
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease 0.2s;
+        }
+        .gallery-item:hover .gallery-overlay h4,
+        .gallery-item:hover .gallery-overlay p {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 2rem;
+        }
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-content {
+            max-width: min(90%, 1000px);
+            max-height: 90vh;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.4s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            border: 4px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .modal-content img:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-primary);
+        }
+        .modal-close {
+            position: absolute;
+            top: -2.5rem;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .modal-close:hover {
+            transform: scale(1.2) rotate(90deg);
+            color: var(--accent-primary);
+        }
+
+        /* ========== CONTACT ========== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+            transition: left 0.5s ease;
+        }
+        .contact-item:hover {
+            transform: translateX(15px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+        .contact-item:hover::before {
+            left: 100%;
+        }
+        .contact-item:active {
+            transform: translateX(5px) scale(0.98);
+        }
+        .contact-item i {
+            font-size: 1.8rem;
+            color: var(--accent-primary);
+            min-width: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .contact-item:hover i {
+            transform: scale(1.2) rotate(10deg);
+            color: var(--accent-secondary);
+            animation: bounce 0.6s ease;
+        }
+        .contact-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            transition: all 0.3s ease;
+        }
+        .contact-item:hover h4 {
+            color: var(--accent-primary);
+        }
+        .contact-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form {
+            padding: 2rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .contact-form:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1.25rem;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 1.5rem;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+        .form-group input:hover,
+        .form-group textarea:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 0.875rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            border: none;
+            border-radius: 1.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        .btn-submit:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+        .btn-submit:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            padding: 3rem 0 2rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            width: 2.75rem;
+            height: 2.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .social-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        .social-links a:hover {
+            transform: translateY(-5px) rotate(360deg) scale(1.1);
+            color: white;
+            border-color: transparent;
+        }
+        .social-links a:hover::before {
+            opacity: 1;
+        }
+        .social-links a:active {
+            transform: translateY(0) scale(0.9);
+        }
+
+        /* ========== WHATSAPP FLOAT ========== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 500;
+            font-size: 2rem;
+            text-decoration: none;
+            z-index: 99;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.2) rotate(360deg);
+            box-shadow: 0 20px 30px rgba(37, 211, 102, 0.4);
+            animation: none;
+        }
+        .whatsapp-float:active {
+            transform: scale(0.9);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .timeline::before { left: 2rem; }
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-left: 3rem;
+            }
+            .timeline-content { width: 100%; }
+            .timeline-dot { left: -2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar .container { flex-direction: column; gap: 1rem; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .hero-content { max-width: 100%; }
+            .hero-description { margin-left: auto; margin-right: auto; }
+            .hero-buttons { justify-content: center; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+            .about-content { max-width: 100%; }
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .section-title::after { left: 50%; transform: translateX(-50%); }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 1.25rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; }
+            .nav-controls span { display: none; }
+            .theme-toggle, .lang-toggle { padding: 0.5rem; }
+            .profile-frame { width: 280px; }
         }
     </style>
 </head>
-<body>
+<body class="light-mode">
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">ELA BOMEN HIA</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
-            <div class="logo">ELA BO<span>MEN HIA</span></div>
+            <div class="logo" onclick="this.style.transform='scale(0.95)'; setTimeout(()=> this.style.transform='', 200)">ELA BOMEN HIA</div>
             <div class="nav-links">
-                <a href="#home">Beranda</a>
-                <a href="#about">Tentang</a>
-                <a href="#skills">Keahlian</a>
-                <a href="#experience">Pengalaman</a>
-                <a href="#certification">Sertifikasi</a>
-                <a href="#gallery">Galeri</a>
-                <a href="#contact">Kontak</a>
+                <a href="#home" data-i18n="nav.home">Beranda</a>
+                <a href="#about" data-i18n="nav.about">Tentang</a>
+                <a href="#skills" data-i18n="nav.skills">Keahlian</a>
+                <a href="#experience" data-i18n="nav.experience">Pengalaman</a>
+                <a href="#gallery" data-i18n="nav.gallery">Galeri</a>
+                <a href="#contact" data-i18n="nav.contact">Kontak</a>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                        <span>Dark</span>
+                    </button>
+                    <button class="lang-toggle" id="lang-toggle">
+                        <i class="fas fa-globe"></i>
+                        <span>EN</span>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section (Beranda) -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>SECURITY GUARD OPERATOR CCTV CONTROL ROOM</h1>
-                <div class="sub">“Monitoring with Precision, Protecting with Integrity”</div>
+            <div class="hero-content" data-aos="fade-right">
+                <span class="hero-badge" data-i18n="hero.badge">Security & CCTV Specialist</span>
+                <h1>Ela Bomen Hia</h1>
+                <div class="typed-text"></div>
+                <p class="hero-description" data-i18n="hero.description">
+                    Profesional keamanan dengan pengalaman dalam pengawasan CCTV dan pengendalian akses.
+                </p>
                 <div class="hero-buttons">
-                    <a href="#about" class="btn">Tentang Saya</a>
-                    <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+                    <a href="#contact" class="btn btn-primary" data-i18n="hero.hire">Hubungi Saya</a>
+                    <a href="cv-ela-bomen-hia.pdf" download class="btn btn-outline" data-i18n="hero.cv">Download CV</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <!-- FOTO PROFIL utama -->
-                <img src="security-a.png" alt="Profile Security Officer" class="profile-photo" onerror="this.src='https://via.placeholder.com/400x400?text=Foto+Profil'">
+            <div class="hero-image" data-aos="fade-left">
+                <div class="profile-frame" onclick="this.style.animation='pulse 0.5s'">
+                    <img src="security-a.png" alt="Ela Bomen Hia" class="profile-photo" onerror="this.src='https://via.placeholder.com/400x400?text=Ela+Bomen+Hia'">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Tentang Saya -->
+    <!-- Statistics -->
+    <section style="padding: 2rem 0;">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" onclick="this.style.transform='scale(0.95)'; setTimeout(()=> this.style.transform='', 200)">
+                    <div class="stat-number" id="exp-years">2+</div>
+                    <div class="stat-label" data-i18n="stats.experience">Tahun Pengalaman</div>
+                </div>
+                <div class="stat-item" onclick="this.style.transform='scale(0.95)'; setTimeout(()=> this.style.transform='', 200)">
+                    <div class="stat-number" id="projects-count">50+</div>
+                    <div class="stat-label" data-i18n="stats.projects">Proyek Selesai</div>
+                </div>
+                <div class="stat-item" onclick="this.style.transform='scale(0.95)'; setTimeout(()=> this.style.transform='', 200)">
+                    <div class="stat-number" id="certif-count">5</div>
+                    <div class="stat-label" data-i18n="stats.certifications">Sertifikasi</div>
+                </div>
+                <div class="stat-item" onclick="this.style.transform='scale(0.95)'; setTimeout(()=> this.style.transform='', 200)">
+                    <div class="stat-number" id="skills-count">9+</div>
+                    <div class="stat-label" data-i18n="stats.skills">Keahlian</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title">Tentang Saya</h2>
+            <h2 class="section-title" data-i18n="about.title" data-aos="fade-up">Tentang Saya</h2>
             <div class="about-grid">
-                <div class="about-img">
-                    <!-- FOTO TENTANG SAYA (berbeda) -->
-                    <img src="security-b.jpg" alt="Tentang saya - operator CCTV" onerror="this.src='https://via.placeholder.com/600x400?text=Control+Room'">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="security-b.jpg" alt="About Me" onerror="this.src='https://via.placeholder.com/500x400?text=Control+Room'">
                 </div>
-                <div class="about-text">
-                    <p>Saya <strong>ELA BOMEN HIA</strong>, saya adalah Profesional keamanan dengan pengalaman lebih dari 2 tahun sebagai Security Operator CCTV Control Room, terbiasa melakukan pengawasan area, patroli, dan pengoperasian sistem CCTV untuk memastikan lingkungan kerja aman dan kondusif. Terampil dalam pelaporan kejadian, administrasi tim keamanan, serta mendukung operasional posko dan lobby untuk pengaturan akses tamu. Memiliki komitmen tinggi dalam menjaga keamanan, ketertiban, dan kenyamanan lingkungan kerja secara menyeluruh..</p>
-                    <p>Sertifikasi Gada Pratama dan berbagai pelatihan internasional memperkuat kompetensi saya di bidang pengawasan elektronik.</p>
+                <div class="about-content" data-aos="fade-left">
+                    <p class="about-text" data-i18n="about.description1">
+                        Saya <strong>ELA BOMEN HIA</strong>, profesional keamanan dengan pengalaman lebih dari 2 tahun sebagai Security Operator CCTV Control Room. Terbiasa melakukan pengawasan area, patroli, dan pengoperasian sistem CCTV untuk memastikan lingkungan kerja aman dan kondusif.
+                    </p>
+                    <p class="about-text" data-i18n="about.description2">
+                        Terampil dalam pelaporan kejadian, administrasi tim keamanan, serta mendukung operasional posko dan lobby untuk pengaturan akses tamu. Memiliki komitmen tinggi dalam menjaga keamanan, ketertiban, dan kenyamanan lingkungan kerja secara menyeluruh.
+                    </p>
+                    <p class="about-text" data-i18n="about.description3">
+                        Sertifikasi Gada Pratama dan berbagai pelatihan internasional memperkuat kompetensi saya di bidang pengawasan elektronik.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Keahlian (Skills) -->
-    <section id="skills" style="background-color: #eef3f8;">
+    <!-- Skills Section -->
+    <section id="skills">
         <div class="container">
-            <h2 class="section-title">Keahlian</h2>
+            <h2 class="section-title" data-i18n="skills.title" data-aos="fade-up">Keahlian</h2>
             <div class="skills-grid">
-                <div class="skill-card"><i class="fas fa-video"></i> CCTV Monitoring</div>
-                <div class="skill-card"><i class="fas fa-clipboard-list"></i> Incident Reporting</div>
-                <div class="skill-card"><i class="fas fa-lock"></i> Access Control</div>
-                <div class="skill-card"><i class="fas fa-phone-alt"></i> Emergency Response</div>
-                <div class="skill-card"><i class="fas fa-broadcast-tower"></i> Communication</div>
-                <div class="skill-card"><i class="fas fa-eye"></i> Security Risk Observation</div>
-                <div class="skill-card"><i class="fas fa-file-excel"></i> Excel, Word, PPT</div>
-                <div class="skill-card"><i class="fas fa-cube"></i> SketchUp 3D</div>
-                <div class="skill-card"><i class="fas fa-edit"></i> CAPCUT Video Editing</div>
+                <div class="skill-card" data-tilt>
+                    <i class="fas fa-video"></i>
+                    <h3 data-i18n="skills.cctv">CCTV Monitoring</h3>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3 data-i18n="skills.incident">Incident Reporting</h3>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <i class="fas fa-lock"></i>
+                    <h3 data-i18n="skills.access">Access Control</h3>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <i class="fas fa-phone-alt"></i>
+                    <h3 data-i18n="skills.emergency">Emergency Response</h3>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <i class="fas fa-broadcast-tower"></i>
+                    <h3 data-i18n="skills.communication">Communication</h3>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <i class="fas fa-eye"></i>
+                    <h3 data-i18n="skills.risk">Risk Observation</h3>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <i class="fas fa-file-excel"></i>
+                    <h3 data-i18n="skills.office">Microsoft Office</h3>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <i class="fas fa-cube"></i>
+                    <h3 data-i18n="skills.sketchup">SketchUp 3D</h3>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <i class="fas fa-edit"></i>
+                    <h3 data-i18n="skills.capcut">Capcut Editing</h3>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Pengalaman Kerja (timeline) -->
+    <!-- Experience Timeline -->
     <section id="experience">
         <div class="container">
-            <h2 class="section-title">Pengalaman Kerja</h2>
+            <h2 class="section-title" data-i18n="experience.title" data-aos="fade-up">Pengalaman Kerja</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Security Guard | Security Operator CCTV Control Room</h3>
-                        <div class="place">PT SIGAP PRIMA ASTREA</div>
-                          <div class="place">PT ASTRA DAIHATSU MOTOR | 2023 - 2025</div>
-                        <p>1. Melakukan pemantauan terhadap lebih dari 30 unit kamera CCTV yang terhubung dengan sistem monitoring di ruang Control Room untuk memastikan seluruh area perusahaan dalam kondisi aman dan terkendali.</p><p>Melaksanakan pengawasan CCTV secara terus-menerus selama jam kerja (shift) guna memonitor aktivitas di area perusahaan dan memastikan tidak terjadi pelanggaran terhadap prosedur keamanan.</p><p>2. Mengidentifikasi dan mengawasi setiap aktivitas yang mencurigakan, tidak wajar, atau berpotensi menimbulkan gangguan keamanan melalui monitor CCTV, serta segera melaporkan kepada atasan atau petugas keamanan di lapangan untuk tindakan lanjutan.</p><p>3. Mengoperasikan seluruh perangkat sistem keamanan, termasuk CCTV, DVR/NVR, monitor pengawasan, dan perangkat pendukung lainnya sesuai dengan Standar Operasional Prosedur (SOP) yang berlaku.</p><p></p>4. Membuat dan mengisi laporan kejadian (Incident Report) secara lengkap dan akurat apabila terjadi pelanggaran keamanan, kecelakaan kerja, gangguan operasional, atau aktivitas mencurigakan yang terpantau melalui CCTV.</p><p>5. Mengontrol dan memantau akses keluar masuk area perusahaan melalui sistem kamera pengawas guna memastikan hanya pihak yang berwenang yang dapat mengakses area tertentu.</p><p>6. Menyimpan, mengelola, dan melakukan pencadangan rekaman CCTV dengan baik sebagai bahan dokumentasi dan bukti pendukung untuk kebutuhan investigasi apabila terjadi suatu kejadian.</p><p>7. Melakukan koordinasi aktif dengan petugas security di lapangan apabila terdeteksi kejadian darurat, potensi gangguan keamanan, atau situasi yang memerlukan tindakan cepat.</p><p>8. Melakukan pemantauan khusus pada area-area yang dianggap rawan, seperti pintu masuk dan keluar, area parkir, gudang penyimpanan, area produksi, serta area terbatas lainnya yang memiliki tingkat risiko lebih tinggi.</p><p>9. Melaporkan secara segera kepada tim teknisi atau bagian terkait apabila ditemukan kerusakan, gangguan, atau ketidaknormalan pada perangkat CCTV maupun sistem keamanan lainnya.</p><p>10. Memastikan seluruh kamera CCTV berfungsi dengan baik selama shift bertugas, termasuk memastikan tampilan kamera jelas, sudut pandang sesuai, dan sistem rekaman berjalan normal.</p><p>11. Memberikan dukungan (support) sebagai petugas cadangan (backup) untuk Posko Utama apabila diperlukan dalam kondisi tertentu.</p><p>12. Memberikan dukungan (backup) kepada petugas lobby dalam hal pengawasan keamanan maupun pengaturan tamu apabila diperlukan.</p><p>13. Membantu pelaksanaan administrasi internal divisi security, termasuk pencatatan laporan, dokumentasi kejadian, dan pengarsipan data keamanan.</p><p>14. Melaksanakan proses serah terima tugas kepada petugas CCTV pada pergantian shift secara jelas, detail, dan terstruktur, termasuk menyampaikan informasi kejadian, kondisi sistem, serta hal-hal penting yang perlu ditindaklanjuti.</p><p>15. Menjaga komunikasi yang baik dengan seluruh tim keamanan, baik di Control Room maupun di lapangan, guna mendukung terciptanya lingkungan kerja yang aman, tertib, dan kondusif bagi seluruh karyawan dan aset perusahaan..</p>
+                    <div class="timeline-content" onclick="this.style.transform='scale(1.02)'; setTimeout(()=> this.style.transform='', 200)">
+                        <div class="timeline-date">2023 - 2025</div>
+                        <h3 data-i18n="experience.position">Security Operator CCTV Control Room</h3>
+                        <div class="company">PT SIGAP PRIMA ASTREA @ PT ASTRA DAIHATSU MOTOR</div>
+                        <ul class="experience-list">
+                            <li>Pemantauan 30+ kamera CCTV di Control Room</li>
+                            <li>Pengawasan CCTV selama shift dan identifikasi aktivitas mencurigakan</li>
+                            <li>Operasional perangkat CCTV, DVR/NVR, dan sistem monitoring</li>
+                            <li>Pembuatan Incident Report lengkap dan akurat</li>
+                            <li>Kontrol akses keluar masuk area perusahaan</li>
+                            <li>Manajemen dan pencadangan rekaman CCTV</li>
+                            <li>Koordinasi dengan petugas security lapangan</li>
+                            <li>Pemantauan khusus area rawan (parkir, gudang, produksi)</li>
+                            <li>Pelaporan kerusakan ke tim teknisi</li>
+                            <li>Memastikan kamera CCTV berfungsi optimal</li>
+                            <li>Backup petugas Posko Utama dan lobby</li>
+                            <li>Administrasi internal divisi security</li>
+                            <li>Serah terima tugas antar shift secara detail</li>
+                            <li>Komunikasi efektif dengan seluruh tim keamanan</li>
+                        </ul>
                     </div>
-    </section>
-
-    <!-- Sertifikasi -->
-    <section id="certification" style="background-color: #eef3f8;">
-        <div class="container">
-            <h2 class="section-title">Sertifikasi</h2>
-            <div class="sertif-grid">
-                <div class="sertif-card"><i class="fas fa-certificate"></i> <span class="title">Gada Pratama</span> <div class="issuer">PT SIGAP PRIMA ASTREA</div></div>
-                <div class="sertif-card"><i class="fas fa-certificate"></i> <span class="title">Security Guarding, CCTV, Door Supervision</span> <div class="issuer">Alison (International)</div></div>
-                <div class="sertif-card"><i class="fas fa-certificate"></i> <span class="title">CCTV System</span> <div class="issuer">Mind Luster</div></div>
-                <div class="sertif-card"><i class="fas fa-certificate"></i> <span class="title">SketchUp: How To Start Modeling Simple 3D Objects</span> <div class="issuer">Coursera</div></div>
-                <div class="sertif-card"><i class="fas fa-certificate"></i> <span class="title">Capcut Desktop Editor Essentials</span> <div class="issuer">Mind Luster</div></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Galeri (Sertifikat preview) -->
+    <!-- Gallery Section -->
     <section id="gallery">
         <div class="container">
-            <h2 class="section-title">Galeri sertifikasi</h2>
-            <div class="gallery">
-              <div class="gallery">
-
-<div class="gallery-item">
-    <a href="GP-sigap.png" target="_blank">
-        <img src="GP-sigap.png" alt="Sertifikat Gada Pratama">
-    </a>
-    <p>PT SIGAP PRIMA ASTREA</p>
-</div>
-
-<div class="gallery-item">
-    <a href="Alison.png" target="_blank">
-        <img src="Alison.png" alt="Alison certificate">
-    </a>
-    <p>Alison</p>
-</div>
-
-<div class="gallery-item">
-    <a href="Mind Luster-CCTV Sistem.jpg" target="_blank">
-        <img src="Mind Luster-CCTV Sistem.jpg" alt="Mind Luster">
-    </a>
-    <p>Mind Luster</p>
-</div>
-
-<div class="gallery-item">
-    <a href="Coursera.png" target="_blank">
-        <img src="Coursera.png" alt="SketchUp">
-    </a>
-    <p>Coursera</p>
-</div>
-
-<div class="gallery-item">
-    <a href="Mind Luster-Capcut.jpg" target="_blank">
-        <img src="Mind Luster-Capcut.jpg" alt="Capcut">
-    </a>
-    <p>Mind Luster</p>
-</div>
-
-</div>
+            <h2 class="section-title" data-i18n="gallery.title" data-aos="fade-up">Galeri Sertifikat</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('GP-sigap.png')">
+                    <img src="GP-sigap.png" alt="Gada Pratama" onerror="this.src='https://via.placeholder.com/300x300?text=Gada+Pratama'">
+                    <div class="gallery-overlay">
+                        <h4>Gada Pratama</h4>
+                        <p>PT SIGAP PRIMA ASTREA</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('Alison.png')">
+                    <img src="Alison.png" alt="Alison" onerror="this.src='https://via.placeholder.com/300x300?text=Alison'">
+                    <div class="gallery-overlay">
+                        <h4>Security Guarding, CCTV</h4>
+                        <p>Alison (International)</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('Mind Luster-CCTV Sistem.jpg')">
+                    <img src="Mind Luster-CCTV Sistem.jpg" alt="Mind Luster CCTV" onerror="this.src='https://via.placeholder.com/300x300?text=Mind+Luster+CCTV'">
+                    <div class="gallery-overlay">
+                        <h4>CCTV System</h4>
+                        <p>Mind Luster</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('Coursera.png')">
+                    <img src="Coursera.png" alt="Coursera" onerror="this.src='https://via.placeholder.com/300x300?text=Coursera'">
+                    <div class="gallery-overlay">
+                        <h4>SketchUp 3D Modeling</h4>
+                        <p>Coursera</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('Mind Luster-Capcut.jpg')">
+                    <img src="Mind Luster-Capcut.jpg" alt="Capcut" onerror="this.src='https://via.placeholder.com/300x300?text=Mind+Luster+Capcut'">
+                    <div class="gallery-overlay">
+                        <h4>Capcut Desktop Editor</h4>
+                        <p>Mind Luster</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Kontak -->
-    <section id="contact" style="background-color: #eef3f8;">
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <img id="modal-image" src="" alt="Certificate">
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
         <div class="container">
-            <h2 class="section-title">Kontak Saya</h2>
+            <h2 class="section-title" data-i18n="contact.title" data-aos="fade-up">Hubungi Saya</h2>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <p><i class="fas fa-phone-alt"></i> +62 022 4696 4391</p>
-                    <p><i class="fab fa-whatsapp"></i> +62 022 4696 4391</p>
-                    <p><i class="fas fa-envelope"></i> elabomenhia28@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Karawang, Indonesia</p>
+                    <div class="contact-item" onclick="this.style.transform='translateX(15px) scale(1.02)'; setTimeout(()=> this.style.transform='', 200)">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4 data-i18n="contact.phone">Telepon</h4>
+                            <p>+62 022 4696 4391</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" onclick="this.style.transform='translateX(15px) scale(1.02)'; setTimeout(()=> this.style.transform='', 200)">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4 data-i18n="contact.whatsapp">WhatsApp</h4>
+                            <p>+62 822 4696 4391</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" onclick="this.style.transform='translateX(15px) scale(1.02)'; setTimeout(()=> this.style.transform='', 200)">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4 data-i18n="contact.email">Email</h4>
+                            <p>elabomenhia28@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" onclick="this.style.transform='translateX(15px) scale(1.02)'; setTimeout(()=> this.style.transform='', 200)">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4 data-i18n="contact.location">Lokasi</h4>
+                            <p>Karawang, Indonesia</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="contact-form"><form action="https://formsubmit.co/elabomenhia28@gmail.com" method="POST">
-                  <div class="form-group"><input type="text" name="name" placeholder="Nama Lengkap" required></div><div class="form-group"><input type="email" name="email" placeholder="Email" required></div><div class="form-group"><textarea name="message" rows="4" placeholder="Pesan Anda..." required></textarea></div><button type="submit" class="btn-submit">Kirim Pesan</button></form>
-                  </div>
+                <div class="contact-form" data-aos="fade-left">
+                    <form action="https://formsubmit.co/elabomenhia28@gmail.com" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Nama Lengkap" data-i18n-placeholder="contact.form.name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" data-i18n-placeholder="contact.form.email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="5" placeholder="Pesan Anda..." data-i18n-placeholder="contact.form.message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit" data-i18n="contact.form.send">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 ELA BOMEN HIA – Security Operator CCTV Control Room. All rights reserved.</p>
-            <p style="margin-top: 10px;">“Monitoring with Precision, Protecting with Integrity”</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ela-bomen-hia-771b97394?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/elabomenhia28"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/elamotreo28"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/el_hia.28?igsh=MTRzMWMwNDh5OXJkMQ=="><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>© 2026 ELA BOMEN HIA – Security Operator CCTV Control Room</p>
+            <p style="margin-top: 1rem; font-style: italic;">“Monitoring with Precision, Protecting with Integrity”</p>
         </div>
     </footer>
 
-    <!-- Tombol WhatsApp melayang -->
-    <a href="https://wa.me/6282246964391" class="whatsapp-float" target="_blank" title="Hubungi via WhatsApp">
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/6282246964391" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- sedikit placeholder untuk background hero lebih hidup (bisa diabaikan) -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            const progressFill = document.getElementById('progress-fill');
+            progressFill.style.width = '100%';
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.visibility = 'hidden';
+                }, 800);
+            }, 2000);
+        });
+
+        // Particles
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 50 },
+                color: { value: '#3b82f6' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.2 },
+                size: { value: 2 },
+                line_linked: { enable: true, distance: 150, color: '#3b82f6', opacity: 0.1 },
+                move: { enable: true, speed: 1 }
+            }
+        });
+
+        // Typed.js
+        var typed = new Typed('.typed-text', {
+            strings: ['Security Operator', 'CCTV Specialist', 'Control Room Expert', 'Safety Professional'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+
+        // AOS
+        AOS.init({ duration: 800, once: true });
+
+        // Vanilla Tilt
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 8,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+        });
+
+        // Sticky Navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animated Counter
+        function animateCounter(elementId, target, suffix = '+') {
+            let current = 0;
+            const increment = target / 50;
+            const element = document.getElementById(elementId);
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + suffix;
+                }
+            }, 30);
+        }
+
+        window.addEventListener('load', function() {
+            animateCounter('exp-years', 2);
+            animateCounter('projects-count', 50);
+            animateCounter('certif-count', 5);
+            animateCounter('skills-count', 9);
+        });
+
+        // Modal
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-image');
+
+        function openModal(imgSrc) {
+            modal.classList.add('show');
+            modalImg.src = imgSrc;
+        }
+
+        function closeModal() {
+            modal.classList.remove('show');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeModal();
+            }
+        });
+
+        // Dark Mode
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i><span>Light</span>';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i><span>Light</span>';
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i><span>Dark</span>';
+            }
+        });
+
+        // Multi-language
+        const translations = {
+            id: {
+                'nav.home': 'Beranda',
+                'nav.about': 'Tentang',
+                'nav.skills': 'Keahlian',
+                'nav.experience': 'Pengalaman',
+                'nav.gallery': 'Galeri',
+                'nav.contact': 'Kontak',
+                'hero.badge': 'Security & CCTV Specialist',
+                'hero.description': 'Profesional keamanan dengan pengalaman dalam pengawasan CCTV dan pengendalian akses.',
+                'hero.hire': 'Hubungi Saya',
+                'hero.cv': 'Download CV',
+                'stats.experience': 'Tahun Pengalaman',
+                'stats.projects': 'Proyek Selesai',
+                'stats.certifications': 'Sertifikasi',
+                'stats.skills': 'Keahlian',
+                'about.title': 'Tentang Saya',
+                'about.description1': 'Saya <strong>ELA BOMEN HIA</strong>, profesional keamanan dengan pengalaman lebih dari 2 tahun sebagai Security Operator CCTV Control Room. Terbiasa melakukan pengawasan area, patroli, dan pengoperasian sistem CCTV untuk memastikan lingkungan kerja aman dan kondusif.',
+                'about.description2': 'Terampil dalam pelaporan kejadian, administrasi tim keamanan, serta mendukung operasional posko dan lobby untuk pengaturan akses tamu. Memiliki komitmen tinggi dalam menjaga keamanan, ketertiban, dan kenyamanan lingkungan kerja secara menyeluruh.',
+                'about.description3': 'Sertifikasi Gada Pratama dan berbagai pelatihan internasional memperkuat kompetensi saya di bidang pengawasan elektronik.',
+                'skills.title': 'Keahlian',
+                'skills.cctv': 'CCTV Monitoring',
+                'skills.incident': 'Incident Reporting',
+                'skills.access': 'Access Control',
+                'skills.emergency': 'Emergency Response',
+                'skills.communication': 'Communication',
+                'skills.risk': 'Risk Observation',
+                'skills.office': 'Microsoft Office',
+                'skills.sketchup': 'SketchUp 3D',
+                'skills.capcut': 'Capcut Editing',
+                'experience.title': 'Pengalaman Kerja',
+                'experience.position': 'Security Operator CCTV Control Room',
+                'gallery.title': 'Galeri Sertifikat',
+                'contact.title': 'Hubungi Saya',
+                'contact.phone': 'Telepon',
+                'contact.whatsapp': 'WhatsApp',
+                'contact.email': 'Email',
+                'contact.location': 'Lokasi',
+                'contact.form.name': 'Nama Lengkap',
+                'contact.form.email': 'Email',
+                'contact.form.message': 'Pesan Anda...',
+                'contact.form.send': 'Kirim Pesan'
+            },
+            en: {
+                'nav.home': 'Home',
+                'nav.about': 'About',
+                'nav.skills': 'Skills',
+                'nav.experience': 'Experience',
+                'nav.gallery': 'Gallery',
+                'nav.contact': 'Contact',
+                'hero.badge': 'Security & CCTV Specialist',
+                'hero.description': 'Security professional with experience in CCTV surveillance and access control.',
+                'hero.hire': 'Contact Me',
+                'hero.cv': 'Download CV',
+                'stats.experience': 'Years Experience',
+                'stats.projects': 'Projects Done',
+                'stats.certifications': 'Certifications',
+                'stats.skills': 'Skills',
+                'about.title': 'About Me',
+                'about.description1': 'I am <strong>ELA BOMEN HIA</strong>, a security professional with more than 2 years of experience as a CCTV Control Room Security Operator. Accustomed to area surveillance, patrol, and operating CCTV systems.',
+                'about.description2': 'Skilled in incident reporting, security team administration, and supporting post and lobby operations for guest access management.',
+                'about.description3': 'Gada Pratama certification and various international trainings strengthen my competence in electronic surveillance.',
+                'skills.title': 'Skills',
+                'skills.cctv': 'CCTV Monitoring',
+                'skills.incident': 'Incident Reporting',
+                'skills.access': 'Access Control',
+                'skills.emergency': 'Emergency Response',
+                'skills.communication': 'Communication',
+                'skills.risk': 'Risk Observation',
+                'skills.office': 'Microsoft Office',
+                'skills.sketchup': 'SketchUp 3D',
+                'skills.capcut': 'Capcut Editing',
+                'experience.title': 'Work Experience',
+                'experience.position': 'Security Operator CCTV Control Room',
+                'gallery.title': 'Certificate Gallery',
+                'contact.title': 'Contact Me',
+                'contact.phone': 'Phone',
+                'contact.whatsapp': 'WhatsApp',
+                'contact.email': 'Email',
+                'contact.location': 'Location',
+                'contact.form.name': 'Full Name',
+                'contact.form.email': 'Email',
+                'contact.form.message': 'Your Message...',
+                'contact.form.send': 'Send Message'
+            }
+        };
+
+        let currentLang = 'id';
+        const langToggle = document.getElementById('lang-toggle');
+
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translations[lang][key];
+                    } else {
+                        el.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+
+            langToggle.innerHTML = `<i class="fas fa-globe"></i><span>${lang === 'id' ? 'EN' : 'ID'}</span>`;
+        }
+
+        langToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'id' ? 'en' : 'id';
+            updateLanguage(currentLang);
+        });
+
+        updateLanguage('id');
+    </script>
 </body>
 </html>
