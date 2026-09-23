@@ -2,1436 +2,1530 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Ela Bomen Hia — Control Room Officer di G4S dengan pengalaman di bidang keamanan, monitoring CCTV, control room operation, dan koordinasi tim security.">
-<meta name="theme-color" content="#1e40af">
-<meta property="og:title" content="Ela Bomen Hia · Control Room Officer">
-<meta property="og:description" content="Control Room Officer di G4S · Pengalaman CCTV monitoring, control room operation, dan koordinasi keamanan.">
-<meta property="og:type" content="website">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Ela Bomen Hia — Control Room Officer di G4S. Ahli monitoring CCTV, control room operation, dan koordinasi keamanan industri.">
+<meta name="theme-color" content="#3b82f6">
 <title>Ela Bomen Hia · Control Room Officer</title>
 
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://unpkg.com">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script>
+  (function(){
+    try{
+      var t = localStorage.getItem('theme') || 'dark';
+      if(t === 'light'){
+        document.documentElement.classList.add('preload-light');
+      } else {
+        document.documentElement.classList.add('preload-dark');
+      }
+    }catch(e){ document.documentElement.classList.add('preload-dark'); }
+  })();
+</script>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s}
+/* ============================================================
+   THEME TOKENS — DARK (default)
+   ============================================================ */
+:root{
+  --blue:#3b82f6;
+  --blue-hover:#2563eb;
+  --blue-dark:#1d4ed8;
+  --blue-glow:rgba(59,130,246,.35);
+  --blue-soft:rgba(59,130,246,.12);
 
-body.light-mode{
-  --bg:#f0f4f8;--bg2:#fff;--text:#0a1929;--text2:#475569;
-  --accent:#1e40af;--accent2:#3b82f6;--accent3:#06b6d4;
-  --glow:rgba(30,64,175,.15);--border:#e2e8f0;--card:rgba(255,255,255,.95);
-  --nav:rgba(255,255,255,.98);--shadow:0 10px 25px -5px rgba(30,64,175,.12);
-  --grid:rgba(30,64,175,.06)
-}
-body.dark-mode{
-  --bg:#0a0f1a;--bg2:#111827;--text:#f1f5f9;--text2:#94a3b8;
-  --accent:#3b82f6;--accent2:#60a5fa;--accent3:#22d3ee;
-  --glow:rgba(59,130,246,.2);--border:#1e293b;--card:rgba(17,24,39,.95);
-  --nav:rgba(10,15,26,.98);--shadow:0 10px 25px -5px rgba(59,130,246,.15);
-  --grid:rgba(59,130,246,.05)
-}
-body{background:var(--bg);color:var(--text)}
-
-.container{width:100%;max-width:1280px;margin:0 auto;padding:0 1.5rem}
-@media(min-width:640px){.container{padding:0 2.5rem}}
-@media(min-width:1024px){.container{padding:0 3rem}}
-
-section{padding:4rem 0;position:relative;z-index:2}
-@media(min-width:768px){section{padding:6rem 0}}
-
-h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.2}
-
-.section-title{
-  font-size:clamp(1.75rem,3.5vw,2.25rem);font-weight:700;
-  margin-bottom:3rem;position:relative;display:inline-flex;
-  align-items:center;gap:.75rem;color:var(--text)
-}
-.section-title i{color:var(--accent);font-size:.9em;transition:all .4s}
-.section-title::after{
-  content:'';position:absolute;bottom:-.75rem;left:0;width:4rem;height:3px;
-  background:linear-gradient(90deg,var(--accent),var(--accent3));
-  border-radius:3px;transition:width .4s
-}
-.section-title:hover i{transform:rotate(360deg) scale(1.1);color:var(--accent3)}
-.section-title:hover::after{width:100%}
-
-.section-subtitle{
-  color:var(--text2);font-size:.95rem;margin-top:-2rem;margin-bottom:2.5rem;
-  max-width:640px
+  --bg:#0a0a0a;
+  --bg-2:#111111;
+  --bg-card:#161616;
+  --bg-card-hover:#1c1c1c;
+  --bg-input:#111111;
+  --border:#242424;
+  --border-light:#2e2e2e;
+  --text:#ffffff;
+  --text-soft:#a8a8a8;
+  --text-faint:#6b6b6b;
+  --bg-gradient-from:#0a0a0a;
+  --bg-gradient-to:#111111;
+  --navbar-bg:rgba(10,10,10,.9);
+  --overlay-bg:rgba(0,0,0,.96);
+  --overlay-soft:rgba(0,0,0,.7);
+  --cert-img-bg:#1a1a1a;
+  --img-brightness:.9;
+  --nav-h:80px;
+  --pad-x:clamp(1.25rem,5vw,3.5rem);
+  --section-y:clamp(4rem,9vw,7rem);
 }
 
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
-@keyframes glow{
-  0%,100%{box-shadow:0 0 0 4px var(--glow)}
-  50%{box-shadow:0 0 0 10px rgba(59,130,246,0)}
+/* ============================================================
+   THEME TOKENS — LIGHT
+   ============================================================ */
+body.light-mode,
+html.preload-light body{
+  --bg:#f8fafc;
+  --bg-2:#f1f5f9;
+  --bg-card:#ffffff;
+  --bg-card-hover:#f8fafc;
+  --bg-input:#f1f5f9;
+  --border:#e2e8f0;
+  --border-light:#cbd5e1;
+  --text:#0f172a;
+  --text-soft:#64748b;
+  --text-faint:#94a3b8;
+  --bg-gradient-from:#ffffff;
+  --bg-gradient-to:#f1f5f9;
+  --navbar-bg:rgba(255,255,255,.92);
+  --overlay-bg:rgba(15,23,42,.95);
+  --overlay-soft:rgba(15,23,42,.55);
+  --cert-img-bg:#f1f5f9;
+  --img-brightness:1;
+  --blue-soft:rgba(59,130,246,.1);
 }
 
-/* Loading */
-#loader{
-  position:fixed;inset:0;background:var(--bg);display:flex;
-  justify-content:center;align-items:center;z-index:9999;
-  transition:opacity .6s,visibility .6s
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Poppins','Montserrat',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text-soft);
+  line-height:1.7;
+  overflow-x:hidden;
+  min-height:100vh;
+  padding-top:env(safe-area-inset-top);
+  padding-bottom:env(safe-area-inset-bottom);
+  -webkit-font-smoothing:antialiased;
+  transition:background .35s ease, color .35s ease;
 }
-#loader.hide{opacity:0;visibility:hidden}
-.load-content{text-align:center}
-.load-logo{
-  font-size:clamp(1.5rem,4vw,2.5rem);font-weight:800;
-  font-family:'Space Grotesk',sans-serif;
-  background:linear-gradient(135deg,var(--accent),var(--accent3));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;color:transparent;
-  margin-bottom:.5rem;letter-spacing:2px
-}
-.load-sub{
-  font-size:.75rem;color:var(--text2);letter-spacing:4px;
-  text-transform:uppercase;margin-bottom:1.5rem
-}
-.load-bar{
-  width:min(280px,70vw);height:3px;background:var(--border);
-  border-radius:3px;overflow:hidden;margin:0 auto
-}
-.load-fill{
-  width:0;height:100%;
-  background:linear-gradient(90deg,var(--accent),var(--accent3));
-  transition:width 1.2s ease
-}
+img{max-width:100%;display:block}
+button,input,textarea,select{font-family:inherit;font-size:inherit;color:inherit}
+a{color:inherit}
 
-.grid-overlay{
-  position:fixed;inset:0;z-index:0;pointer-events:none;
+.container{
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  padding-left:max(var(--pad-x),env(safe-area-inset-left));
+  padding-right:max(var(--pad-x),env(safe-area-inset-right));
+}
+section{padding:var(--section-y) 0;position:relative}
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
   background-image:
-    linear-gradient(var(--grid) 1px,transparent 1px),
-    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-  background-size:50px 50px
+    radial-gradient(circle at 20% 30%, rgba(59,130,246,.06), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(59,130,246,.04), transparent 50%);
+  pointer-events:none;
+  z-index:0;
+}
+body.light-mode::before{
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(59,130,246,.05), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(59,130,246,.03), transparent 50%);
 }
 
-/* Navbar */
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1,h2,h3,h4{
+  font-family:'Montserrat',sans-serif;
+  color:var(--text);
+  font-weight:800;
+  line-height:1.2;
+  letter-spacing:-.01em;
+  transition:color .35s ease;
+}
+
+.section-heading{
+  font-size:clamp(1.5rem,3.5vw,2rem);
+  font-weight:800;
+  color:var(--text);
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  margin-bottom:1rem;
+  position:relative;
+  display:inline-block;
+}
+.section-heading::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:-10px;
+  width:70px;height:3px;
+  background:var(--blue);
+  border-radius:2px;
+}
+.section-heading span{color:var(--blue)}
+
+.section-sub{
+  color:var(--text-soft);
+  font-size:.9rem;
+  max-width:520px;
+  margin-bottom:clamp(2.5rem,5vw,3.5rem);
+  margin-top:1.5rem;
+  line-height:1.7;
+}
+
+/* ============================================================
+   LOADER
+   ============================================================ */
+#loader{
+  position:fixed;inset:0;background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  z-index:9999;transition:opacity .5s,visibility .5s;
+}
+#loader.hide{opacity:0;visibility:hidden;pointer-events:none}
+.loader-mark{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(1.25rem,4vw,1.75rem);
+  font-weight:900;letter-spacing:-.02em;
+  color:var(--text);text-align:center;
+}
+.loader-mark span{color:var(--blue)}
+.loader-bar{
+  width:min(200px,60vw);height:2px;background:var(--border);
+  border-radius:2px;overflow:hidden;margin:1.25rem auto 0;
+}
+.loader-bar > div{
+  width:0;height:100%;background:var(--blue);
+  transition:width 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
 .navbar{
-  position:fixed;top:0;left:0;width:100%;padding:1.25rem 0;
-  z-index:100;transition:all .3s;background:transparent
+  position:fixed;top:0;left:0;right:0;
+  height:var(--nav-h);z-index:100;
+  display:flex;align-items:center;
+  background:transparent;
+  transition:background .35s ease, border-color .35s ease, backdrop-filter .35s ease;
 }
 .navbar.scrolled{
-  background:var(--nav);backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  padding:.75rem 0;box-shadow:0 4px 6px -1px rgba(0,0,0,.08);
-  border-bottom:1px solid var(--border)
+  background:var(--navbar-bg);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
 }
-.navbar .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-
-.logo{
-  font-size:1.4rem;font-weight:800;font-family:'Space Grotesk',sans-serif;
-  background:linear-gradient(135deg,var(--accent),var(--accent3));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;color:transparent;
-  cursor:pointer;display:inline-flex;align-items:center;gap:.5rem
-}
-.logo i{-webkit-text-fill-color:var(--accent);color:var(--accent);font-size:1rem;animation:blink 2s infinite}
-
-.nav-links{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
-.nav-links a{
-  color:var(--text);text-decoration:none;font-weight:500;font-size:.9rem;
-  position:relative;padding:.5rem 0;transition:all .3s
-}
-.nav-links a::after{
-  content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
-  background:linear-gradient(90deg,var(--accent),var(--accent3));
-  transition:width .3s
-}
-.nav-links a:hover{color:var(--accent)}
-.nav-links a:hover::after{width:100%}
-
-.nav-controls{display:flex;gap:.5rem;margin-left:.5rem}
-.theme-toggle,.lang-toggle{
-  background:var(--card);border:1px solid var(--border);border-radius:2rem;
-  padding:.5rem 1rem;cursor:pointer;display:flex;align-items:center;gap:.4rem;
-  font-weight:600;font-size:.85rem;color:var(--text);transition:all .3s;
-  font-family:inherit
-}
-.theme-toggle:hover,.lang-toggle:hover{
-  background:var(--accent);color:#fff;transform:translateY(-2px);
-  box-shadow:var(--shadow);border-color:transparent
-}
-.theme-toggle:hover i,.lang-toggle:hover i{animation:spin .6s}
-
-/* Hero */
-.hero{
-  min-height:100vh;display:flex;align-items:center;
-  padding:6rem 0 3rem;position:relative;z-index:2
-}
-.hero .container{
-  display:grid;grid-template-columns:1.1fr .9fr;
-  gap:3rem;align-items:center
-}
-.hero-content{max-width:620px}
-
-.hero-status{
-  display:inline-flex;align-items:center;gap:.5rem;
-  padding:.4rem 1rem;background:rgba(16,185,129,.1);
-  border:1px solid rgba(16,185,129,.3);border-radius:2rem;
-  font-size:.8rem;font-weight:600;color:#10b981;
-  margin-bottom:1rem;letter-spacing:.5px
-}
-.hero-status .dot{
-  width:8px;height:8px;background:#10b981;border-radius:50%;
-  animation:blink 1.5s infinite;box-shadow:0 0 8px #10b981
+.navbar .container{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
 }
 
-.hero-badge{
-  display:inline-block;padding:.4rem 1.2rem;background:var(--card);
-  border:1px solid var(--border);border-radius:2rem;
-  font-size:.8rem;font-weight:600;color:var(--accent);
-  margin-bottom:1.25rem;letter-spacing:1px;text-transform:uppercase
+.brand{
+  display:inline-flex;align-items:center;gap:.75rem;
+  cursor:pointer;flex-shrink:0;
+  text-decoration:none;
 }
-
-.hero h1{
-  font-size:clamp(2.25rem,5vw,3.75rem);font-weight:800;
-  margin-bottom:.75rem;line-height:1.05;letter-spacing:-.02em
-}
-.hero h1 span{
-  background:linear-gradient(135deg,var(--accent),var(--accent3));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;color:transparent
-}
-
-.typed-wrap{
-  font-size:clamp(1rem,2vw,1.4rem);font-weight:600;
-  margin-bottom:1.25rem;color:var(--text2);
-  min-height:2.5rem;font-family:'Space Grotesk',sans-serif
-}
-.cursor{
-  display:inline-block;width:2px;height:1.2em;background:var(--accent);
-  vertical-align:middle;animation:blink 1s infinite;margin-left:2px
-}
-
-.hero-description{
-  color:var(--text2);margin-bottom:2rem;max-width:560px;
-  font-size:1rem;line-height:1.7
-}
-
-.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
-.btn{
-  display:inline-flex;align-items:center;gap:.5rem;
-  padding:.85rem 1.75rem;border-radius:.75rem;font-weight:600;
-  text-decoration:none;transition:all .3s;cursor:pointer;border:none;
-  font-size:.95rem;font-family:inherit
-}
-.btn-primary{
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#fff;box-shadow:var(--shadow)
-}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 30px -10px var(--accent)}
-.btn-outline{
-  background:transparent;border:1.5px solid var(--border);color:var(--text)
-}
-.btn-outline:hover{
-  border-color:var(--accent);background:var(--card);
-  transform:translateY(-3px);color:var(--accent)
-}
-
-.hero-trust{
-  display:flex;gap:1.5rem;flex-wrap:wrap;
-  padding-top:1.25rem;border-top:1px solid var(--border)
-}
-.trust-item{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--text2);font-weight:500}
-.trust-item i{color:var(--accent);font-size:1rem}
-
-/* PROFILE HERO */
-.hero-image{display:flex;justify-content:center;align-items:center}
-
-.profile-container{
+.brand-icon{
+  width:46px;height:46px;
+  display:flex;align-items:center;justify-content:center;
   position:relative;
-  width:min(400px,90%);
-  aspect-ratio:1;
+  flex-shrink:0;
 }
-
-.profile-container::before{
+.brand-icon svg{width:100%;height:100%;display:block}
+.brand-icon::after{
   content:'';
   position:absolute;
-  inset:-24px;
-  border-radius:3rem;
-  background:radial-gradient(circle at 30% 20%,var(--glow),transparent 70%);
-  z-index:0;
-  pointer-events:none;
-}
-
-.profile-frame{
-  position:relative;
-  width:100%;
-  height:100%;
-  border-radius:1.75rem;
-  background:var(--card);
-  padding:8px;
-  box-shadow:
-    0 20px 45px -25px rgba(0,0,0,.25),
-    0 0 0 1px var(--border);
-  z-index:2;
-  transition:transform .5s ease, box-shadow .5s ease;
-  overflow:hidden;
-}
-.profile-frame:hover{
-  transform:translateY(-6px);
-  box-shadow:
-    0 30px 55px -30px rgba(0,0,0,.3),
-    0 0 0 1px var(--accent);
-}
-
-.profile-photo{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:1.35rem;
-  display:block;
-}
-
-.profile-badge{
-  position:absolute;
-  bottom:1.25rem;
-  left:50%;
-  transform:translateX(-50%);
-  background:var(--card);
-  border:1px solid var(--border);
-  padding:.55rem 1.15rem;
-  border-radius:2rem;
-  display:inline-flex;
-  align-items:center;
-  gap:.55rem;
-  font-size:.75rem;
-  font-weight:600;
-  color:var(--text);
-  box-shadow:var(--shadow);
-  z-index:4;
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  white-space:nowrap;
-  transition:transform .35s ease, border-color .35s ease;
-}
-.profile-badge:hover{
-  border-color:var(--accent);
-  transform:translateX(-50%) translateY(-2px);
-}
-.profile-badge .status-dot{
-  width:7px;
-  height:7px;
-  background:#10b981;
+  inset:-4px;
   border-radius:50%;
-  box-shadow:0 0 8px #10b981;
-  animation:blink 1.8s infinite;
+  background:radial-gradient(circle, var(--blue-glow), transparent 70%);
+  z-index:-1;
+  opacity:.6;
 }
 
-/* Stats */
-.stats-section{padding:2rem 0}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
-.stat-item{
-  text-align:center;padding:1.5rem 1rem;background:var(--card);
-  border:1px solid var(--border);border-radius:1rem;
-  transition:all .4s;position:relative;overflow:hidden
-}
-.stat-item::before{
-  content:'';position:absolute;top:0;left:0;width:100%;height:3px;
-  background:linear-gradient(90deg,var(--accent),var(--accent3));
-  transform:scaleX(0);transform-origin:left;transition:transform .4s
-}
-.stat-item:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--accent)}
-.stat-item:hover::before{transform:scaleX(1)}
-.stat-icon{font-size:1.4rem;color:var(--accent);margin-bottom:.6rem;transition:all .3s}
-.stat-item:hover .stat-icon{transform:scale(1.15);color:var(--accent3)}
-.stat-number{
-  font-size:clamp(1.5rem,3.5vw,2rem);font-weight:800;
-  color:var(--text);margin-bottom:.25rem;font-family:'Space Grotesk',sans-serif
-}
-.stat-label{
-  font-size:.75rem;font-weight:500;color:var(--text2);
-  text-transform:uppercase;letter-spacing:.5px
-}
-
-/* About */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.about-image{display:flex;justify-content:center}
-.about-image-wrapper{position:relative;width:100%;max-width:500px}
-.about-image img{
-  width:100%;border-radius:1.5rem;border:3px solid var(--border);
-  box-shadow:var(--shadow);transition:all .5s;display:block
-}
-.about-image:hover img{
-  transform:scale(1.02);box-shadow:0 30px 40px -15px var(--accent);
-  border-color:var(--accent)
-}
-.about-badge{
-  position:absolute;bottom:-1rem;right:-1rem;background:var(--accent);
-  color:#fff;padding:.75rem 1.25rem;border-radius:1rem;
-  box-shadow:var(--shadow);display:flex;align-items:center;gap:.6rem;
-  font-weight:600;font-size:.85rem
-}
-.about-badge i{font-size:1.25rem}
-.about-badge small{
-  display:block;font-size:.65rem;opacity:.9;
-  text-transform:uppercase;letter-spacing:.5px
-}
-
-.about-content{max-width:550px}
-.about-highlight{
-  display:flex;gap:1rem;margin-bottom:1.25rem;padding:1.25rem;
-  background:var(--card);border:1px solid var(--border);
-  border-radius:1rem;border-left:3px solid var(--accent);
-  transition:all .3s
-}
-.about-highlight:hover{
-  transform:translateX(8px);box-shadow:var(--shadow);
-  border-left-color:var(--accent3)
-}
-.about-highlight i{color:var(--accent);font-size:1.2rem;margin-top:.2rem;flex-shrink:0}
-.about-highlight p{color:var(--text2);font-size:.95rem;line-height:1.6}
-.about-highlight strong{color:var(--text);font-weight:600}
-
-/* Skills */
-.skills-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem
-}
-.skill-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:1rem;padding:1.5rem 1.25rem;transition:all .4s;
-  position:relative;overflow:hidden
-}
-.skill-card::before{
-  content:'';position:absolute;top:0;left:0;width:3px;height:100%;
-  background:linear-gradient(180deg,var(--accent),var(--accent3));
-  transform:scaleY(0);transform-origin:top;transition:transform .4s
-}
-.skill-card:hover{
-  transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--accent)
-}
-.skill-card:hover::before{transform:scaleY(1)}
-.skill-icon{
-  width:3rem;height:3rem;border-radius:.75rem;background:var(--glow);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:1rem;transition:all .4s
-}
-.skill-icon i{font-size:1.4rem;color:var(--accent);transition:all .4s}
-.skill-card:hover .skill-icon{background:var(--accent);transform:rotate(-5deg) scale(1.05)}
-.skill-card:hover .skill-icon i{color:#fff;transform:scale(1.1)}
-.skill-card h3{font-size:1rem;font-weight:600;margin-bottom:.5rem;color:var(--text)}
-.skill-level{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--text2);font-weight:500}
-.skill-bar{flex:1;height:4px;background:var(--border);border-radius:4px;overflow:hidden}
-.skill-bar-fill{
-  height:100%;background:linear-gradient(90deg,var(--accent),var(--accent3));
-  border-radius:4px;width:0;transition:width 1.2s ease
-}
-
-/* Experience Timeline */
-.timeline{
-  position:relative;padding:1rem 0;max-width:960px;margin:0 auto
-}
-.timeline::before{
-  content:'';position:absolute;left:2rem;top:0;width:2px;height:100%;
-  background:linear-gradient(180deg,var(--accent),var(--accent3),transparent);
-  border-radius:2px
-}
-.timeline-item{position:relative;padding-left:5rem;margin-bottom:2.5rem}
-.timeline-item:last-child{margin-bottom:0}
-.timeline-dot{
-  position:absolute;left:1.25rem;top:1.5rem;width:1.5rem;height:1.5rem;
-  background:var(--bg);border:3px solid var(--accent);border-radius:50%;
-  z-index:3;display:flex;align-items:center;justify-content:center;
-  transition:all .3s
-}
-.timeline-dot::after{
-  content:'';width:.5rem;height:.5rem;background:var(--accent);
-  border-radius:50%;animation:pulse 2s infinite
-}
-.timeline-item:hover .timeline-dot{
-  transform:scale(1.2);box-shadow:0 0 20px var(--glow);border-color:var(--accent3)
-}
-
-.timeline-item.current .timeline-dot{
-  background:var(--accent);border-color:var(--accent);
-  box-shadow:0 0 0 4px var(--glow);animation:glow 2s infinite
-}
-.timeline-item.current .timeline-content{
-  border-color:var(--accent);background:linear-gradient(135deg,var(--card),var(--glow))
-}
-
-.timeline-content{
-  padding:1.75rem;background:var(--card);border:1px solid var(--border);
-  border-radius:1rem;transition:all .4s;position:relative
-}
-.timeline-content::before{
-  content:'';position:absolute;left:-8px;top:1.75rem;width:16px;height:16px;
-  background:var(--card);border-left:1px solid var(--border);
-  border-bottom:1px solid var(--border);transform:rotate(45deg)
-}
-.timeline-item:hover .timeline-content{
-  transform:translateX(8px);box-shadow:var(--shadow);border-color:var(--accent)
-}
-.timeline-header{
-  display:flex;justify-content:space-between;align-items:flex-start;
-  flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem
-}
-.timeline-date{
-  display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;
-  font-weight:600;color:var(--accent);background:var(--glow);
-  padding:.25rem .75rem;border-radius:1rem
-}
-.timeline-type{
-  font-size:.7rem;font-weight:600;color:#10b981;
-  background:rgba(16,185,129,.1);padding:.25rem .75rem;
-  border-radius:1rem;text-transform:uppercase;letter-spacing:.5px
-}
-.timeline-type.current-type{
-  color:#f59e0b;background:rgba(245,158,11,.15);
-  animation:blink 1.5s infinite
-}
-.timeline-type.contract-type{
-  color:#8b5cf6;background:rgba(139,92,246,.1)
-}
-.timeline-content h3{font-size:1.2rem;margin-bottom:.35rem;color:var(--text)}
-.company{
-  font-weight:600;color:var(--text2);margin-bottom:.35rem;font-size:.9rem;
-  display:flex;align-items:center;gap:.4rem;flex-wrap:wrap
-}
-.company i{color:var(--accent);font-size:.85rem}
-.company .client{
-  font-weight:500;font-size:.8rem;color:var(--text2);
-  background:var(--glow);padding:.15rem .6rem;border-radius:.5rem
-}
-.timeline-desc{
-  color:var(--text2);font-size:.9rem;margin-bottom:1rem;
-  font-style:italic;padding-left:.75rem;border-left:2px solid var(--border);
-  line-height:1.65
-}
-.experience-list{
-  list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.6rem 1.5rem
-}
-.experience-list li{
-  padding-left:1.25rem;position:relative;color:var(--text2);
-  font-size:.85rem;line-height:1.5
-}
-.experience-list li::before{
-  content:'';position:absolute;left:0;top:.5rem;width:6px;height:6px;
-  background:var(--accent);border-radius:50%;transition:all .3s
-}
-.timeline-item:hover .experience-list li::before{
-  background:var(--accent3);box-shadow:0 0 8px var(--glow)
-}
-
-/* Photo Gallery */
-.photo-gallery-section{
-  background:linear-gradient(180deg,transparent,var(--glow),transparent)
-}
-
-.photo-filter{
-  display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;
-  margin-bottom:2.5rem
-}
-.filter-btn{
-  padding:.5rem 1.25rem;background:var(--card);border:1px solid var(--border);
-  border-radius:2rem;cursor:pointer;font-weight:600;font-size:.85rem;
-  color:var(--text2);transition:all .3s;font-family:inherit;
-  display:inline-flex;align-items:center;gap:.4rem
-}
-.filter-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
-.filter-btn.active{
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#fff;border-color:transparent;box-shadow:var(--shadow)
-}
-.filter-btn i{font-size:.85rem}
-
-.photo-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-  gap:1rem;
-  grid-auto-rows:200px
-}
-.photo-item{
-  position:relative;border-radius:1rem;overflow:hidden;
-  cursor:pointer;border:1px solid var(--border);
-  transition:all .5s cubic-bezier(.175,.885,.32,1.275);
-  background:var(--card)
-}
-.photo-item.tall{grid-row:span 2}
-.photo-item.wide{grid-column:span 2}
-@media(max-width:640px){
-  .photo-item.wide{grid-column:span 1}
-  .photo-item.tall{grid-row:span 1}
-}
-
-.photo-item img{
-  width:100%;height:100%;object-fit:cover;
-  transition:transform .6s ease,filter .4s
-}
-.photo-item:hover{
-  transform:translateY(-6px);box-shadow:0 25px 40px -15px var(--accent);
-  border-color:var(--accent);z-index:5
-}
-.photo-item:hover img{transform:scale(1.1);filter:brightness(1.05)}
-
-.photo-item::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,.85) 0%,transparent 50%);
-  opacity:0;transition:opacity .4s;pointer-events:none
-}
-.photo-item:hover::after{opacity:1}
-
-.photo-caption{
-  position:absolute;bottom:0;left:0;right:0;padding:1.25rem;
-  color:#fff;z-index:3;transform:translateY(20px);
-  opacity:0;transition:all .4s ease
-}
-.photo-item:hover .photo-caption{
-  transform:translateY(0);opacity:1
-}
-.photo-caption h4{
-  font-size:1rem;margin-bottom:.25rem;
-  display:flex;align-items:center;gap:.5rem
-}
-.photo-caption h4 i{color:var(--accent3);font-size:.9rem}
-.photo-caption p{font-size:.8rem;opacity:.9}
-
-.photo-tag{
-  position:absolute;top:1rem;left:1rem;z-index:3;
-  background:rgba(0,0,0,.7);color:#fff;
-  padding:.3rem .75rem;border-radius:1rem;font-size:.7rem;
-  font-weight:600;letter-spacing:.5px;text-transform:uppercase;
-  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
-  border:1px solid rgba(255,255,255,.15)
-}
-
-.photo-zoom{
-  position:absolute;top:1rem;right:1rem;z-index:3;
-  width:2.25rem;height:2.25rem;background:rgba(255,255,255,.95);
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  color:var(--accent);opacity:0;transform:scale(.8) rotate(-45deg);
-  transition:all .4s ease
-}
-.photo-item:hover .photo-zoom{opacity:1;transform:scale(1) rotate(0)}
-
-/* Lightbox */
-.lightbox{
-  display:none;position:fixed;inset:0;background:rgba(0,0,0,.98);
-  z-index:1000;justify-content:center;align-items:center;
-  opacity:0;transition:opacity .35s ease;padding:2rem
-}
-.lightbox.show{display:flex;opacity:1}
-
-.lightbox-content{
-  max-width:min(95%,1100px);max-height:88vh;position:relative;
-  transform:scale(.92);transition:transform .4s cubic-bezier(.175,.885,.32,1.275)
-}
-.lightbox.show .lightbox-content{transform:scale(1)}
-
-.lightbox-content img{
-  width:100%;height:auto;max-height:88vh;object-fit:contain;
-  border-radius:1rem;box-shadow:0 30px 60px rgba(0,0,0,.5);
-  border:2px solid rgba(255,255,255,.1)
-}
-
-.lightbox-caption{
-  position:absolute;bottom:-3.5rem;left:0;right:0;
-  text-align:center;color:#fff
-}
-.lightbox-caption h3{
-  font-size:1.1rem;margin-bottom:.25rem;
-  font-family:'Space Grotesk',sans-serif
-}
-.lightbox-caption p{font-size:.85rem;opacity:.7}
-
-.lightbox-close{
-  position:absolute;top:-3rem;right:0;
-  width:2.5rem;height:2.5rem;border-radius:50%;
-  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
-  color:#fff;font-size:1.5rem;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .3s;font-family:inherit
-}
-.lightbox-close:hover{
-  background:var(--accent);border-color:var(--accent);
-  transform:rotate(90deg) scale(1.1)
-}
-
-.lightbox-nav{
-  position:absolute;top:50%;transform:translateY(-50%);
-  width:3rem;height:3rem;border-radius:50%;
-  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
-  color:#fff;font-size:1.25rem;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .3s;z-index:10
-}
-.lightbox-nav:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-50%) scale(1.1)}
-.lightbox-nav.prev{left:-4rem}
-.lightbox-nav.next{right:-4rem}
-
-@media(max-width:768px){
-  .lightbox-nav.prev{left:.5rem}
-  .lightbox-nav.next{right:.5rem}
-  .lightbox-nav{width:2.5rem;height:2.5rem}
-}
-
-.lightbox-counter{
-  position:absolute;top:-3rem;left:0;color:#fff;
-  font-size:.85rem;font-weight:600;letter-spacing:1px;
-  background:rgba(255,255,255,.1);padding:.4rem 1rem;border-radius:1rem
-}
-
-/* ============ CERTIFICATE GALLERY (REVAMPED) ============ */
-.cert-gallery-section{
-  background:linear-gradient(180deg,transparent,var(--glow),transparent)
-}
-
-.cert-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-  gap:1.5rem
-}
-
-.cert-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:1rem;
-  overflow:hidden;
-  transition:all .4s ease;
+.brand-text{
   display:flex;
   flex-direction:column;
-  position:relative;
+  justify-content:center;
+  line-height:1.05;
+  white-space:nowrap;
 }
-.cert-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 25px 45px -20px var(--accent);
-  border-color:var(--accent);
+.brand-text .brand-line-1{
+  font-family:'Montserrat',sans-serif;
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--text);
+  transition:color .3s ease;
 }
+.brand-text .brand-line-2{
+  font-family:'Montserrat',sans-serif;
+  font-size:.62rem;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin-top:2px;
+}
+.brand:hover .brand-text .brand-line-1{color:var(--blue)}
 
-.cert-image{
+.nav-menu{
+  display:flex;align-items:center;gap:.35rem;
+  margin-left:auto;
+}
+.nav-menu a{
+  text-decoration:none;
+  font-family:'Montserrat',sans-serif;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--text-soft);
+  padding:.65rem 1rem;
   position:relative;
-  aspect-ratio:16/10;
-  overflow:hidden;
-  background:linear-gradient(135deg,var(--glow),transparent);
-  cursor:pointer;
+  transition:color .25s ease;
+  white-space:nowrap;
 }
-.cert-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .6s ease, filter .4s;
-  display:block;
-}
-.cert-card:hover .cert-image img{
-  transform:scale(1.08);
-  filter:brightness(1.05);
-}
-
-/* Gradient overlay bottom of image */
-.cert-image::after{
+.nav-menu a::after{
   content:'';
   position:absolute;
-  inset:0;
-  background:linear-gradient(to top, rgba(0,0,0,.35) 0%, transparent 55%);
-  opacity:0;
-  transition:opacity .35s;
+  left:1rem;right:1rem;
+  bottom:.35rem;
+  height:2px;
+  background:var(--blue);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .3s ease;
+}
+.nav-menu a:hover{color:var(--text)}
+.nav-menu a:hover::after,
+.nav-menu a.active::after{transform:scaleX(1)}
+.nav-menu a.active{color:var(--text)}
+
+.nav-actions{display:flex;align-items:center;gap:.5rem;margin-left:.75rem}
+.icon-btn{
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--border);
+  background:transparent;color:var(--text-soft);
+  cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
+  font-size:.9rem;transition:all .25s ease;flex-shrink:0;
+}
+.icon-btn:hover{
+  border-color:var(--blue);color:var(--blue);
+  background:var(--blue-soft);
+  transform:translateY(-1px);
+}
+.lang-btn{
+  width:auto;padding:0 .9rem;border-radius:999px;
+  font-family:'Montserrat',sans-serif;
+  font-size:.7rem;font-weight:700;letter-spacing:.1em;
+}
+
+#themeToggle i{
+  transition:transform .4s cubic-bezier(.2,.8,.2,1), color .25s ease;
+}
+#themeToggle:hover i{
+  transform:rotate(20deg) scale(1.1);
+}
+
+.menu-toggle{display:none}
+
+.nav-overlay{
+  position:fixed;inset:0;background:var(--overlay-soft);
+  backdrop-filter:blur(4px);
+  opacity:0;visibility:hidden;transition:all .3s ease;z-index:98;
+}
+.nav-overlay.show{opacity:1;visibility:visible}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  padding-top:calc(var(--nav-h) + 2rem);
+  padding-bottom:0;
+  position:relative;
+  overflow:hidden;
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+}
+.hero .container{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(1.5rem,4vw,3rem);
+  align-items:center;
+  width:100%;
+  padding-top:2rem;
+  padding-bottom:3rem;
+}
+
+.hero-visual{
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  position:relative;
+  min-height:520px;
+  align-self:end;
+}
+.hero-photo{
+  position:relative;
+  width:100%;
+  max-width:460px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+.hero-photo img{
+  width:100%;
+  height:auto;
+  max-height:640px;
+  object-fit:contain;
+  object-position:bottom center;
+  filter:drop-shadow(0 30px 60px rgba(0,0,0,.5));
+  position:relative;
+  z-index:2;
+  transition:filter .35s ease;
+}
+body.light-mode .hero-photo img{
+  filter:drop-shadow(0 30px 50px rgba(15,23,42,.15));
+}
+.hero-photo::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:0;
+  width:min(70%,320px);
+  height:55%;
+  background:linear-gradient(to top,var(--blue-glow),transparent);
+  border-radius:50% 50% 0 0 / 20% 20% 0 0;
+  filter:blur(30px);
+  z-index:1;
+}
+
+.hero-content{
+  padding:2rem 0;
+  text-align:left;
+}
+.hero-content h1{
+  font-size:clamp(2rem,5.5vw,3.5rem);
+  font-weight:800;
+  line-height:1.15;
+  margin-bottom:1.25rem;
+  letter-spacing:-.01em;
+  text-transform:uppercase;
+  color:var(--text);
+}
+.hero-content h1 .blue{color:var(--blue)}
+.hero-content h1 .cursor{
+  display:inline-block;
+  width:3px;
+  height:1em;
+  background:var(--blue);
+  vertical-align:text-bottom;
+  margin-left:4px;
+  animation:blink 1s steps(1) infinite;
+  border-radius:2px;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+.hero-desc-block{
+  position:relative;
+  padding-left:1.25rem;
+  margin-bottom:2rem;
+  max-width:480px;
+}
+.hero-desc-block::before{
+  content:'';
+  position:absolute;
+  left:0;top:6px;bottom:6px;
+  width:3px;
+  background:var(--blue);
+  border-radius:2px;
+}
+.hero-desc-block p{
+  color:var(--text-soft);
+  font-size:clamp(.85rem,1.5vw,.95rem);
+  line-height:1.75;
+}
+.hero-desc-block strong{color:var(--text);font-weight:600}
+
+.btn-blue{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  padding:.9rem 1.75rem;
+  background:var(--blue);
+  color:#fff;
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:.8rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-radius:6px;
+  border:none;
+  cursor:pointer;
+  transition:all .3s ease;
+  box-shadow:0 10px 30px -10px var(--blue-glow);
+}
+.btn-blue:hover{
+  background:var(--blue-hover);
+  transform:translateY(-2px);
+  box-shadow:0 16px 40px -10px var(--blue-glow);
+}
+.btn-blue i{
+  transition:transform .3s ease;
+  font-size:.85em;
+}
+.btn-blue:hover i{transform:translateX(4px)}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about{
+  background:linear-gradient(to bottom, var(--bg-gradient-from), var(--bg-gradient-to));
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+  transition:background .35s ease, border-color .35s ease;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);
+  gap:clamp(2rem,6vw,5rem);
+  align-items:center;
+}
+.about-content h2{
+  font-size:clamp(1.5rem,3.5vw,2rem);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  margin-bottom:2rem;
+  position:relative;
+  color:var(--text);
+}
+.about-content h2::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:-12px;
+  width:70px;height:3px;
+  background:var(--blue);
+  border-radius:2px;
+}
+.about-content h2 span{color:var(--blue)}
+.about-content p{
+  color:var(--text-soft);
+  font-size:.9rem;
+  line-height:1.85;
+  margin-bottom:1.25rem;
+}
+.about-content p strong{color:var(--text);font-weight:600}
+
+.about-socials{
+  display:flex;
+  gap:.5rem;
+  margin-top:1.75rem;
+}
+.about-socials a{
+  width:38px;height:38px;
+  border-radius:50%;
+  border:1px solid var(--border-light);
+  display:inline-flex;align-items:center;justify-content:center;
+  color:var(--text-soft);
+  text-decoration:none;
+  font-size:.85rem;
+  transition:all .25s ease;
+}
+.about-socials a:hover{
+  border-color:var(--blue);
+  color:var(--blue);
+  background:var(--blue-soft);
+  transform:translateY(-3px);
+}
+
+.about-visual{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.about-frame{
+  position:relative;
+  width:100%;
+  max-width:480px;
+  padding:0;
+}
+.about-frame img{
+  width:100%;
+  height:auto;
+  display:block;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:2px;
+  transition:filter .35s ease;
+}
+.about-frame::before{
+  content:'';
+  position:absolute;
+  top:-14px;
+  right:-14px;
+  width:70%;
+  height:70%;
+  border-top:3px solid var(--blue);
+  border-right:3px solid var(--blue);
   pointer-events:none;
 }
-.cert-card:hover .cert-image::after{opacity:1}
-
-/* Issuer icon badge (top-right) */
-.cert-badge{
+.about-frame::after{
+  content:'';
   position:absolute;
-  top:.75rem;
-  right:.75rem;
-  width:2.4rem;
-  height:2.4rem;
-  border-radius:.7rem;
-  background:rgba(255,255,255,.96);
-  color:var(--accent);
+  bottom:-14px;
+  left:30%;
+  width:70%;
+  height:70%;
+  border-bottom:3px solid var(--blue);
+  border-right:3px solid var(--blue);
+  pointer-events:none;
+}
+
+/* ============================================================
+   SKILLS — GRID CARD 3 KOLOM
+   ============================================================ */
+.skills{
+  background:var(--bg);
+  transition:background .35s ease;
+}
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(1rem,2vw,1.5rem);
+}
+.skill-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:clamp(1.75rem,3vw,2.25rem) clamp(1.25rem,2.5vw,1.75rem);
+  text-align:center;
+  transition:all .35s cubic-bezier(.2,.8,.2,1);
+  position:relative;
+  overflow:hidden;
+}
+.skill-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:2px;
+  background:var(--blue);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .4s ease;
+}
+.skill-card:hover{
+  background:var(--bg-card-hover);
+  border-color:var(--border-light);
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px -20px rgba(59,130,246,.25);
+}
+body.light-mode .skill-card{
+  box-shadow:0 2px 8px rgba(15,23,42,.04);
+}
+body.light-mode .skill-card:hover{
+  box-shadow:0 20px 40px -20px rgba(59,130,246,.3);
+}
+.skill-card:hover::before{transform:scaleX(1)}
+.skill-icon{
+  width:60px;
+  height:60px;
+  margin:0 auto 1.25rem;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:1.05rem;
-  box-shadow:0 6px 18px rgba(0,0,0,.15);
-  z-index:3;
+  color:var(--blue);
+  font-size:1.7rem;
   transition:transform .35s ease;
 }
-.cert-card:hover .cert-badge{
-  transform:scale(1.08) rotate(-5deg);
+.skill-card:hover .skill-icon{transform:scale(1.1) rotate(-5deg)}
+.skill-card h3{
+  font-family:'Montserrat',sans-serif;
+  font-size:.82rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin-bottom:.85rem;
+  line-height:1.4;
+}
+.skill-card p{
+  color:var(--text-soft);
+  font-size:.8rem;
+  line-height:1.7;
+  max-width:280px;
+  margin:0 auto;
 }
 
-/* Year pill (top-left) */
-.cert-year{
+/* ============================================================
+   EXPERIENCE
+   ============================================================ */
+.experience{
+  background:var(--bg-2);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  transition:background .35s ease, border-color .35s ease;
+}
+.exp-timeline{
+  position:relative;
+  max-width:900px;
+  margin:0 auto;
+}
+.exp-timeline::before{
+  content:'';
   position:absolute;
-  top:.75rem;
-  left:.75rem;
-  padding:.3rem .7rem;
-  background:rgba(0,0,0,.75);
-  backdrop-filter:blur(6px);
-  -webkit-backdrop-filter:blur(6px);
-  color:#fff;
-  border-radius:2rem;
-  font-size:.68rem;
-  font-weight:700;
-  letter-spacing:.4px;
-  z-index:3;
-  border:1px solid rgba(255,255,255,.15);
+  left:16px;top:8px;bottom:8px;
+  width:2px;
+  background:linear-gradient(to bottom, var(--blue), var(--border) 70%, transparent);
+}
+.exp-item{
+  position:relative;
+  padding-left:56px;
+  padding-bottom:2rem;
+}
+.exp-item:last-child{padding-bottom:0}
+.exp-marker{
+  position:absolute;
+  left:6px;top:6px;
+  width:22px;height:22px;
+  border-radius:50%;
+  background:var(--bg);
+  border:2px solid var(--border-light);
+  display:flex;align-items:center;justify-content:center;
+  z-index:2;
+  transition:all .3s ease;
+}
+.exp-marker::after{
+  content:'';
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--text-faint);
+  transition:all .3s ease;
+}
+.exp-item.current .exp-marker{
+  border-color:var(--blue);
+  box-shadow:0 0 0 4px var(--blue-soft);
+}
+.exp-item.current .exp-marker::after{background:var(--blue);box-shadow:0 0 8px var(--blue)}
+.exp-item:hover .exp-marker{border-color:var(--blue);transform:scale(1.1)}
+.exp-item:hover .exp-marker::after{background:var(--blue)}
+
+.exp-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:clamp(1.25rem,2.5vw,1.75rem);
+  transition:all .3s ease;
+}
+body.light-mode .exp-card{
+  box-shadow:0 2px 8px rgba(15,23,42,.04);
+}
+.exp-item.current .exp-card{
+  border-color:rgba(59,130,246,.35);
+  background:linear-gradient(135deg, var(--bg-card), var(--blue-soft));
+}
+.exp-card:hover{
+  border-color:var(--border-light);
+  transform:translateX(6px);
+  box-shadow:0 20px 40px -20px rgba(59,130,246,.2);
+}
+.exp-top{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:.75rem;flex-wrap:wrap;margin-bottom:.85rem;
+}
+.exp-date{
+  font-family:'Montserrat',sans-serif;
+  font-size:.7rem;font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--text-faint);
+  display:inline-flex;align-items:center;gap:.4rem;
+}
+.exp-tag{
+  font-family:'Montserrat',sans-serif;
+  font-size:.62rem;font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:.3rem .75rem;
+  border-radius:999px;
+  background:var(--bg-2);
+  color:var(--text-soft);
+  border:1px solid var(--border);
+}
+.exp-tag.current{
+  background:var(--blue-soft);
+  color:var(--blue);
+  border-color:transparent;
+}
+.exp-tag.contract{
+  background:rgba(251,191,36,.12);
+  color:#d97706;
+  border-color:transparent;
+}
+body:not(.light-mode) .exp-tag.contract{
+  color:#fbbf24;
+}
+.exp-card h3{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.05rem;
+  font-weight:800;
+  color:var(--text);
+  margin-bottom:.35rem;
+  letter-spacing:-.01em;
+}
+.exp-company{
+  display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+  font-size:.82rem;color:var(--text-soft);margin-bottom:.85rem;
+  font-weight:500;
+}
+.exp-company i{color:var(--blue);font-size:.8rem}
+.exp-company .client{
+  font-family:'Montserrat',sans-serif;
+  font-size:.68rem;font-weight:700;
+  padding:.2rem .55rem;
+  background:var(--blue-soft);
+  color:var(--blue);
+  border-radius:4px;
+  letter-spacing:.04em;
+}
+.exp-list{
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.4rem 1.25rem;
+  margin-top:1rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.exp-list li{
+  font-size:.78rem;
+  color:var(--text-soft);
+  padding-left:1.1rem;
+  position:relative;
+  line-height:1.55;
+}
+.exp-list li::before{
+  content:'';
+  position:absolute;
+  left:0;top:.55rem;
+  width:5px;height:5px;
+  border-radius:50%;
+  background:var(--blue);
+  opacity:.7;
 }
 
-/* Zoom hint (appears on hover, bottom-right of image) */
-.cert-zoom{
-  position:absolute;
-  bottom:.75rem;
-  right:.75rem;
-  padding:.35rem .7rem;
-  background:rgba(255,255,255,.96);
-  color:var(--accent);
-  border-radius:2rem;
-  font-size:.7rem;
-  font-weight:700;
-  display:inline-flex;
-  align-items:center;
-  gap:.3rem;
-  z-index:3;
-  opacity:0;
-  transform:translateY(8px);
+/* ============================================================
+   CERTIFICATES
+   ============================================================ */
+.certificates{background:var(--bg);transition:background .35s ease;}
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));
+  gap:clamp(1rem,2vw,1.5rem);
+}
+.cert-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:4px;
+  overflow:hidden;
+  cursor:pointer;
   transition:all .35s ease;
-}
-.cert-card:hover .cert-zoom{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* Info panel */
-.cert-info{
-  padding:1.25rem 1.35rem 1.35rem;
   display:flex;
   flex-direction:column;
-  gap:.5rem;
-  flex:1;
 }
-
-.cert-info h4{
-  font-size:.98rem;
+body.light-mode .cert-card{
+  box-shadow:0 2px 8px rgba(15,23,42,.04);
+}
+.cert-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(59,130,246,.4);
+  box-shadow:0 20px 40px -15px rgba(59,130,246,.25);
+}
+.cert-img{
+  position:relative;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  background:var(--cert-img-bg);
+  transition:background .35s ease;
+}
+.cert-img img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .5s ease, filter .5s ease;
+  filter:brightness(var(--img-brightness));
+}
+.cert-card:hover .cert-img img{
+  transform:scale(1.06);
+  filter:brightness(1);
+}
+.cert-year{
+  position:absolute;top:.65rem;left:.65rem;
+  padding:.3rem .7rem;
+  background:var(--blue);color:#fff;
+  font-family:'Montserrat',sans-serif;
+  font-size:.6rem;font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  border-radius:3px;
+  z-index:2;
+}
+.cert-body{
+  padding:1.1rem 1.15rem 1.25rem;
+  display:flex;flex-direction:column;gap:.4rem;flex:1;
+}
+.cert-body h4{
+  font-family:'Montserrat',sans-serif;
+  font-size:.85rem;
   font-weight:700;
   color:var(--text);
-  line-height:1.35;
-  margin-bottom:.15rem;
+  line-height:1.4;
+  letter-spacing:-.01em;
 }
-
 .cert-issuer{
-  display:inline-flex;
-  align-items:center;
-  gap:.4rem;
-  font-size:.78rem;
-  font-weight:600;
-  color:var(--accent);
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.72rem;font-weight:600;
+  color:var(--blue);
 }
-.cert-issuer i{
-  font-size:.72rem;
-}
-
+.cert-issuer i{font-size:.8em}
 .cert-meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.4rem .9rem;
   margin-top:auto;
   padding-top:.85rem;
   border-top:1px solid var(--border);
-  font-size:.7rem;
-  color:var(--text2);
+  display:flex;flex-wrap:wrap;gap:.4rem .85rem;
+  font-family:'Montserrat',sans-serif;
+  font-size:.62rem;
+  color:var(--text-faint);
+  letter-spacing:.04em;
 }
-.cert-meta span{
-  display:inline-flex;
+.cert-meta span{display:inline-flex;align-items:center;gap:.3rem;min-width:0}
+.cert-meta i{color:var(--blue);font-size:.75em;flex-shrink:0}
+.cert-meta .id{word-break:break-all}
+
+/* ============================================================
+   CONTACT (info saja, tanpa form)
+   ============================================================ */
+.contact{
+  background:var(--bg-2);
+  border-top:1px solid var(--border);
+  transition:background .35s ease, border-color .35s ease;
+}
+.contact-info{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(1rem,2vw,1.5rem);
+  max-width:1000px;
+  margin:0 auto;
+}
+.contact-row{
+  display:flex;
   align-items:center;
-  gap:.35rem;
-  line-height:1.3;
+  gap:1rem;
+  padding:1.5rem 1.5rem;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:6px;
+  text-decoration:none;
+  transition:all .25s ease;
+  text-align:left;
 }
-.cert-meta i{
-  color:var(--accent);
-  font-size:.72rem;
+body.light-mode .contact-row{
+  box-shadow:0 2px 8px rgba(15,23,42,.04);
 }
-.cert-meta .cred-id{
-  font-family:'Space Grotesk',monospace;
-  letter-spacing:.2px;
-  word-break:break-all;
-  color:var(--text2);
+.contact-row:hover{
+  border-color:rgba(59,130,246,.4);
+  transform:translateY(-4px);
+  box-shadow:0 20px 40px -20px rgba(59,130,246,.3);
 }
-
-/* Modal */
-.modal{
-  display:none;position:fixed;inset:0;
-  background:rgba(0,0,0,.95);z-index:1000;
-  justify-content:center;align-items:center;
-  padding:2rem;opacity:0;transition:opacity .3s ease
-}
-.modal.show{display:flex;opacity:1}
-.modal-content{
-  max-width:min(95%,1000px);max-height:90vh;
-  position:relative;transform:scale(.92);
-  transition:transform .35s cubic-bezier(.175,.885,.32,1.275)
-}
-.modal.show .modal-content{transform:scale(1)}
-.modal-content img{
-  width:100%;height:auto;max-height:90vh;object-fit:contain;
-  border-radius:1rem;box-shadow:0 30px 60px rgba(0,0,0,.5);
-  border:2px solid rgba(255,255,255,.1)
-}
-.modal-close{
-  position:absolute;top:-3rem;right:0;
-  width:2.5rem;height:2.5rem;border-radius:50%;
-  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
-  color:#fff;font-size:1.5rem;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .3s;font-family:inherit
-}
-.modal-close:hover{
-  background:var(--accent);border-color:var(--accent);
-  transform:rotate(90deg) scale(1.1)
-}
-
-/* Contact */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-.contact-info{display:flex;flex-direction:column;gap:1rem}
-.contact-item{
-  display:flex;align-items:center;gap:1.25rem;padding:1.25rem 1.5rem;
-  background:var(--card);border:1px solid var(--border);
-  border-radius:1rem;transition:all .4s;position:relative;overflow:hidden
-}
-.contact-item::before{
-  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
-  background:linear-gradient(90deg,transparent,var(--glow),transparent);
-  transition:left .5s
-}
-.contact-item:hover{
-  transform:translateX(10px);box-shadow:var(--shadow);border-color:var(--accent)
-}
-.contact-item:hover::before{left:100%}
 .contact-icon{
-  width:3rem;height:3rem;border-radius:.75rem;background:var(--glow);
+  width:50px;height:50px;border-radius:8px;
+  background:var(--blue-soft);
+  color:var(--blue);
   display:flex;align-items:center;justify-content:center;
-  transition:all .4s;flex-shrink:0
+  font-size:1.15rem;flex-shrink:0;
+  transition:all .25s ease;
 }
-.contact-icon i{font-size:1.25rem;color:var(--accent);transition:all .3s}
-.contact-item:hover .contact-icon{background:var(--accent);transform:scale(1.05)}
-.contact-item:hover .contact-icon i{color:#fff}
-.contact-item h4{font-size:.95rem;margin-bottom:.15rem;color:var(--text)}
-.contact-item p{color:var(--text2);font-size:.9rem;word-break:break-word}
+.contact-row:hover .contact-icon{background:var(--blue);color:#fff}
+.contact-row h4{
+  font-family:'Montserrat',sans-serif;
+  font-size:.7rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-faint);
+  margin-bottom:.3rem;
+}
+.contact-row p{
+  font-size:.92rem;font-weight:600;
+  color:var(--text);
+  word-break:break-word;overflow-wrap:anywhere;
+  line-height:1.4;
+}
 
-.contact-form{
-  padding:2rem;background:var(--card);border:1px solid var(--border);
-  border-radius:1rem;transition:all .3s
-}
-.contact-form:hover{box-shadow:var(--shadow);border-color:var(--accent)}
-.contact-form h3{
-  margin-bottom:1.5rem;font-size:1.1rem;color:var(--text);
-  display:flex;align-items:center;gap:.5rem
-}
-.contact-form h3 i{color:var(--accent)}
-.form-group{margin-bottom:1.25rem}
-.form-group input,.form-group textarea{
-  width:100%;padding:.85rem 1.25rem;background:var(--bg);
-  border:1.5px solid var(--border);border-radius:.75rem;
-  font-family:inherit;font-size:.9rem;color:var(--text);transition:all .3s
-}
-.form-group input:hover,.form-group textarea:hover{border-color:var(--accent2)}
-.form-group input:focus,.form-group textarea:focus{
-  outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)
-}
-.btn-submit{
-  width:100%;padding:.85rem;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#fff;border:none;border-radius:.75rem;font-weight:600;
-  font-size:.95rem;cursor:pointer;transition:all .4s;
-  display:flex;align-items:center;justify-content:center;gap:.5rem;
-  font-family:inherit
-}
-.btn-submit:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-
-/* Footer */
+/* ============================================================
+   FOOTER
+   ============================================================ */
 .footer{
-  padding:3rem 0 2rem;background:var(--bg2);border-top:1px solid var(--border);
-  text-align:center;position:relative;z-index:2
+  padding:clamp(2.5rem,5vw,3.5rem) 0 2rem;
+  background:var(--bg);
+  border-top:1px solid var(--border);
+  text-align:center;
+  transition:background .35s ease, border-color .35s ease;
 }
 .footer-logo{
-  font-size:1.4rem;font-weight:800;font-family:'Space Grotesk',sans-serif;
-  background:linear-gradient(135deg,var(--accent),var(--accent3));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;color:transparent;
-  margin-bottom:1rem
+  font-family:'Montserrat',sans-serif;
+  font-size:1.25rem;
+  font-weight:900;
+  letter-spacing:-.02em;
+  color:var(--text);
+  margin-bottom:.85rem;
+  text-transform:uppercase;
 }
-.social-links{display:flex;justify-content:center;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap}
-.social-links a{
-  width:2.5rem;height:2.5rem;display:flex;align-items:center;justify-content:center;
-  background:var(--card);border:1px solid var(--border);border-radius:.75rem;
-  color:var(--text);font-size:1.1rem;transition:all .4s;text-decoration:none
+.footer-logo span{color:var(--blue)}
+.footer p{
+  color:var(--text-soft);
+  font-size:.8rem;
+  margin-bottom:.5rem;
 }
-.social-links a:hover{
-  transform:translateY(-4px);background:var(--accent);color:#fff;
-  border-color:transparent;box-shadow:var(--shadow)
+.footer .tagline{
+  font-family:'Montserrat',sans-serif;
+  font-style:italic;
+  color:var(--blue);
+  font-weight:500;
+  font-size:.85rem;
+  margin-top:1.25rem;
 }
-.footer p{color:var(--text2);font-size:.85rem}
-.footer .tagline{margin-top:.75rem;font-style:italic;color:var(--accent);font-weight:500}
+.socials{
+  display:flex;justify-content:center;gap:.5rem;
+  margin:1.5rem 0;
+}
+.socials a{
+  width:42px;height:42px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid var(--border);
+  color:var(--text-soft);
+  text-decoration:none;
+  font-size:.95rem;
+  transition:all .25s ease;
+  background:transparent;
+}
+.socials a:hover{
+  border-color:var(--blue);
+  color:var(--blue);
+  background:var(--blue-soft);
+  transform:translateY(-3px);
+}
 
-/* Accessibility */
-@media (prefers-reduced-motion: reduce){
+/* ============================================================
+   MODAL
+   ============================================================ */
+.overlay{
+  position:fixed;inset:0;
+  background:var(--overlay-bg);
+  backdrop-filter:blur(8px);
+  z-index:1000;
+  display:flex;align-items:center;justify-content:center;
+  padding:1.5rem;
+  opacity:0;visibility:hidden;
+  transition:opacity .3s,visibility .3s;
+}
+.overlay.show{opacity:1;visibility:visible}
+.overlay-inner{
+  position:relative;
+  max-width:min(95vw,1000px);
+  max-height:90vh;width:100%;
+  transform:scale(.94);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.overlay.show .overlay-inner{transform:scale(1)}
+.overlay-inner img{
+  width:100%;height:auto;
+  max-height:80vh;
+  object-fit:contain;
+  border-radius:4px;
+  margin:0 auto;
+  box-shadow:0 30px 80px rgba(0,0,0,.6);
+}
+.overlay-close{
+  position:absolute;
+  top:-3rem;right:0;
+  width:42px;height:42px;
+  border-radius:50%;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
+  color:#fff;
+  font-size:1.3rem;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .25s ease;
+  font-family:inherit;
+}
+.overlay-close:hover{
+  background:var(--blue);
+  border-color:var(--blue);
+  transform:rotate(90deg);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1024px){
+  .hero .container{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:2rem;
+    padding-top:1rem;
+  }
+  .hero-content{text-align:center;order:2;padding:0}
+  .hero-content h1{font-size:clamp(1.85rem,7vw,2.75rem)}
+  .hero-desc-block{
+    margin-left:auto;margin-right:auto;
+    text-align:left;
+  }
+  .hero-visual{order:1;min-height:380px;align-self:center}
+  .hero-photo{max-width:340px}
+  .hero-photo img{max-height:440px}
+
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .about-visual{order:-1}
+  .about-content{text-align:center}
+  .about-content h2::after{left:50%;transform:translateX(-50%)}
+  .about-socials{justify-content:center}
+  .about-frame{max-width:400px;margin:0 auto}
+
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-info{grid-template-columns:1fr}
+}
+
+@media (max-width:900px){
+  .menu-toggle{display:inline-flex}
+  .nav-menu{
+    position:fixed;
+    top:0;right:0;
+    width:min(320px,85vw);
+    height:100vh;height:100dvh;
+    background:var(--bg-2);
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:flex-start;
+    gap:.15rem;
+    padding:calc(var(--nav-h) + 1rem) 1.25rem 1.5rem;
+    transform:translateX(100%);
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), background .35s ease;
+    z-index:99;overflow-y:auto;
+    box-shadow:-20px 0 60px rgba(0,0,0,.4);
+    border-left:1px solid var(--border);
+    margin-left:0;
+  }
+  .nav-menu.open{transform:translateX(0)}
+  .nav-menu a{
+    padding:.95rem .85rem;
+    font-size:.8rem;
+    border-radius:4px;
+    text-align:left;
+  }
+  .nav-menu a::after{left:.85rem;right:.85rem;bottom:.5rem}
+  .nav-actions{
+    margin-top:1rem;
+    padding-top:1rem;
+    border-top:1px solid var(--border);
+    flex-direction:row;
+    justify-content:flex-start;
+    width:100%;
+    margin-left:0;
+  }
+  .lang-btn{flex:1;justify-content:center}
+}
+
+@media (max-width:640px){
+  .hero{padding-top:calc(var(--nav-h) + 1rem)}
+  .hero .container{padding-top:.5rem;padding-bottom:2rem}
+  .hero-content h1{font-size:clamp(1.6rem,8vw,2.25rem)}
+  .hero-visual{min-height:320px}
+  .hero-photo{max-width:280px}
+  .hero-photo img{max-height:360px}
+
+  .about-frame::before,
+  .about-frame::after{display:none}
+
+  .skills-grid{grid-template-columns:1fr}
+
+  .exp-list{grid-template-columns:1fr}
+  .exp-timeline::before{left:12px}
+  .exp-item{padding-left:44px}
+  .exp-marker{left:2px;width:20px;height:20px}
+
+  .overlay-close{top:-2.5rem;width:36px;height:36px;font-size:1.15rem}
+}
+
+@media (max-width:560px){
+  .brand-icon{width:38px;height:38px}
+  .brand-text .brand-line-1{font-size:.62rem;letter-spacing:.14em}
+  .brand-text .brand-line-2{font-size:.55rem;letter-spacing:.18em}
+}
+@media (max-width:400px){
+  .brand-text{display:none}
+}
+
+@media (prefers-reduced-motion:reduce){
   *,*::before,*::after{
     animation-duration:.001ms !important;
     animation-iteration-count:1 !important;
     transition-duration:.001ms !important;
-    scroll-behavior:auto !important
+    scroll-behavior:auto !important;
   }
 }
-:focus-visible{outline:2px solid var(--accent3);outline-offset:3px;border-radius:4px}
 
-/* Responsive */
-@media(max-width:1024px){
-  .hero .container{grid-template-columns:1fr;text-align:center;gap:2.5rem}
-  .hero-content{max-width:100%;margin:0 auto}
-  .hero-description{margin-left:auto;margin-right:auto}
-  .hero-buttons,.hero-trust{justify-content:center}
-  .hero-image{order:-1}
-  .profile-container{width:min(320px,80%)}
-  .experience-list{grid-template-columns:1fr}
-}
-@media(max-width:768px){
-  .navbar .container{flex-direction:column;gap:.75rem}
-  .nav-links{justify-content:center;gap:1rem}
-  .nav-controls{margin-left:0}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .about-grid{grid-template-columns:1fr;text-align:center;gap:2rem}
-  .about-content{max-width:100%}
-  .about-badge{right:50%;transform:translateX(50%);bottom:-1.5rem}
-  .contact-grid{grid-template-columns:1fr;gap:2rem}
-  .section-title::after{left:50%;transform:translateX(-50%)}
-  .section-title{justify-content:center;width:100%;text-align:center}
-  .section-subtitle{text-align:center;margin-left:auto;margin-right:auto}
-  .timeline::before{left:1rem}
-  .timeline-item{padding-left:3rem}
-  .timeline-dot{left:.25rem}
-  .timeline-content::before{display:none}
-  .cert-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem}
-}
-@media(max-width:480px){
-  .container{padding:0 1.25rem}
-  .stats-grid{grid-template-columns:1fr}
-  .hero-buttons{flex-direction:column}
-  .btn{width:100%;justify-content:center}
-  .nav-controls span{display:none}
-  .theme-toggle,.lang-toggle{padding:.5rem}
-  .profile-container{width:280px}
-  .profile-badge{font-size:.7rem;padding:.5rem 1rem;bottom:1rem}
-  .about-badge{padding:.6rem 1rem;font-size:.75rem}
-  .photo-grid{grid-auto-rows:180px}
-  .cert-grid{grid-template-columns:1fr}
-  .cert-meta{font-size:.68rem}
+:focus-visible{
+  outline:2px solid var(--blue);
+  outline-offset:3px;
+  border-radius:4px;
 }
 </style>
 </head>
-<body class="light-mode">
+<body>
 
-<!-- Loader -->
-<div id="loader" role="status" aria-live="polite" aria-label="Memuat halaman">
-  <div class="load-content">
-    <div class="load-logo">ELA BOMEN HIA</div>
-    <div class="load-sub">Control Room Officer</div>
-    <div class="load-bar"><div class="load-fill" id="loadFill"></div></div>
+<!-- LOADER -->
+<div id="loader" role="status" aria-label="Memuat">
+  <div style="text-align:center">
+    <div class="loader-mark">ELA BOMEN <span>HIA</span></div>
+    <div class="loader-bar"><div id="loaderBar"></div></div>
   </div>
 </div>
 
-<div class="grid-overlay" aria-hidden="true"></div>
-
-<!-- Navbar -->
-<nav class="navbar" id="navbar" aria-label="Navigasi utama">
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
   <div class="container">
-    <div class="logo"><i class="fas fa-satellite-dish" aria-hidden="true"></i> ELA BOMEN HIA</div>
-    <div class="nav-links">
-      <a href="#home" data-i18n="nav.home">Beranda</a>
-      <a href="#about" data-i18n="nav.about">Tentang</a>
-      <a href="#skills" data-i18n="nav.skills">Keahlian</a>
-      <a href="#experience" data-i18n="nav.experience">Pengalaman</a>
-      <a href="#photos" data-i18n="nav.photos">Foto</a>
-      <a href="#gallery" data-i18n="nav.gallery">Sertifikat</a>
-      <a href="#contact" data-i18n="nav.contact">Kontak</a>
-      <div class="nav-controls">
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Ganti tema">
-          <i class="fas fa-moon" aria-hidden="true"></i><span>Dark</span>
+    <div class="brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <div class="brand-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <rect x="28" y="2" width="8" height="10" rx="1.5" fill="#3b82f6"/>
+          <rect x="20" y="10" width="24" height="4" rx="2" fill="#3b82f6"/>
+          <ellipse cx="32" cy="4" rx="14" ry="3" fill="#2563eb"/>
+          <path d="M14 22 C14 16, 20 12, 32 12 C44 12, 50 16, 50 22 L50 30 C50 34, 46 37, 40 37 L24 37 C18 37, 14 34, 14 30 Z" fill="#3b82f6"/>
+          <path d="M18 20 C18 17, 23 15, 32 15 L32 22 L18 22 Z" fill="#60a5fa" opacity="0.7"/>
+          <rect x="38" y="20" width="18" height="14" rx="4" fill="#2563eb"/>
+          <circle cx="50" cy="27" r="6" fill="#1e40af"/>
+          <circle cx="50" cy="27" r="4.2" fill="#0f172a"/>
+          <circle cx="50" cy="27" r="2.4" fill="#3b82f6"/>
+          <circle cx="48.6" cy="25.5" r="0.9" fill="#ffffff" opacity="0.9"/>
+          <circle cx="20" cy="30" r="1.3" fill="#ef4444"/>
+          <circle cx="26" cy="30" r="1.3" fill="#ef4444" opacity="0.5"/>
+          <circle cx="32" cy="30" r="1.3" fill="#ef4444" opacity="0.5"/>
+          <rect x="28" y="37" width="8" height="6" fill="#1d4ed8" rx="1"/>
+          <path d="M56 18 Q60 22, 56 26" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-linecap="round" opacity="0.85"/>
+          <path d="M59 15 Q64.5 22, 59 29" fill="none" stroke="#3b82f6" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+
+      <div class="brand-text" aria-label="Control Room Officer">
+        <span class="brand-line-1">ELA BOMEN HIA</span>
+        <span class="brand-line-2" data-i18n="brand.role">Control Room Officer</span>
+      </div>
+    </div>
+
+    <button type="button" class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+      <a href="#home" class="active" data-i18n="nav.home">Home</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#skills" data-i18n="nav.skills">Skill</a>
+      <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+      <a href="#gallery" data-i18n="nav.gallery">Blog</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <div class="nav-actions">
+        <button type="button" class="icon-btn" id="themeToggle" aria-label="Ganti tema" title="Ganti tema">
+          <i class="fas fa-sun"></i>
         </button>
-        <button type="button" class="lang-toggle" id="langToggle" aria-label="Ganti bahasa">
-          <i class="fas fa-globe" aria-hidden="true"></i><span>EN</span>
-        </button>
+        <button type="button" class="icon-btn lang-btn" id="langToggle" aria-label="Bahasa">EN</button>
       </div>
     </div>
   </div>
 </nav>
+<div class="nav-overlay" id="navOverlay"></div>
 
-<!-- Hero -->
+<!-- HERO -->
 <section id="home" class="hero">
   <div class="container">
-    <div class="hero-content" data-aos="fade-right">
-      <div class="hero-status">
-        <span class="dot" aria-hidden="true"></span>
-        <span data-i18n="hero.status">Sedang Bekerja · Control Room Officer di G4S</span>
-      </div>
-      <span class="hero-badge" data-i18n="hero.badge">Control Room Officer</span>
-      <h1>Ela Bomen <span>Hia</span></h1>
-      <div class="typed-wrap">
-        <span id="typedText"></span><span class="cursor" aria-hidden="true"></span>
-      </div>
-      <p class="hero-description" data-i18n="hero.description">
-        Control Room Officer di <strong>G4S</strong> yang ditempatkan di PT Dahana (Persero). Fokus pada monitoring CCTV, pengawasan situasi keamanan, komunikasi operasional, deteksi potensi risiko, serta pencatatan dan pelaporan kejadian. Berpengalaman di lingkungan industri pertambangan & manufaktur dengan mengedepankan ketelitian, kewaspadaan, dan koordinasi yang efektif.
-      </p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary" data-i18n="hero.hire">
-          <i class="fas fa-paper-plane" aria-hidden="true"></i> Hubungi Saya
-        </a>
-        <a href="#photos" class="btn btn-outline" data-i18n="hero.photos">
-          <i class="fas fa-images" aria-hidden="true"></i> Lihat Foto
-        </a>
-      </div>
-      <div class="hero-trust">
-        <div class="trust-item"><i class="fas fa-shield-alt" aria-hidden="true"></i><span data-i18n="hero.trust1">Sertifikasi Gada Pratama</span></div>
-        <div class="trust-item"><i class="fas fa-briefcase" aria-hidden="true"></i><span data-i18n="hero.trust2">5 Posisi Keamanan</span></div>
-        <div class="trust-item"><i class="fas fa-clock" aria-hidden="true"></i><span data-i18n="hero.trust3">3+ Tahun Pengalaman</span></div>
+
+    <div class="hero-visual">
+      <div class="hero-photo">
+        <img src="Ela Bomen Hia.jpeg" alt="Ela Bomen Hia — Control Room Officer"
+             onerror="this.onerror=null;this.src='https://placehold.co/600x800/3b82f6/0a0a0a?text=Ela+Bomen+Hia'">
       </div>
     </div>
-    <div class="hero-image" data-aos="fade-left">
-      <div class="profile-container">
-        <div class="profile-frame">
-          <img src="security-a.png" alt="Foto profil Ela Bomen Hia" class="profile-photo"
-               onerror="this.onerror=null;this.src='https://placehold.co/400x400/1e40af/ffffff?text=ELA+BOMEN+HIA'">
-        </div>
-        <div class="profile-badge">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span>Available · Control Room Officer</span>
-        </div>
+
+    <div class="hero-content">
+      <h1>
+        <span data-i18n="hero.line1">I AM A</span>
+        <span class="blue" id="typedText">CONTROL ROOM OFFICER</span><span class="cursor"></span>
+      </h1>
+
+      <div class="hero-desc-block">
+        <p data-i18n="hero.description">
+          Control Room Officer di <strong>G4S</strong> yang ditempatkan di PT Dahana (Persero). Fokus pada monitoring CCTV, pengawasan situasi keamanan, komunikasi operasional, deteksi potensi risiko, serta pencatatan dan pelaporan kejadian.
+        </p>
       </div>
+
+      <a href="#about" class="btn-blue">
+        <span data-i18n="hero.cta">Learn More</span>
+        <i class="fas fa-chevron-right"></i>
+      </a>
     </div>
+
   </div>
 </section>
 
-<!-- Stats -->
-<section class="stats-section">
+<!-- ABOUT -->
+<section id="about" class="about">
   <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item" data-aos="fade-up">
-        <div class="stat-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
-        <div class="stat-number" id="expYears">3+</div>
-        <div class="stat-label" data-i18n="stats.experience">Tahun Pengalaman</div>
-      </div>
-      <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-        <div class="stat-icon"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
-        <div class="stat-number" id="rolesCount">5</div>
-        <div class="stat-label" data-i18n="stats.roles">Posisi Keamanan</div>
-      </div>
-      <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-        <div class="stat-icon"><i class="fas fa-certificate" aria-hidden="true"></i></div>
-        <div class="stat-number" id="certifCount">8</div>
-        <div class="stat-label" data-i18n="stats.certifications">Sertifikasi</div>
-      </div>
-      <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-        <div class="stat-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
-        <div class="stat-number" id="cctvCount">30+</div>
-        <div class="stat-label" data-i18n="stats.cameras">Kamera Dimonitor</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- About -->
-<section id="about">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">
-      <i class="fas fa-user-shield" aria-hidden="true"></i> <span data-i18n="about.title">Tentang Saya</span>
-    </h2>
     <div class="about-grid">
-      <div class="about-image" data-aos="fade-right">
-        <div class="about-image-wrapper">
-          <img src="security-b.jpg" alt="Control Room Officer" loading="lazy" decoding="async"
-               onerror="this.onerror=null;this.src='https://placehold.co/500x400/1e40af/ffffff?text=Control+Room+Officer'">
-          <div class="about-badge">
-            <i class="fas fa-award" aria-hidden="true"></i>
-            <div>
-              <small data-i18n="about.badge.label">Bersertifikat</small>
-              <span>Gada Pratama</span>
-            </div>
-          </div>
+
+      <div class="about-content">
+        <h2 data-i18n="about.title">ABOUT <span>ME</span></h2>
+
+        <p data-i18n="about.p1">
+          Saya <strong>ELA BOMEN HIA</strong>, saat ini bekerja sebagai <strong>Control Room Officer di G4S</strong> yang ditempatkan di lingkup industri <strong>PT Dahana (Persero)</strong>. Sebelumnya saya berkembang di PT Sigap Prima Astrea — mulai dari Security Guard, Admin Security Officer, CCTV Control Room Operator, hingga dipercaya sebagai PIC CCTV Control Room di lingkup industri PT Astra Daihatsu Motor.
+        </p>
+
+        <p data-i18n="about.p2">
+          Sebagai Control Room Officer, saya fokus pada monitoring CCTV, pengawasan situasi keamanan, komunikasi operasional, deteksi potensi risiko, serta pencatatan dan pelaporan kejadian. Setiap tugas menuntut ketelitian, kewaspadaan, respons cepat, dan koordinasi efektif untuk mendukung keamanan, keselamatan, serta kelancaran operasional perusahaan.
+        </p>
+
+        <div class="about-socials">
+          <a href="https://www.linkedin.com/in/ela-bomen-hia-771b97394" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/elabomenhia28" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://x.com/elamotreo28" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/el_hia.28" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-      <div class="about-content" data-aos="fade-left">
-        <div class="about-highlight">
-          <i class="fas fa-satellite-dish" aria-hidden="true"></i>
-          <p data-i18n="about.description1">
-            Saya <strong>ELA BOMEN HIA</strong>, saat ini bekerja sebagai <strong>Control Room Officer di G4S</strong> yang ditempatkan di lingkup industri <strong>PT Dahana (Persero)</strong>. Sebelumnya saya berkembang di <strong>PT Sigap Prima Astrea</strong> — mulai dari Security Guard, Admin Security Officer, CCTV Control Room Operator, hingga dipercaya sebagai PIC CCTV Control Room di lingkup industri PT Astra Daihatsu Motor.
-          </p>
-        </div>
-        <div class="about-highlight">
-          <i class="fas fa-clipboard-check" aria-hidden="true"></i>
-          <p data-i18n="about.description2">
-            Sebagai Control Room Officer, saya fokus pada monitoring CCTV, pengawasan situasi keamanan, komunikasi operasional, deteksi potensi risiko, serta pencatatan dan pelaporan kejadian. Setiap tugas menuntut ketelitian, kewaspadaan, respons cepat, dan koordinasi efektif untuk mendukung keamanan, keselamatan, serta kelancaran operasional perusahaan.
-          </p>
-        </div>
-        <div class="about-highlight">
-          <i class="fas fa-medal" aria-hidden="true"></i>
-          <p data-i18n="about.description3">
-            Sertifikasi <strong>Gada Pratama</strong> dan berbagai pelatihan internasional (Saylor University, UniAthena, HP LIFE, Alison, Google, MindLuster, United Latino Students Association) memperkuat kompetensi saya di bidang CCTV Monitoring & Surveillance, Control Room Operation, Occupational Safety, Leadership & Teams, serta Critical Thinking di era AI.
-          </p>
+
+      <div class="about-visual">
+        <div class="about-frame">
+          <img src="Ela Bomen Hia About.jpeg" alt="Ela Bomen Hia — About"
+               onerror="this.onerror=null;this.src='https://placehold.co/700x525/3b82f6/ffffff?text=About+Photo'">
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- Skills -->
-<section id="skills">
+<!-- SKILLS — GRID CARD 3 KOLOM (12 SKILL) -->
+<section id="skills" class="skills">
   <div class="container">
-    <h2 class="section-title" data-aos="fade-up">
-      <i class="fas fa-cogs" aria-hidden="true"></i> <span data-i18n="skills.title">Keahlian</span>
-    </h2>
-    <div class="skills-grid">
-      <div class="skill-card" data-aos="fade-up">
-        <div class="skill-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
-        <h3 data-i18n="skills.cctv">CCTV Monitoring & Surveillance</h3>
-        <div class="skill-level">
-          <span>Expert</span>
-          <div class="skill-bar"><div class="skill-bar-fill" data-level="95"></div></div>
-        </div>
-      </div>
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="50">
-        <div class="skill-icon"><i class="fas fa-satellite-dish" aria-hidden="true"></i></div>
-        <h3 data-i18n="skills.controlroom">Control Room Operation</h3>
-        <div class="skill-level">
-          <span>Expert</span>
-          <div class="skill-bar"><div class="skill-bar-fill" data-level="94"></div></div>
-        </div>
-      </div>
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="skill-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
-        <h3 data-i18n="skills.troubleshoot">CCTV System Troubleshooting</h3>
-        <div class="skill-level">
-          <span>Advanced</span>
-          <div class="skill-bar"><div class="skill-bar-fill" data-level="88"></div></div>
-        </div>
-      </div>
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
-        <div class="skill-icon"><i class="fas fa-hdd" aria-hidden="true"></i></div>
-        <h3 data-i18n="skills.nvr">NVR/DVR Operation & Playback</h3>
-        <div class="skill-level">
-          <span>Expert</span>
-          <div class="skill-bar"><div class="skill-bar-fill" data-level="92"></div></div>
-        </div>
-      </div>
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="skill-icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
-        <h3 data-i18n="skills.reporting">Incident Reporting</h3>
-        <div class="skill-level">
-          <span>Expert</span>
-          <div class="skill-bar"><div class="skill-bar-fill" data-level="92"></div></div>
-        </div>
-      </div>
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="250">
-        <div class="skill-icon"><i class="fas fa-folder-open" aria-hidden="true"></i></div>
-        <h3 data-i18n="skills.admin">Security Administration & Reporting</h3>
-        <div class="skill-level">
-          <span>Advanced</span>
-          <div class="skill-bar"><div class="skill-bar-fill" data-level="90"></div></div>
-        </div>
-      </div>
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="skill-icon"><i class="fas fa-broadcast-tower" aria-hidden="true"></i></div>
-        <h3 data-i18n="skills.communication">Security Communication & Coordination</h3>
-        <div class="skill-level">
-          <span>Expert</span>
-          <div class="skill-bar"><div class="skill-bar-fill" data-level="93"></div></div>
-        </div>
-      </div>
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="350">
-        <div class="skill-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
-        <h3 data-i18n="skills.emergency">Emergency Response Coordination</h3>
-        <div class="skill-level">
-          <span>Advanced</span>
-          <div class="skill-bar"><div class="skill-bar-fill" data-level="88"></div></div>
-        </div>
-      </div>
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
-        <div class="skill-icon"><i class="fas fa-eye" aria-hidden="true"></i></div>
-        <h3 data-i18n="skills.risk">Risk Observation & Detection</h3>
-        <div class="skill-level">
-          <span>Advanced</span>
-          <div class="skill-bar"><div class="skill-bar-fill" data-level="89"></div></div>
-        </div>
-      </div>
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="450">
-        <div class="skill-icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
-        <h3 data-i18n="skills.access">Access Control</h3>
-        <div class="skill-level">
-          <span>Advanced</span>
-          <div class="skill-bar"><div class="skill-bar-fill" data-level="87"></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Experience -->
-<section id="experience">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">
-      <i class="fas fa-history" aria-hidden="true"></i> <span data-i18n="experience.title">Pengalaman Kerja</span>
-    </h2>
-    <p class="section-subtitle" data-i18n="experience.subtitle">
-      Perjalanan karier dari Security Guard hingga dipercaya sebagai Control Room Officer di G4S — 5 posisi keamanan dengan tanggung jawab yang terus berkembang di lingkungan industri pertambangan dan manufaktur.
+    <h2 class="section-heading" data-i18n="skills.title">SKILL</h2>
+    <p class="section-sub" data-i18n="skills.sub">
+      Kompetensi inti yang saya kuasai dari pengalaman langsung di lapangan industri manufaktur.
     </p>
 
-    <div class="timeline">
+    <div class="skills-grid">
 
-      <!-- 1. Control Room Officer - G4S (CURRENT) -->
-      <div class="timeline-item current" data-aos="fade-up">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <span class="timeline-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i> <span data-i18n="exp.cro.date">Apr 2026 - Saat Ini · 6 bln</span></span>
-            <span class="timeline-type current-type"><i class="fas fa-circle" style="font-size:6px;margin-right:4px" aria-hidden="true"></i> <span data-i18n="exp.cro.type">Current</span></span>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-video"></i></div>
+        <h3 data-i18n="skills.s1">CCTV Monitoring & Surveillance</h3>
+        <p data-i18n="skills.s1d">Pemantauan kamera real-time, deteksi anomali, dan pelaporan kejadian secara akurat.</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-satellite-dish"></i></div>
+        <h3 data-i18n="skills.s2">Control Room Operations</h3>
+        <p data-i18n="skills.s2d">Pengoperasian pusat kendali keamanan, monitoring multi-camera, dan koordinasi terpusat.</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-file-alt"></i></div>
+        <h3 data-i18n="skills.s3">Incident Identification & Reporting</h3>
+        <p data-i18n="skills.s3d">Identifikasi insiden dan penyusunan laporan kejadian lengkap, akurat, serta tepat waktu.</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-tools"></i></div>
+        <h3 data-i18n="skills.s4">CCTV System Troubleshooting</h3>
+        <p data-i18n="skills.s4d">Diagnosa dan perbaikan sistem CCTV serta koordinasi dengan vendor teknis.</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-hdd"></i></div>
+        <h3 data-i18n="skills.s5">NVR/DVR Operation & Playback</h3>
+        <p data-i18n="skills.s5d">Operasional NVR/DVR, playback rekaman, dan manajemen penyimpanan data.</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-desktop"></i></div>
+        <h3 data-i18n="skills.s6">VMS & Security Application Monitoring</h3>
+        <p data-i18n="skills.s6d">Pengoperasian VMS dan aplikasi keamanan untuk monitoring terintegrasi.</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3 data-i18n="skills.s7">Security System Monitoring</h3>
+        <p data-i18n="skills.s7d">Pemantauan sistem keamanan terintegrasi di seluruh area industri.</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-phone-alt"></i></div>
+        <h3 data-i18n="skills.s8">Emergency Response Coordination</h3>
+        <p data-i18n="skills.s8d">Koordinasi cepat dan tepat dalam situasi darurat serta kondisi kontingensi.</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-broadcast-tower"></i></div>
+        <h3 data-i18n="skills.s9">Security Communication & Coordination</h3>
+        <p data-i18n="skills.s9d">Komunikasi operasional dengan tim lapangan dan pihak terkait secara efektif.</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-lock"></i></div>
+        <h3 data-i18n="skills.s10">Access Control Management Sistem</h3>
+        <p data-i18n="skills.s10d">Pengelolaan sistem kontrol akses, visitor management, dan otorisasi area.</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-fingerprint"></i></div>
+        <h3 data-i18n="skills.s11">PIDS Monitoring</h3>
+        <p data-i18n="skills.s11d">Monitoring Perimeter Intrusion Detection System untuk deteksi dini gangguan.</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-folder-open"></i></div>
+        <h3 data-i18n="skills.s12">Security Administration & Reporting</h3>
+        <p data-i18n="skills.s12d">Administrasi keamanan, dokumentasi, dan pelaporan berkala tim security.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="portfolio" class="experience">
+  <div class="container">
+    <h2 class="section-heading" data-i18n="exp.title">WORK <span>EXPERIENCE</span></h2>
+    <p class="section-sub" data-i18n="exp.sub">
+      Perjalanan karier dari Security Guard hingga dipercaya sebagai Control Room Officer di G4S.
+    </p>
+
+    <div class="exp-timeline">
+
+      <div class="exp-item current">
+        <div class="exp-marker"></div>
+        <div class="exp-card">
+          <div class="exp-top">
+            <span class="exp-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="exp.cro.date">Apr 2026 - Saat Ini</span></span>
+            <span class="exp-tag current" data-i18n="exp.cro.type">Current</span>
           </div>
           <h3 data-i18n="exp.cro.position">Control Room Officer</h3>
-          <div class="company">
-            <i class="fas fa-building" aria-hidden="true"></i>
-            <span data-i18n="exp.cro.company">G4S</span>
+          <div class="exp-company">
+            <i class="fas fa-building"></i>
+            <span>G4S</span>
             <span class="client" data-i18n="exp.cro.client">PT Dahana (Persero)</span>
           </div>
-          <p class="timeline-desc" data-i18n="exp.cro.desc">
-            Sebagai Control Room Officer (CRO), fokus pada monitoring CCTV, pengawasan situasi keamanan, komunikasi operasional, deteksi potensi risiko, serta pencatatan dan pelaporan kejadian. Setiap tugas membutuhkan ketelitian, kewaspadaan, respons cepat, dan koordinasi yang efektif untuk mendukung keamanan, keselamatan, serta kelancaran operasional perusahaan.
-          </p>
-          <ul class="experience-list">
-            <li data-i18n="exp.cro.item1">Monitoring CCTV & surveillance secara real-time</li>
-            <li data-i18n="exp.cro.item2">Pengawasan situasi keamanan di lingkup industri</li>
-            <li data-i18n="exp.cro.item3">Komunikasi operasional dengan tim keamanan lapangan</li>
-            <li data-i18n="exp.cro.item4">Deteksi dini potensi risiko & ancaman keamanan</li>
-            <li data-i18n="exp.cro.item5">Pencatatan & pelaporan kejadian (incident report)</li>
-            <li data-i18n="exp.cro.item6">Koordinasi cepat untuk situasi darurat</li>
-            <li data-i18n="exp.cro.item7">Mendukung keamanan, keselamatan, & kelancaran operasional</li>
-            <li data-i18n="exp.cro.item8">Kontrak · Di lokasi PT Dahana (Persero)</li>
+          <ul class="exp-list">
+            <li data-i18n="exp.cro.i1">Monitoring CCTV & surveillance real-time</li>
+            <li data-i18n="exp.cro.i2">Pengawasan situasi keamanan industri</li>
+            <li data-i18n="exp.cro.i3">Komunikasi operasional dengan tim lapangan</li>
+            <li data-i18n="exp.cro.i4">Deteksi dini potensi risiko & ancaman</li>
+            <li data-i18n="exp.cro.i5">Pencatatan & pelaporan kejadian</li>
+            <li data-i18n="exp.cro.i6">Koordinasi cepat untuk situasi darurat</li>
           </ul>
         </div>
       </div>
 
-      <!-- 2. PIC CCTV Control Room -->
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <span class="timeline-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i> <span data-i18n="exp.pic.date">Agu 2023 - Nov 2025 · 2 thn 4 bln</span></span>
-            <span class="timeline-type contract-type" data-i18n="exp.pic.type">Contract</span>
+      <div class="exp-item">
+        <div class="exp-marker"></div>
+        <div class="exp-card">
+          <div class="exp-top">
+            <span class="exp-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="exp.pic.date">Agu 2023 - Nov 2025</span></span>
+            <span class="exp-tag contract" data-i18n="exp.pic.type">Contract</span>
           </div>
           <h3 data-i18n="exp.pic.position">PIC CCTV Control Room</h3>
-          <div class="company">
-            <i class="fas fa-building" aria-hidden="true"></i>
-            <span data-i18n="exp.pic.company">PT Sigap Prima Astrea</span>
+          <div class="exp-company">
+            <i class="fas fa-building"></i>
+            <span>PT Sigap Prima Astrea</span>
             <span class="client" data-i18n="exp.pic.client">PT Astra Daihatsu Motor</span>
           </div>
-          <p class="timeline-desc" data-i18n="exp.pic.desc">
-            Penanggung jawab utama sistem CCTV Control Room di lingkup industri PT Astra Daihatsu Motor — mengelola, memelihara, dan memastikan seluruh perangkat CCTV berfungsi optimal, serta menjadi pusat koordinasi pengawasan keamanan area pabrik.
-          </p>
-          <ul class="experience-list">
-            <li data-i18n="exp.pic.item1">Penanggung jawab operasional CCTV Control Room</li>
-            <li data-i18n="exp.pic.item2">CCTV Monitoring & Surveillance seluruh area industri</li>
-            <li data-i18n="exp.pic.item3">CCTV System Troubleshooting & maintenance</li>
-            <li data-i18n="exp.pic.item4">Manajemen NVR/DVR & playback rekaman</li>
-            <li data-i18n="exp.pic.item5">Koordinasi dengan vendor & teknisi CCTV</li>
-            <li data-i18n="exp.pic.item6">Penyusunan laporan pemantauan & incident report</li>
-            <li data-i18n="exp.pic.item7">Supervisi operator CCTV & security lapangan</li>
-            <li data-i18n="exp.pic.item8">Kontrak · Karawang, Jawa Barat, Indonesia</li>
+          <ul class="exp-list">
+            <li data-i18n="exp.pic.i1">Penanggung jawab operasional CCTV Control Room</li>
+            <li data-i18n="exp.pic.i2">CCTV Monitoring seluruh area industri</li>
+            <li data-i18n="exp.pic.i3">Troubleshooting & maintenance sistem</li>
+            <li data-i18n="exp.pic.i4">Manajemen NVR/DVR & playback</li>
+            <li data-i18n="exp.pic.i5">Koordinasi dengan vendor & teknisi</li>
+            <li data-i18n="exp.pic.i6">Supervisi operator CCTV & security</li>
           </ul>
         </div>
       </div>
 
-      <!-- 3. CCTV Control Room Operator -->
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <span class="timeline-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i> <span data-i18n="exp.op.date">Jun 2023 - Jul 2023 · 2 bln</span></span>
-            <span class="timeline-type contract-type" data-i18n="exp.op.type">Contract</span>
+      <div class="exp-item">
+        <div class="exp-marker"></div>
+        <div class="exp-card">
+          <div class="exp-top">
+            <span class="exp-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="exp.op.date">Jun 2023 - Jul 2023</span></span>
+            <span class="exp-tag contract" data-i18n="exp.op.type">Contract</span>
           </div>
           <h3 data-i18n="exp.op.position">CCTV Control Room Operator</h3>
-          <div class="company">
-            <i class="fas fa-building" aria-hidden="true"></i>
-            <span data-i18n="exp.op.company">PT Sigap Prima Astrea</span>
+          <div class="exp-company">
+            <i class="fas fa-building"></i>
+            <span>PT Sigap Prima Astrea</span>
             <span class="client" data-i18n="exp.op.client">PT Astra Daihatsu Motor</span>
           </div>
-          <p class="timeline-desc" data-i18n="exp.op.desc">
-            Mengoperasikan sistem CCTV Control Room secara real-time di lingkup industri PT Astra Daihatsu Motor — monitoring area, identifikasi aktivitas mencurigakan, pengoperasian NVR/DVR, dan pelaporan kejadian.
-          </p>
-          <ul class="experience-list">
-            <li data-i18n="exp.op.item1">CCTV Monitoring & Surveillance selama shift</li>
-            <li data-i18n="exp.op.item2">NVR/DVR Operation & Playback rekaman</li>
-            <li data-i18n="exp.op.item3">Identifikasi aktivitas mencurigakan / anomali</li>
-            <li data-i18n="exp.op.item4">Kontrol akses keluar masuk area perusahaan</li>
-            <li data-i18n="exp.op.item5">Pembuatan Incident Report lengkap & akurat</li>
-            <li data-i18n="exp.op.item6">Manajemen & pencadangan rekaman CCTV</li>
-            <li data-i18n="exp.op.item7">Koordinasi dengan petugas security lapangan</li>
-            <li data-i18n="exp.op.item8">Pemantauan area rawan (parkir, gudang, produksi)</li>
+          <ul class="exp-list">
+            <li data-i18n="exp.op.i1">CCTV Monitoring & surveillance selama shift</li>
+            <li data-i18n="exp.op.i2">NVR/DVR operation & playback</li>
+            <li data-i18n="exp.op.i3">Identifikasi aktivitas mencurigakan</li>
+            <li data-i18n="exp.op.i4">Kontrol akses keluar masuk area</li>
+            <li data-i18n="exp.op.i5">Pembuatan Incident Report</li>
+            <li data-i18n="exp.op.i6">Pemantauan area rawan</li>
           </ul>
         </div>
       </div>
 
-      <!-- 4. Admin Security Officer -->
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <span class="timeline-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i> <span data-i18n="exp.adm.date">Mei 2023 · 1 bln</span></span>
-            <span class="timeline-type contract-type" data-i18n="exp.adm.type">Contract</span>
+      <div class="exp-item">
+        <div class="exp-marker"></div>
+        <div class="exp-card">
+          <div class="exp-top">
+            <span class="exp-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="exp.adm.date">Mei 2023</span></span>
+            <span class="exp-tag contract" data-i18n="exp.adm.type">Contract</span>
           </div>
           <h3 data-i18n="exp.adm.position">Admin Security Officer</h3>
-          <div class="company">
-            <i class="fas fa-building" aria-hidden="true"></i>
-            <span data-i18n="exp.adm.company">PT Sigap Prima Astrea</span>
+          <div class="exp-company">
+            <i class="fas fa-building"></i>
+            <span>PT Sigap Prima Astrea</span>
             <span class="client" data-i18n="exp.adm.client">PT Astra Daihatsu Motor</span>
           </div>
-          <p class="timeline-desc" data-i18n="exp.adm.desc">
-            Menangani administrasi divisi keamanan di lingkup industri PT Astra Daihatsu Motor — pengelolaan dokumen, jadwal shift, laporan, dan koordinasi operasional tim security.
-          </p>
-          <ul class="experience-list">
-            <li data-i18n="exp.adm.item1">Security Administration & Reporting</li>
-            <li data-i18n="exp.adm.item2">Security Communication & Coordination</li>
-            <li data-i18n="exp.adm.item3">Pengelolaan jadwal shift & absensi tim</li>
-            <li data-i18n="exp.adm.item4">Penyusunan laporan harian & bulanan</li>
-            <li data-i18n="exp.adm.item5">Pengelolaan dokumen & arsip keamanan</li>
-            <li data-i18n="exp.adm.item6">Pencatatan inventaris peralatan security</li>
-            <li data-i18n="exp.adm.item7">Support operasional posko & lobby</li>
-            <li data-i18n="exp.adm.item8">Pengaturan akses tamu & visitor management</li>
+          <ul class="exp-list">
+            <li data-i18n="exp.adm.i1">Security administration & reporting</li>
+            <li data-i18n="exp.adm.i2">Security communication & coordination</li>
+            <li data-i18n="exp.adm.i3">Pengelolaan jadwal shift & absensi</li>
+            <li data-i18n="exp.adm.i4">Penyusunan laporan harian & bulanan</li>
+            <li data-i18n="exp.adm.i5">Pengelolaan dokumen & arsip</li>
+            <li data-i18n="exp.adm.i6">Visitor management</li>
           </ul>
         </div>
       </div>
 
-      <!-- 5. Security Guard -->
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <span class="timeline-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i> <span data-i18n="exp.guard.date">Apr 2023 · 1 bln</span></span>
-            <span class="timeline-type contract-type" data-i18n="exp.guard.type">Contract</span>
+      <div class="exp-item">
+        <div class="exp-marker"></div>
+        <div class="exp-card">
+          <div class="exp-top">
+            <span class="exp-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="exp.guard.date">Apr 2023</span></span>
+            <span class="exp-tag contract" data-i18n="exp.guard.type">Contract</span>
           </div>
           <h3 data-i18n="exp.guard.position">Security Guard</h3>
-          <div class="company">
-            <i class="fas fa-building" aria-hidden="true"></i>
-            <span data-i18n="exp.guard.company">PT Sigap Prima Astrea</span>
+          <div class="exp-company">
+            <i class="fas fa-building"></i>
+            <span>PT Sigap Prima Astrea</span>
             <span class="client" data-i18n="exp.guard.client">PT Astra Daihatsu Motor</span>
           </div>
-          <p class="timeline-desc" data-i18n="exp.guard.desc">
-            Petugas keamanan lapangan di lingkup industri PT Astra Daihatsu Motor — patroli area, pengawasan akses, dan penanganan pertama situasi keamanan di lingkungan perusahaan.
-          </p>
-          <ul class="experience-list">
-            <li data-i18n="exp.guard.item1">Security Communication & Coordination</li>
-            <li data-i18n="exp.guard.item2">Emergency Response Coordination</li>
-            <li data-i18n="exp.guard.item3">Patroli rutin area perusahaan</li>
-            <li data-i18n="exp.guard.item4">Pengawasan keluar masuk kendaraan & orang</li>
-            <li data-i18n="exp.guard.item5">Pemeriksaan identitas & barang bawaan</li>
-            <li data-i18n="exp.guard.item6">Pengaturan lalu lintas di area perusahaan</li>
-            <li data-i18n="exp.guard.item7">Pelaporan kejadian ke atasan</li>
-            <li data-i18n="exp.guard.item8">Serah terima tugas antar shift</li>
+          <ul class="exp-list">
+            <li data-i18n="exp.guard.i1">Security communication & coordination</li>
+            <li data-i18n="exp.guard.i2">Emergency response coordination</li>
+            <li data-i18n="exp.guard.i3">Patroli rutin area perusahaan</li>
+            <li data-i18n="exp.guard.i4">Pengawasan keluar masuk kendaraan</li>
+            <li data-i18n="exp.guard.i5">Pemeriksaan identitas & barang</li>
+            <li data-i18n="exp.guard.i6">Pengaturan lalu lintas area</li>
           </ul>
         </div>
       </div>
@@ -1440,279 +1534,140 @@ h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1
   </div>
 </section>
 
-<!-- Photo Gallery -->
-<section id="photos" class="photo-gallery-section">
+<!-- CERTIFICATES -->
+<section id="gallery" class="certificates">
   <div class="container">
-    <h2 class="section-title" data-aos="fade-up">
-      <i class="fas fa-images" aria-hidden="true"></i> <span data-i18n="photos.title">Galeri Foto</span>
-    </h2>
-    <p class="section-subtitle" data-i18n="photos.subtitle">
-      Dokumentasi aktivitas kerja — dari Control Room, monitoring CCTV, patroli, hingga momen bersama tim keamanan.
-    </p>
-
-    <div class="photo-filter" data-aos="fade-up">
-      <button type="button" class="filter-btn active" data-filter="all"><i class="fas fa-th" aria-hidden="true"></i> <span data-i18n="photos.filter.all">Semua</span></button>
-      <button type="button" class="filter-btn" data-filter="control"><i class="fas fa-satellite-dish" aria-hidden="true"></i> <span data-i18n="photos.filter.control">Control Room</span></button>
-      <button type="button" class="filter-btn" data-filter="cctv"><i class="fas fa-video" aria-hidden="true"></i> <span data-i18n="photos.filter.cctv">CCTV</span></button>
-      <button type="button" class="filter-btn" data-filter="patrol"><i class="fas fa-walking" aria-hidden="true"></i> <span data-i18n="photos.filter.patrol">Patroli</span></button>
-      <button type="button" class="filter-btn" data-filter="team"><i class="fas fa-users" aria-hidden="true"></i> <span data-i18n="photos.filter.team">Tim</span></button>
-    </div>
-
-    <div class="photo-grid" id="photoGrid">
-
-      <div class="photo-item wide" data-category="control" data-aos="fade-up" onclick="openLightbox(0)" role="button" tabindex="0">
-        <span class="photo-tag" data-i18n="photos.tag.control">Control Room</span>
-        <div class="photo-zoom"><i class="fas fa-expand" aria-hidden="true"></i></div>
-        <img src="photo-control-1.jpg" alt="Control Room Station" loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.src='https://placehold.co/800x500/1e40af/ffffff?text=Control+Room+Officer'">
-        <div class="photo-caption">
-          <h4><i class="fas fa-satellite-dish" aria-hidden="true"></i> Control Room Station</h4>
-          <p data-i18n="photos.cap1">Pusat monitoring & koordinasi keamanan</p>
-        </div>
-      </div>
-
-      <div class="photo-item" data-category="cctv" data-aos="fade-up" data-aos-delay="50" onclick="openLightbox(1)" role="button" tabindex="0">
-        <span class="photo-tag" data-i18n="photos.tag.cctv">CCTV</span>
-        <div class="photo-zoom"><i class="fas fa-expand" aria-hidden="true"></i></div>
-        <img src="photo-cctv-1.jpg" alt="CCTV Monitoring" loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.src='https://placehold.co/500x500/1e40af/ffffff?text=CCTV+Monitor'">
-        <div class="photo-caption">
-          <h4><i class="fas fa-video" aria-hidden="true"></i> CCTV Monitoring</h4>
-          <p data-i18n="photos.cap2">Pemantauan kamera real-time</p>
-        </div>
-      </div>
-
-      <div class="photo-item tall" data-category="control" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox(2)" role="button" tabindex="0">
-        <span class="photo-tag" data-i18n="photos.tag.monitor">Monitoring</span>
-        <div class="photo-zoom"><i class="fas fa-expand" aria-hidden="true"></i></div>
-        <img src="photo-monitor-1.jpg" alt="Monitoring Wall" loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.src='https://placehold.co/500x800/1e40af/ffffff?text=Monitoring+Wall'">
-        <div class="photo-caption">
-          <h4><i class="fas fa-desktop" aria-hidden="true"></i> Monitoring Wall</h4>
-          <p data-i18n="photos.cap3">Tampilan multi-camera monitoring</p>
-        </div>
-      </div>
-
-      <div class="photo-item" data-category="patrol" data-aos="fade-up" data-aos-delay="150" onclick="openLightbox(3)" role="button" tabindex="0">
-        <span class="photo-tag" data-i18n="photos.tag.patrol">Patroli</span>
-        <div class="photo-zoom"><i class="fas fa-expand" aria-hidden="true"></i></div>
-        <img src="photo-patrol-1.jpg" alt="Patroli Area" loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.src='https://placehold.co/500x500/1e40af/ffffff?text=Patroli+Area'">
-        <div class="photo-caption">
-          <h4><i class="fas fa-walking" aria-hidden="true"></i> Patroli Area</h4>
-          <p data-i18n="photos.cap4">Pemeriksaan area secara berkala</p>
-        </div>
-      </div>
-
-      <div class="photo-item" data-category="team" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox(4)" role="button" tabindex="0">
-        <span class="photo-tag" data-i18n="photos.tag.team">Tim</span>
-        <div class="photo-zoom"><i class="fas fa-expand" aria-hidden="true"></i></div>
-        <img src="photo-team-1.jpg" alt="Security Team" loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.src='https://placehold.co/500x500/1e40af/ffffff?text=Security+Team'">
-        <div class="photo-caption">
-          <h4><i class="fas fa-users" aria-hidden="true"></i> Security Team</h4>
-          <p data-i18n="photos.cap5">Bersama tim keamanan</p>
-        </div>
-      </div>
-
-      <div class="photo-item wide" data-category="cctv" data-aos="fade-up" data-aos-delay="250" onclick="openLightbox(5)" role="button" tabindex="0">
-        <span class="photo-tag" data-i18n="photos.tag.cctv">CCTV</span>
-        <div class="photo-zoom"><i class="fas fa-expand" aria-hidden="true"></i></div>
-        <img src="photo-cctv-2.jpg" alt="CCTV Setup" loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.src='https://placehold.co/800x500/1e40af/ffffff?text=CCTV+Setup'">
-        <div class="photo-caption">
-          <h4><i class="fas fa-tools" aria-hidden="true"></i> CCTV Setup & Maintenance</h4>
-          <p data-i18n="photos.cap6">Konfigurasi & perawatan perangkat CCTV</p>
-        </div>
-      </div>
-
-      <div class="photo-item" data-category="control" data-aos="fade-up" data-aos-delay="300" onclick="openLightbox(6)" role="button" tabindex="0">
-        <span class="photo-tag" data-i18n="photos.tag.control">Control</span>
-        <div class="photo-zoom"><i class="fas fa-expand" aria-hidden="true"></i></div>
-        <img src="photo-control-2.jpg" alt="Control Desk" loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.src='https://placehold.co/500x500/1e40af/ffffff?text=Control+Desk'">
-        <div class="photo-caption">
-          <h4><i class="fas fa-headset" aria-hidden="true"></i> Control Desk</h4>
-          <p data-i18n="photos.cap7">Koordinasi & komunikasi dengan tim</p>
-        </div>
-      </div>
-
-      <div class="photo-item" data-category="team" data-aos="fade-up" data-aos-delay="350" onclick="openLightbox(7)" role="button" tabindex="0">
-        <span class="photo-tag" data-i18n="photos.tag.team">Tim</span>
-        <div class="photo-zoom"><i class="fas fa-expand" aria-hidden="true"></i></div>
-        <img src="photo-team-2.jpg" alt="Team Briefing" loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.src='https://placehold.co/500x500/1e40af/ffffff?text=Team+Briefing'">
-        <div class="photo-caption">
-          <h4><i class="fas fa-clipboard-list" aria-hidden="true"></i> Team Briefing</h4>
-          <p data-i18n="photos.cap8">Briefing sebelum shift dimulai</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ CERTIFICATE GALLERY (REVAMPED) ============ -->
-<section id="gallery" class="cert-gallery-section">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">
-      <i class="fas fa-certificate" aria-hidden="true"></i> <span data-i18n="gallery.title">Sertifikat & Pelatihan</span>
-    </h2>
-    <p class="section-subtitle" data-i18n="gallery.subtitle">
-      8 lisensi & sertifikasi resmi dari berbagai lembaga nasional dan internasional — bukti komitmen berkelanjutan dalam pengembangan kompetensi di bidang keamanan, keselamatan kerja, kepemimpinan, dan teknologi.
+    <h2 class="section-heading" data-i18n="cert.title">CERTIFICATES & <span>TRAINING</span></h2>
+    <p class="section-sub" data-i18n="cert.sub">
+      8 lisensi & sertifikasi resmi dari berbagai lembaga nasional dan internasional.
     </p>
 
     <div class="cert-grid">
 
-      <!-- 1. Leadership and Teams - Saylor University -->
-      <div class="cert-card" data-aos="fade-up" onclick="openModal('saylor-leadership.png')" role="button" tabindex="0">
-        <div class="cert-image">
+      <div class="cert-card" onclick="openModal('saylor-leadership.png')" role="button" tabindex="0">
+        <div class="cert-img">
           <span class="cert-year">Agu 2026</span>
-          <span class="cert-badge"><i class="fas fa-graduation-cap" aria-hidden="true"></i></span>
-          <span class="cert-zoom"><i class="fas fa-expand" aria-hidden="true"></i> Zoom</span>
-          <img src="saylor-leadership.png" alt="Sertifikat Leadership and Teams - Saylor University" loading="lazy" decoding="async"
-               onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e40af/ffffff?text=Leadership+and+Teams'">
+          <img src="saylor-leadership.png" alt="Leadership"
+               onerror="this.onerror=null;this.src='https://placehold.co/600x400/3b82f6/ffffff?text=Leadership'">
         </div>
-        <div class="cert-info">
+        <div class="cert-body">
           <h4>Leadership and Teams</h4>
-          <div class="cert-issuer"><i class="fas fa-university" aria-hidden="true"></i> Saylor University</div>
+          <div class="cert-issuer"><i class="fas fa-university"></i> Saylor University</div>
           <div class="cert-meta">
-            <span><i class="far fa-calendar-check" aria-hidden="true"></i> Aug 2026</span>
-            <span class="cred-id" title="Credential ID"><i class="fas fa-fingerprint" aria-hidden="true"></i> 9649136085EH</span>
+            <span><i class="far fa-calendar-check"></i> Aug 2026</span>
+            <span class="id"><i class="fas fa-fingerprint"></i> 9649136085EH</span>
           </div>
         </div>
       </div>
 
-      <!-- 2. Basics Of Occupational Safety - UniAthena -->
-      <div class="cert-card" data-aos="fade-up" data-aos-delay="50" onclick="openModal('uniathena-safety.png')" role="button" tabindex="0">
-        <div class="cert-image">
+      <div class="cert-card" onclick="openModal('uniathena-safety.png')" role="button" tabindex="0">
+        <div class="cert-img">
           <span class="cert-year">Agu 2026</span>
-          <span class="cert-badge"><i class="fas fa-hard-hat" aria-hidden="true"></i></span>
-          <span class="cert-zoom"><i class="fas fa-expand" aria-hidden="true"></i> Zoom</span>
-          <img src="uniathena-safety.png" alt="Sertifikat Basics of Occupational Safety - UniAthena" loading="lazy" decoding="async"
-               onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e40af/ffffff?text=Occupational+Safety'">
+          <img src="uniathena-safety.png" alt="Safety"
+               onerror="this.onerror=null;this.src='https://placehold.co/600x400/3b82f6/ffffff?text=Occupational+Safety'">
         </div>
-        <div class="cert-info">
+        <div class="cert-body">
           <h4>Basics Of Occupational Safety</h4>
-          <div class="cert-issuer"><i class="fas fa-shield-heart" aria-hidden="true"></i> UniAthena</div>
+          <div class="cert-issuer"><i class="fas fa-shield-heart"></i> UniAthena</div>
           <div class="cert-meta">
-            <span><i class="far fa-calendar-check" aria-hidden="true"></i> Aug 2026</span>
-            <span class="cred-id" title="Credential ID"><i class="fas fa-fingerprint" aria-hidden="true"></i> 484240536806</span>
+            <span><i class="far fa-calendar-check"></i> Aug 2026</span>
+            <span class="id"><i class="fas fa-fingerprint"></i> 484240536806</span>
           </div>
         </div>
       </div>
 
-      <!-- 3. Berfikir Kritis di Era AI - HP LIFE -->
-      <div class="cert-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal('hp-life-critical.png')" role="button" tabindex="0">
-        <div class="cert-image">
+      <div class="cert-card" onclick="openModal('hp-life-critical.png')" role="button" tabindex="0">
+        <div class="cert-img">
           <span class="cert-year">Jul 2026</span>
-          <span class="cert-badge"><i class="fas fa-brain" aria-hidden="true"></i></span>
-          <span class="cert-zoom"><i class="fas fa-expand" aria-hidden="true"></i> Zoom</span>
-          <img src="hp-life-critical.png" alt="Sertifikat Berfikir Kritis di Era Kecerdasan Buatan - HP LIFE" loading="lazy" decoding="async"
-               onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e40af/ffffff?text=Critical+Thinking+AI'">
+          <img src="hp-life-critical.png" alt="Critical Thinking"
+               onerror="this.onerror=null;this.src='https://placehold.co/600x400/3b82f6/ffffff?text=Critical+Thinking'">
         </div>
-        <div class="cert-info">
-          <h4>Berfikir Kritis di Era Kecerdasan Buatan</h4>
-          <div class="cert-issuer"><i class="fas fa-lightbulb" aria-hidden="true"></i> HP LIFE</div>
+        <div class="cert-body">
+          <h4>Berfikir Kritis di Era AI</h4>
+          <div class="cert-issuer"><i class="fas fa-lightbulb"></i> HP LIFE</div>
           <div class="cert-meta">
-            <span><i class="far fa-calendar-check" aria-hidden="true"></i> Jul 2026</span>
-            <span class="cred-id" title="Credential ID"><i class="fas fa-fingerprint" aria-hidden="true"></i> 5f818e20-d47q-47df-8c30-721578535f3e</span>
+            <span><i class="far fa-calendar-check"></i> Jul 2026</span>
+            <span class="id"><i class="fas fa-fingerprint"></i> 5f818e20-d47q</span>
           </div>
         </div>
       </div>
 
-      <!-- 4. Security Guarding, CCTV Monitoring and Door Supervision - Alison -->
-      <div class="cert-card" data-aos="fade-up" data-aos-delay="150" onclick="openModal('alison-security.png')" role="button" tabindex="0">
-        <div class="cert-image">
+      <div class="cert-card" onclick="openModal('alison-security.png')" role="button" tabindex="0">
+        <div class="cert-img">
           <span class="cert-year">Mar 2026</span>
-          <span class="cert-badge"><i class="fas fa-shield-alt" aria-hidden="true"></i></span>
-          <span class="cert-zoom"><i class="fas fa-expand" aria-hidden="true"></i> Zoom</span>
-          <img src="alison-security.png" alt="Sertifikat Security Guarding, CCTV Monitoring and Door Supervision - Alison" loading="lazy" decoding="async"
-               onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e40af/ffffff?text=Security+Guarding+CCTV'">
+          <img src="alison-security.png" alt="Security Guarding"
+               onerror="this.onerror=null;this.src='https://placehold.co/600x400/3b82f6/ffffff?text=Security+Guarding'">
         </div>
-        <div class="cert-info">
-          <h4>Security Guarding, CCTV Monitoring and Door Supervision</h4>
-          <div class="cert-issuer"><i class="fas fa-award" aria-hidden="true"></i> Alison</div>
+        <div class="cert-body">
+          <h4>Security Guarding & CCTV Monitoring</h4>
+          <div class="cert-issuer"><i class="fas fa-award"></i> Alison</div>
           <div class="cert-meta">
-            <span><i class="far fa-calendar-check" aria-hidden="true"></i> Mar 2026</span>
-            <span class="cred-id" title="Credential ID"><i class="fas fa-fingerprint" aria-hidden="true"></i> 6393-56906754</span>
+            <span><i class="far fa-calendar-check"></i> Mar 2026</span>
+            <span class="id"><i class="fas fa-fingerprint"></i> 6393-56906754</span>
           </div>
         </div>
       </div>
 
-      <!-- 5. Sertifikasi Google Analytics - Google -->
-      <div class="cert-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal('google-analytics.png')" role="button" tabindex="0">
-        <div class="cert-image">
+      <div class="cert-card" onclick="openModal('google-analytics.png')" role="button" tabindex="0">
+        <div class="cert-img">
           <span class="cert-year">Feb 2026</span>
-          <span class="cert-badge"><i class="fas fa-chart-line" aria-hidden="true"></i></span>
-          <span class="cert-zoom"><i class="fas fa-expand" aria-hidden="true"></i> Zoom</span>
-          <img src="google-analytics.png" alt="Sertifikasi Google Analytics" loading="lazy" decoding="async"
-               onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e40af/ffffff?text=Google+Analytics'">
+          <img src="google-analytics.png" alt="Google Analytics"
+               onerror="this.onerror=null;this.src='https://placehold.co/600x400/3b82f6/ffffff?text=Google+Analytics'">
         </div>
-        <div class="cert-info">
-          <h4>Sertifikasi Google Analytics</h4>
-          <div class="cert-issuer"><i class="fab fa-google" aria-hidden="true"></i> Google</div>
+        <div class="cert-body">
+          <h4>Google Analytics</h4>
+          <div class="cert-issuer"><i class="fab fa-google"></i> Google</div>
           <div class="cert-meta">
-            <span><i class="far fa-calendar-check" aria-hidden="true"></i> Feb 2026</span>
-            <span><i class="far fa-calendar-times" aria-hidden="true"></i> Exp: Feb 2027</span>
-            <span class="cred-id" title="Credential ID"><i class="fas fa-fingerprint" aria-hidden="true"></i> 175253817</span>
+            <span><i class="far fa-calendar-check"></i> Feb 2026</span>
+            <span class="id"><i class="fas fa-fingerprint"></i> 175253817</span>
           </div>
         </div>
       </div>
 
-      <!-- 6. CCTV Sistem - MindLuster -->
-      <div class="cert-card" data-aos="fade-up" data-aos-delay="250" onclick="openModal('mindluster-cctv.jpg')" role="button" tabindex="0">
-        <div class="cert-image">
+      <div class="cert-card" onclick="openModal('mindluster-cctv.jpg')" role="button" tabindex="0">
+        <div class="cert-img">
           <span class="cert-year">Feb 2026</span>
-          <span class="cert-badge"><i class="fas fa-video" aria-hidden="true"></i></span>
-          <span class="cert-zoom"><i class="fas fa-expand" aria-hidden="true"></i> Zoom</span>
-          <img src="mindluster-cctv.jpg" alt="Sertifikat CCTV Sistem - MindLuster" loading="lazy" decoding="async"
-               onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e40af/ffffff?text=CCTV+System'">
+          <img src="mindluster-cctv.jpg" alt="CCTV Sistem"
+               onerror="this.onerror=null;this.src='https://placehold.co/600x400/3b82f6/ffffff?text=CCTV+System'">
         </div>
-        <div class="cert-info">
+        <div class="cert-body">
           <h4>CCTV Sistem</h4>
-          <div class="cert-issuer"><i class="fas fa-play-circle" aria-hidden="true"></i> MindLuster</div>
+          <div class="cert-issuer"><i class="fas fa-play-circle"></i> MindLuster</div>
           <div class="cert-meta">
-            <span><i class="far fa-calendar-check" aria-hidden="true"></i> Feb 2026</span>
-            <span class="cred-id" title="Credential ID"><i class="fas fa-fingerprint" aria-hidden="true"></i> 69981194</span>
+            <span><i class="far fa-calendar-check"></i> Feb 2026</span>
+            <span class="id"><i class="fas fa-fingerprint"></i> 69981194</span>
           </div>
         </div>
       </div>
 
-      <!-- 7. SketchUp 3D - United Latino Students Association -->
-      <div class="cert-card" data-aos="fade-up" data-aos-delay="300" onclick="openModal('ulsa-sketchup.png')" role="button" tabindex="0">
-        <div class="cert-image">
+      <div class="cert-card" onclick="openModal('ulsa-sketchup.png')" role="button" tabindex="0">
+        <div class="cert-img">
           <span class="cert-year">Mar 2026</span>
-          <span class="cert-badge"><i class="fas fa-cube" aria-hidden="true"></i></span>
-          <span class="cert-zoom"><i class="fas fa-expand" aria-hidden="true"></i> Zoom</span>
-          <img src="ulsa-sketchup.png" alt="Sertifikat SketchUp 3D - United Latino Students Association" loading="lazy" decoding="async"
-               onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e40af/ffffff?text=SketchUp+3D'">
+          <img src="ulsa-sketchup.png" alt="SketchUp"
+               onerror="this.onerror=null;this.src='https://placehold.co/600x400/3b82f6/ffffff?text=SketchUp'">
         </div>
-        <div class="cert-info">
-          <h4>SketchUp: How to Start Modelling Simple 3D Objects</h4>
-          <div class="cert-issuer"><i class="fas fa-cubes" aria-hidden="true"></i> United Latino Students Association</div>
+        <div class="cert-body">
+          <h4>SketchUp 3D Modelling</h4>
+          <div class="cert-issuer"><i class="fas fa-cubes"></i> United Latino Students Association</div>
           <div class="cert-meta">
-            <span><i class="far fa-calendar-check" aria-hidden="true"></i> Mar 2026</span>
-            <span class="cred-id" title="Credential ID"><i class="fas fa-fingerprint" aria-hidden="true"></i> 6PCJ83JC72HH</span>
+            <span><i class="far fa-calendar-check"></i> Mar 2026</span>
+            <span class="id"><i class="fas fa-fingerprint"></i> 6PCJ83JC72HH</span>
           </div>
         </div>
       </div>
 
-      <!-- 8. Gada Pratama - PT Sigap Prima Astrea -->
-      <div class="cert-card" data-aos="fade-up" data-aos-delay="350" onclick="openModal('gp-sigap.png')" role="button" tabindex="0">
-        <div class="cert-image">
+      <div class="cert-card" onclick="openModal('gp-sigap.png')" role="button" tabindex="0">
+        <div class="cert-img">
           <span class="cert-year">Mar 2023</span>
-          <span class="cert-badge"><i class="fas fa-user-shield" aria-hidden="true"></i></span>
-          <span class="cert-zoom"><i class="fas fa-expand" aria-hidden="true"></i> Zoom</span>
-          <img src="gp-sigap.png" alt="Sertifikat Gada Pratama - PT Sigap Prima Astrea" loading="lazy" decoding="async"
-               onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e40af/ffffff?text=Gada+Pratama'">
+          <img src="gp-sigap.png" alt="Gada Pratama"
+               onerror="this.onerror=null;this.src='https://placehold.co/600x400/3b82f6/ffffff?text=Gada+Pratama'">
         </div>
-        <div class="cert-info">
+        <div class="cert-body">
           <h4>Gada Pratama</h4>
-          <div class="cert-issuer"><i class="fas fa-shield-halved" aria-hidden="true"></i> PT Sigap Prima Astrea</div>
+          <div class="cert-issuer"><i class="fas fa-shield-halved"></i> PT Sigap Prima Astrea</div>
           <div class="cert-meta">
-            <span><i class="far fa-calendar-check" aria-hidden="true"></i> Mar 2023</span>
-            <span><i class="fas fa-star" aria-hidden="true"></i> Sertifikasi Dasar Satpam</span>
+            <span><i class="far fa-calendar-check"></i> Mar 2023</span>
+            <span><i class="fas fa-star"></i> Sertifikasi Dasar Satpam</span>
           </div>
         </div>
       </div>
@@ -1721,603 +1676,347 @@ h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1
   </div>
 </section>
 
-<!-- Modal Certificate -->
-<div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Sertifikat" onclick="closeModal()">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <button type="button" class="modal-close" onclick="closeModal()" aria-label="Tutup">&times;</button>
+<!-- CONTACT (info saja, tanpa form) -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-heading" data-i18n="contact.title">CONTACT <span>ME</span></h2>
+    <p class="section-sub" data-i18n="contact.sub">
+      Terbuka untuk diskusi seputar keamanan industri dan peluang kolaborasi profesional.
+    </p>
+
+    <div class="contact-info">
+      <a href="tel:+622246964391" class="contact-row">
+        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+        <div>
+          <h4 data-i18n="contact.phone">Telepon</h4>
+          <p>+62 022 4696 4391</p>
+        </div>
+      </a>
+
+      <a href="mailto:elabomenhia28@gmail.com" class="contact-row">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <h4 data-i18n="contact.email">Email</h4>
+          <p>elabomenhia28@gmail.com</p>
+        </div>
+      </a>
+
+      <div class="contact-row">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <h4 data-i18n="contact.location">Lokasi</h4>
+          <p>Karawang, Indonesia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">ELA BOMEN <span>HIA</span></div>
+    <p data-i18n="footer.role">Control Room Officer · G4S · PT Dahana (Persero)</p>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/ela-bomen-hia-771b97394" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/elabomenhia28" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/elamotreo28" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/el_hia.28" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p class="tagline">"Monitoring with Precision, Protecting with Integrity"</p>
+    <p style="margin-top:1.5rem;font-size:.72rem;color:var(--text-faint)">
+      © <span id="year">2026</span> ELA BOMEN HIA. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" class="overlay" role="dialog" aria-modal="true" onclick="closeModal()">
+  <div class="overlay-inner" onclick="event.stopPropagation()">
+    <button type="button" class="overlay-close" onclick="closeModal()" aria-label="Tutup">&times;</button>
     <img id="modalImage" src="" alt="Sertifikat">
   </div>
 </div>
 
-<!-- Lightbox Photo -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Galeri foto" onclick="closeLightbox()">
-  <div class="lightbox-content" onclick="event.stopPropagation()">
-    <span class="lightbox-counter" id="lightboxCounter">1 / 8</span>
-    <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Tutup">&times;</button>
-    <button type="button" class="lightbox-nav prev" onclick="navLightbox(-1)" aria-label="Sebelumnya"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
-    <img id="lightboxImage" src="" alt="Foto">
-    <button type="button" class="lightbox-nav next" onclick="navLightbox(1)" aria-label="Selanjutnya"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
-    <div class="lightbox-caption">
-      <h3 id="lightboxTitle">Title</h3>
-      <p id="lightboxDesc">Description</p>
-    </div>
-  </div>
-</div>
-
-<!-- Contact -->
-<section id="contact">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">
-      <i class="fas fa-headset" aria-hidden="true"></i> <span data-i18n="contact.title">Hubungi Saya</span>
-    </h2>
-    <div class="contact-grid">
-      <div class="contact-info" data-aos="fade-right">
-        <div class="contact-item">
-          <div class="contact-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
-          <div>
-            <h4 data-i18n="contact.phone">Telepon</h4>
-            <p>+62 022 4696 4391</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
-          <div>
-            <h4 data-i18n="contact.email">Email</h4>
-            <p>elabomenhia28@gmail.com</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
-          <div>
-            <h4 data-i18n="contact.location">Lokasi</h4>
-            <p>Karawang, Indonesia</p>
-          </div>
-        </div>
-      </div>
-      <div class="contact-form" data-aos="fade-left">
-        <h3><i class="fas fa-comment-dots" aria-hidden="true"></i> <span data-i18n="contact.form.title">Kirim Pesan</span></h3>
-        <form action="https://formsubmit.co/elabomenhia28@gmail.com" method="POST">
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="hidden" name="_subject" value="Pesan Baru dari Website Portfolio">
-          <input type="hidden" name="_template" value="table">
-          <div class="form-group">
-            <input type="text" name="name" placeholder="Nama Lengkap" data-i18n-placeholder="contact.form.name" required>
-          </div>
-          <div class="form-group">
-            <input type="email" name="email" placeholder="Email" data-i18n-placeholder="contact.form.email" required>
-          </div>
-          <div class="form-group">
-            <textarea name="message" rows="5" placeholder="Pesan Anda..." data-i18n-placeholder="contact.form.message" required></textarea>
-          </div>
-          <button type="submit" class="btn-submit" data-i18n="contact.form.send">
-            <i class="fas fa-paper-plane" aria-hidden="true"></i> Kirim Pesan
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-logo">ELA BOMEN HIA</div>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/ela-bomen-hia-771b97394" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-      <a href="https://github.com/elabomenhia28" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-      <a href="https://x.com/elamotreo28" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-      <a href="https://www.instagram.com/el_hia.28" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-    </div>
-    <p>© <span id="year">2026</span> ELA BOMEN HIA – Control Room Officer</p>
-    <p class="tagline">"Monitoring with Precision, Protecting with Integrity"</p>
-  </div>
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 (function(){
   'use strict';
+  var $ = function(s,c){return (c||document).querySelector(s)};
+  var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var $  = function(sel, ctx){ return (ctx||document).querySelector(sel); };
-  var $$ = function(sel, ctx){ return Array.prototype.slice.call((ctx||document).querySelectorAll(sel)); };
-  var prefersReducedMotion = window.matchMedia &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* THEME */
+  var body = document.body;
+  var themeToggle = $('#themeToggle');
+  var themeIcon = themeToggle.querySelector('i');
+
+  function applyTheme(theme){
+    if(theme === 'light'){
+      body.classList.add('light-mode');
+      themeIcon.className = 'fas fa-moon';
+      themeToggle.setAttribute('aria-label', 'Aktifkan mode gelap');
+      themeToggle.setAttribute('title', 'Mode Gelap');
+    } else {
+      body.classList.remove('light-mode');
+      themeIcon.className = 'fas fa-sun';
+      themeToggle.setAttribute('aria-label', 'Aktifkan mode terang');
+      themeToggle.setAttribute('title', 'Mode Terang');
+    }
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if(meta) meta.setAttribute('content', theme === 'light' ? '#ffffff' : '#3b82f6');
+    document.documentElement.classList.remove('preload-light','preload-dark');
+  }
+
+  var savedTheme = 'dark';
+  try { savedTheme = localStorage.getItem('theme') || 'dark'; } catch(e){}
+  applyTheme(savedTheme);
+
+  themeToggle.addEventListener('click', function(){
+    var isLight = body.classList.contains('light-mode');
+    var next = isLight ? 'dark' : 'light';
+    applyTheme(next);
+    try { localStorage.setItem('theme', next); } catch(e){}
+  });
 
   /* LOADER */
-  var loaderEl = $('#loader');
-  var loadFillEl = $('#loadFill');
-  var loaderHidden = false;
-
+  var loader = $('#loader'), loaderBar = $('#loaderBar'), loaderDone = false;
   function hideLoader(){
-    if(loaderHidden) return;
-    loaderHidden = true;
-    if(loadFillEl) loadFillEl.style.width = '100%';
-    setTimeout(function(){
-      if(loaderEl) loaderEl.classList.add('hide');
-    }, 1200);
+    if(loaderDone) return;
+    loaderDone = true;
+    if(loaderBar) loaderBar.style.width = '100%';
+    setTimeout(function(){ if(loader) loader.classList.add('hide'); }, 1100);
   }
   if(document.readyState === 'complete') hideLoader();
   else window.addEventListener('load', hideLoader);
   setTimeout(hideLoader, 2500);
 
-  /* AOS */
-  if(typeof AOS !== 'undefined'){
-    AOS.init({
-      duration: prefersReducedMotion ? 0 : 700,
-      once: true,
-      offset: 80,
-      disable: prefersReducedMotion
+  /* NAVBAR SCROLL */
+  var navbar = $('#navbar'), ticking = false;
+  window.addEventListener('scroll', function(){
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+      ticking = false;
+    });
+  }, {passive:true});
+
+  /* ACTIVE LINK */
+  var navLinksAll = $$('.nav-menu a[href^="#"]');
+  var sections = navLinksAll.map(function(a){
+    var id = a.getAttribute('href').slice(1);
+    return document.getElementById(id);
+  }).filter(Boolean);
+  function updateActiveLink(){
+    var scrollPos = window.scrollY + 120;
+    var current = sections[0];
+    sections.forEach(function(s){
+      if(s && s.offsetTop <= scrollPos) current = s;
+    });
+    navLinksAll.forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href') === '#' + (current ? current.id : ''));
     });
   }
+  window.addEventListener('scroll', updateActiveLink, {passive:true});
 
-  /* NAVBAR SCROLL */
-  var navbar = $('#navbar');
-  if(navbar){
-    var ticking = false;
-    window.addEventListener('scroll', function(){
-      if(ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(function(){
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
-        ticking = false;
-      });
-    }, {passive:true});
+  /* MOBILE MENU */
+  var menuToggle = $('#menuToggle'), navMenu = $('#navMenu'), navOverlay = $('#navOverlay');
+  function openMenu(){
+    navMenu.classList.add('open');
+    navOverlay.classList.add('show');
+    menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+    menuToggle.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
   }
+  function closeMenu(){
+    navMenu.classList.remove('open');
+    navOverlay.classList.remove('show');
+    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    menuToggle.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+  menuToggle.addEventListener('click', function(){
+    navMenu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  navOverlay.addEventListener('click', closeMenu);
+  $$('a', navMenu).forEach(function(a){
+    a.addEventListener('click', function(){ if(window.innerWidth <= 900) closeMenu(); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && navMenu.classList.contains('open')) closeMenu();
+  });
 
-  /* TYPED TEXT */
+  /* TYPED */
   var strings = [
-    'Control Room Officer · G4S',
-    'CCTV Surveillance Expert',
-    'Security Operations Specialist',
-    'Access Control & Monitoring'
+    'CONTROL ROOM OFFICER',
+    'CCTV SURVEILLANCE EXPERT',
+    'SECURITY OPERATIONS',
+    'ACCESS CONTROL'
   ];
   var typedEl = $('#typedText');
-  if(typedEl && !prefersReducedMotion){
-    var sIdx = 0, cIdx = 0, deleting = false;
+  if(typedEl && !reduced){
+    var si = 0, ci = 0, del = false;
     (function type(){
-      var current = strings[sIdx];
-      if(!deleting){
-        typedEl.textContent = current.substring(0, cIdx + 1);
-        cIdx++;
-        if(cIdx === current.length){
-          deleting = true;
-          return setTimeout(type, 1600);
-        }
-        setTimeout(type, 55);
+      var cur = strings[si];
+      if(!del){
+        typedEl.textContent = cur.substring(0, ci + 1);
+        ci++;
+        if(ci === cur.length){ del = true; return setTimeout(type, 1800); }
+        setTimeout(type, 70);
       } else {
-        typedEl.textContent = current.substring(0, cIdx - 1);
-        cIdx--;
-        if(cIdx === 0){
-          deleting = false;
-          sIdx = (sIdx + 1) % strings.length;
-          return setTimeout(type, 300);
-        }
-        setTimeout(type, 30);
+        typedEl.textContent = cur.substring(0, ci - 1);
+        ci--;
+        if(ci === 0){ del = false; si = (si + 1) % strings.length; return setTimeout(type, 350); }
+        setTimeout(type, 35);
       }
     })();
   } else if(typedEl){
     typedEl.textContent = strings[0];
   }
 
-  /* STATS COUNTER */
-  function animateCounter(id, target, suffix){
-    var el = document.getElementById(id);
-    if(!el) return;
-    if(prefersReducedMotion){
-      el.textContent = target + suffix;
-      return;
-    }
-    var duration = 1200;
-    var start = null;
-    function step(ts){
-      if(!start) start = ts;
-      var progress = Math.min((ts - start) / duration, 1);
-      var eased = 1 - (1 - progress) * (1 - progress);
-      el.textContent = Math.floor(eased * target) + suffix;
-      if(progress < 1) requestAnimationFrame(step);
-      else el.textContent = target + suffix;
-    }
-    requestAnimationFrame(step);
-  }
-
-  var statsSection = $('.stats-section');
-  var countersStarted = false;
-  function startCounters(){
-    if(countersStarted) return;
-    countersStarted = true;
-    animateCounter('expYears', 3, '+');
-    animateCounter('rolesCount', 5, '');
-    animateCounter('certifCount', 8, '');
-    animateCounter('cctvCount', 30, '+');
-  }
-  if('IntersectionObserver' in window && statsSection){
-    new IntersectionObserver(function(entries, obs){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){ startCounters(); obs.disconnect(); }
-      });
-    }, {threshold: 0.3}).observe(statsSection);
-  } else {
-    startCounters();
-  }
-
-  /* SKILL BARS */
-  var skillBars = $$('.skill-bar-fill');
-  function fillSkills(){
-    skillBars.forEach(function(bar){
-      var level = bar.getAttribute('data-level');
-      bar.style.width = level + '%';
-    });
-  }
-  var skillsSection = $('#skills');
-  if('IntersectionObserver' in window && skillsSection && skillBars.length){
-    new IntersectionObserver(function(entries, obs){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){ fillSkills(); obs.disconnect(); }
-      });
-    }, {threshold: 0.2}).observe(skillsSection);
-  } else {
-    fillSkills();
-  }
-
-  /* CERTIFICATE MODAL */
-  var modal = $('#modal');
-  var modalImg = $('#modalImage');
-
+  /* MODAL */
+  var modal = $('#modal'), modalImg = $('#modalImage');
   window.openModal = function(src){
-    if(!modal || !modalImg) return;
     modal.classList.add('show');
     modalImg.src = src;
     document.body.style.overflow = 'hidden';
   };
   window.closeModal = function(){
-    if(!modal) return;
     modal.classList.remove('show');
     document.body.style.overflow = '';
   };
-
-  /* PHOTO LIGHTBOX */
-  var photos = [
-    {src:'photo-control-1.jpg', title:'Control Room Station', desc:'Pusat monitoring & koordinasi keamanan', fallback:'https://placehold.co/1000x600/1e40af/ffffff?text=Control+Room+Officer'},
-    {src:'photo-cctv-1.jpg',    title:'CCTV Monitoring',      desc:'Pemantauan kamera real-time',       fallback:'https://placehold.co/800x800/1e40af/ffffff?text=CCTV+Monitor'},
-    {src:'photo-monitor-1.jpg', title:'Monitoring Wall',      desc:'Tampilan multi-camera monitoring',      fallback:'https://placehold.co/800x1000/1e40af/ffffff?text=Monitoring+Wall'},
-    {src:'photo-patrol-1.jpg',  title:'Patroli Area',         desc:'Pemeriksaan area secara berkala',       fallback:'https://placehold.co/800x800/1e40af/ffffff?text=Patroli+Area'},
-    {src:'photo-team-1.jpg',    title:'Security Team',        desc:'Bersama tim keamanan',                  fallback:'https://placehold.co/800x800/1e40af/ffffff?text=Security+Team'},
-    {src:'photo-cctv-2.jpg',    title:'CCTV Setup & Maintenance', desc:'Konfigurasi & perawatan perangkat CCTV', fallback:'https://placehold.co/1000x600/1e40af/ffffff?text=CCTV+Setup'},
-    {src:'photo-control-2.jpg', title:'Control Desk',         desc:'Koordinasi & komunikasi dengan tim',    fallback:'https://placehold.co/800x800/1e40af/ffffff?text=Control+Desk'},
-    {src:'photo-team-2.jpg',    title:'Team Briefing',        desc:'Briefing sebelum shift dimulai',        fallback:'https://placehold.co/800x800/1e40af/ffffff?text=Team+Briefing'}
-  ];
-
-  var lightbox = $('#lightbox');
-  var lightboxImg = $('#lightboxImage');
-  var lightboxTitle = $('#lightboxTitle');
-  var lightboxDesc = $('#lightboxDesc');
-  var lightboxCounter = $('#lightboxCounter');
-  var currentPhotoIdx = 0;
-
-  function loadPhoto(idx){
-    var p = photos[idx];
-    if(!p || !lightboxImg) return;
-    lightboxImg.onerror = function(){
-      this.onerror = null;
-      this.src = p.fallback;
-    };
-    lightboxImg.src = p.src;
-    if(lightboxTitle) lightboxTitle.textContent = p.title;
-    if(lightboxDesc) lightboxDesc.textContent = p.desc;
-    if(lightboxCounter) lightboxCounter.textContent = (idx + 1) + ' / ' + photos.length;
-  }
-
-  window.openLightbox = function(idx){
-    if(!lightbox) return;
-    currentPhotoIdx = idx;
-    loadPhoto(idx);
-    lightbox.classList.add('show');
-    document.body.style.overflow = 'hidden';
-  };
-  window.closeLightbox = function(){
-    if(!lightbox) return;
-    lightbox.classList.remove('show');
-    document.body.style.overflow = '';
-  };
-  window.navLightbox = function(dir){
-    currentPhotoIdx = (currentPhotoIdx + dir + photos.length) % photos.length;
-    loadPhoto(currentPhotoIdx);
-  };
-
-  /* PHOTO FILTER */
-  var filterBtns = $$('.filter-btn');
-  var photoItems = $$('.photo-item');
-  var filterTimers = [];
-
-  function clearFilterTimers(){
-    filterTimers.forEach(clearTimeout);
-    filterTimers = [];
-  }
-
-  filterBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      filterBtns.forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-
-      clearFilterTimers();
-      var filter = btn.getAttribute('data-filter');
-
-      photoItems.forEach(function(item){
-        var cat = item.getAttribute('data-category');
-        var match = (filter === 'all' || cat === filter);
-        if(match){
-          item.style.display = '';
-          var t = setTimeout(function(){
-            item.style.opacity = '1';
-            item.style.transform = 'scale(1)';
-          }, 20);
-          filterTimers.push(t);
-        } else {
-          item.style.opacity = '0';
-          item.style.transform = 'scale(0.9)';
-          var t2 = setTimeout(function(){
-            item.style.display = 'none';
-          }, 300);
-          filterTimers.push(t2);
-        }
-      });
-    });
-  });
-
-  /* KEYBOARD NAV */
   document.addEventListener('keydown', function(e){
-    if(lightbox && lightbox.classList.contains('show')){
-      if(e.key === 'Escape')     window.closeLightbox();
-      if(e.key === 'ArrowLeft')  window.navLightbox(-1);
-      if(e.key === 'ArrowRight') window.navLightbox(1);
-    }
-    if(modal && modal.classList.contains('show') && e.key === 'Escape'){
-      window.closeModal();
-    }
+    if(modal.classList.contains('show') && e.key === 'Escape') closeModal();
   });
 
-  document.addEventListener('keydown', function(e){
-    if(e.key !== 'Enter' && e.key !== ' ') return;
-    var t = e.target;
-    if(t && t.getAttribute && t.getAttribute('role') === 'button'){
-      e.preventDefault();
-      t.click();
-    }
-  });
-
-  /* SWIPE */
-  var touchStartX = 0;
-  if(lightbox){
-    lightbox.addEventListener('touchstart', function(e){
-      touchStartX = e.changedTouches[0].screenX;
-    }, {passive:true});
-    lightbox.addEventListener('touchend', function(e){
-      var diff = e.changedTouches[0].screenX - touchStartX;
-      if(Math.abs(diff) > 50){
-        if(diff > 0) window.navLightbox(-1);
-        else window.navLightbox(1);
-      }
-    }, {passive:true});
-  }
-
-  /* THEME TOGGLE */
-  var themeToggle = $('#themeToggle');
-  var body = document.body;
-
-  function setTheme(theme){
-    if(theme === 'dark'){
-      body.classList.remove('light-mode');
-      body.classList.add('dark-mode');
-      if(themeToggle){
-        themeToggle.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i><span>Light</span>';
-        themeToggle.setAttribute('aria-pressed', 'true');
-      }
-    } else {
-      body.classList.remove('dark-mode');
-      body.classList.add('light-mode');
-      if(themeToggle){
-        themeToggle.innerHTML = '<i class="fas fa-moon" aria-hidden="true"></i><span>Dark</span>';
-        themeToggle.setAttribute('aria-pressed', 'false');
-      }
-    }
-  }
-
-  try {
-    if(localStorage.getItem('theme') === 'dark') setTheme('dark');
-    else setTheme('light');
-  } catch(e){ setTheme('light'); }
-
-  if(themeToggle){
-    themeToggle.addEventListener('click', function(){
-      var isDark = body.classList.contains('dark-mode');
-      setTheme(isDark ? 'light' : 'dark');
-      try{ localStorage.setItem('theme', isDark ? 'light' : 'dark'); }catch(e){}
-    });
-  }
-
-  /* LANGUAGE TOGGLE */
-  var translations = {
+  /* LANGUAGE */
+  var T = {
     id: {
-      'nav.home':'Beranda','nav.about':'Tentang','nav.skills':'Keahlian',
-      'nav.experience':'Pengalaman','nav.photos':'Foto','nav.gallery':'Sertifikat','nav.contact':'Kontak',
-      'hero.status':'Sedang Bekerja · Control Room Officer di G4S','hero.badge':'Control Room Officer',
-      'hero.description':'Control Room Officer di <strong>G4S</strong> yang ditempatkan di PT Dahana (Persero). Fokus pada monitoring CCTV, pengawasan situasi keamanan, komunikasi operasional, deteksi potensi risiko, serta pencatatan dan pelaporan kejadian. Berpengalaman di lingkungan industri pertambangan & manufaktur dengan mengedepankan ketelitian, kewaspadaan, dan koordinasi yang efektif.',
-      'hero.hire':'Hubungi Saya','hero.photos':'Lihat Foto',
-      'hero.trust1':'Sertifikasi Gada Pratama','hero.trust2':'5 Posisi Keamanan','hero.trust3':'3+ Tahun Pengalaman',
-      'stats.experience':'Tahun Pengalaman','stats.roles':'Posisi Keamanan',
-      'stats.certifications':'Sertifikasi','stats.cameras':'Kamera Dimonitor',
-      'about.title':'Tentang Saya','about.badge.label':'Bersertifikat',
-      'about.description1':'Saya <strong>ELA BOMEN HIA</strong>, saat ini bekerja sebagai <strong>Control Room Officer di G4S</strong> yang ditempatkan di lingkup industri <strong>PT Dahana (Persero)</strong>. Sebelumnya saya berkembang di <strong>PT Sigap Prima Astrea</strong> — mulai dari Security Guard, Admin Security Officer, CCTV Control Room Operator, hingga dipercaya sebagai PIC CCTV Control Room di lingkup industri PT Astra Daihatsu Motor.',
-      'about.description2':'Sebagai Control Room Officer, saya fokus pada monitoring CCTV, pengawasan situasi keamanan, komunikasi operasional, deteksi potensi risiko, serta pencatatan dan pelaporan kejadian. Setiap tugas menuntut ketelitian, kewaspadaan, respons cepat, dan koordinasi efektif untuk mendukung keamanan, keselamatan, serta kelancaran operasional perusahaan.',
-      'about.description3':'Sertifikasi <strong>Gada Pratama</strong> dan berbagai pelatihan internasional (Saylor University, UniAthena, HP LIFE, Alison, Google, MindLuster, United Latino Students Association) memperkuat kompetensi saya di bidang CCTV Monitoring & Surveillance, Control Room Operation, Occupational Safety, Leadership & Teams, serta Critical Thinking di era AI.',
-      'skills.title':'Keahlian',
-      'skills.cctv':'CCTV Monitoring & Surveillance',
-      'skills.controlroom':'Control Room Operation',
-      'skills.troubleshoot':'CCTV System Troubleshooting',
-      'skills.nvr':'NVR/DVR Operation & Playback',
-      'skills.reporting':'Incident Reporting',
-      'skills.admin':'Security Administration & Reporting',
-      'skills.communication':'Security Communication & Coordination',
-      'skills.emergency':'Emergency Response Coordination',
-      'skills.risk':'Risk Observation & Detection',
-      'skills.access':'Access Control',
-      'experience.title':'Pengalaman Kerja',
-      'experience.subtitle':'Perjalanan karier dari Security Guard hingga dipercaya sebagai Control Room Officer di G4S — 5 posisi keamanan dengan tanggung jawab yang terus berkembang di lingkungan industri pertambangan dan manufaktur.',
-      'exp.cro.date':'Apr 2026 - Saat Ini · 6 bln','exp.cro.type':'Current','exp.cro.position':'Control Room Officer','exp.cro.company':'G4S','exp.cro.client':'PT Dahana (Persero)',
-      'exp.cro.desc':'Sebagai Control Room Officer (CRO), fokus pada monitoring CCTV, pengawasan situasi keamanan, komunikasi operasional, deteksi potensi risiko, serta pencatatan dan pelaporan kejadian. Setiap tugas membutuhkan ketelitian, kewaspadaan, respons cepat, dan koordinasi yang efektif untuk mendukung keamanan, keselamatan, serta kelancaran operasional perusahaan.',
-      'exp.cro.item1':'Monitoring CCTV & surveillance secara real-time','exp.cro.item2':'Pengawasan situasi keamanan di lingkup industri',
-      'exp.cro.item3':'Komunikasi operasional dengan tim keamanan lapangan','exp.cro.item4':'Deteksi dini potensi risiko & ancaman keamanan',
-      'exp.cro.item5':'Pencatatan & pelaporan kejadian (incident report)','exp.cro.item6':'Koordinasi cepat untuk situasi darurat',
-      'exp.cro.item7':'Mendukung keamanan, keselamatan, & kelancaran operasional','exp.cro.item8':'Kontrak · Di lokasi PT Dahana (Persero)',
-      'exp.pic.date':'Agu 2023 - Nov 2025 · 2 thn 4 bln','exp.pic.type':'Contract','exp.pic.position':'PIC CCTV Control Room','exp.pic.company':'PT Sigap Prima Astrea','exp.pic.client':'PT Astra Daihatsu Motor',
-      'exp.pic.desc':'Penanggung jawab utama sistem CCTV Control Room di lingkup industri PT Astra Daihatsu Motor — mengelola, memelihara, dan memastikan seluruh perangkat CCTV berfungsi optimal, serta menjadi pusat koordinasi pengawasan keamanan area pabrik.',
-      'exp.pic.item1':'Penanggung jawab operasional CCTV Control Room','exp.pic.item2':'CCTV Monitoring & Surveillance seluruh area industri',
-      'exp.pic.item3':'CCTV System Troubleshooting & maintenance','exp.pic.item4':'Manajemen NVR/DVR & playback rekaman',
-      'exp.pic.item5':'Koordinasi dengan vendor & teknisi CCTV','exp.pic.item6':'Penyusunan laporan pemantauan & incident report',
-      'exp.pic.item7':'Supervisi operator CCTV & security lapangan','exp.pic.item8':'Kontrak · Karawang, Jawa Barat, Indonesia',
-      'exp.op.date':'Jun 2023 - Jul 2023 · 2 bln','exp.op.type':'Contract','exp.op.position':'CCTV Control Room Operator','exp.op.company':'PT Sigap Prima Astrea','exp.op.client':'PT Astra Daihatsu Motor',
-      'exp.op.desc':'Mengoperasikan sistem CCTV Control Room secara real-time di lingkup industri PT Astra Daihatsu Motor — monitoring area, identifikasi aktivitas mencurigakan, pengoperasian NVR/DVR, dan pelaporan kejadian.',
-      'exp.op.item1':'CCTV Monitoring & Surveillance selama shift','exp.op.item2':'NVR/DVR Operation & Playback rekaman',
-      'exp.op.item3':'Identifikasi aktivitas mencurigakan / anomali','exp.op.item4':'Kontrol akses keluar masuk area perusahaan',
-      'exp.op.item5':'Pembuatan Incident Report lengkap & akurat','exp.op.item6':'Manajemen & pencadangan rekaman CCTV',
-      'exp.op.item7':'Koordinasi dengan petugas security lapangan','exp.op.item8':'Pemantauan area rawan (parkir, gudang, produksi)',
-      'exp.adm.date':'Mei 2023 · 1 bln','exp.adm.type':'Contract','exp.adm.position':'Admin Security Officer','exp.adm.company':'PT Sigap Prima Astrea','exp.adm.client':'PT Astra Daihatsu Motor',
-      'exp.adm.desc':'Menangani administrasi divisi keamanan di lingkup industri PT Astra Daihatsu Motor — pengelolaan dokumen, jadwal shift, laporan, dan koordinasi operasional tim security.',
-      'exp.adm.item1':'Security Administration & Reporting','exp.adm.item2':'Security Communication & Coordination',
-      'exp.adm.item3':'Pengelolaan jadwal shift & absensi tim','exp.adm.item4':'Penyusunan laporan harian & bulanan',
-      'exp.adm.item5':'Pengelolaan dokumen & arsip keamanan','exp.adm.item6':'Pencatatan inventaris peralatan security',
-      'exp.adm.item7':'Support operasional posko & lobby','exp.adm.item8':'Pengaturan akses tamu & visitor management',
-      'exp.guard.date':'Apr 2023 · 1 bln','exp.guard.type':'Contract','exp.guard.position':'Security Guard','exp.guard.company':'PT Sigap Prima Astrea','exp.guard.client':'PT Astra Daihatsu Motor',
-      'exp.guard.desc':'Petugas keamanan lapangan di lingkup industri PT Astra Daihatsu Motor — patroli area, pengawasan akses, dan penanganan pertama situasi keamanan di lingkungan perusahaan.',
-      'exp.guard.item1':'Security Communication & Coordination','exp.guard.item2':'Emergency Response Coordination',
-      'exp.guard.item3':'Patroli rutin area perusahaan','exp.guard.item4':'Pengawasan keluar masuk kendaraan & orang',
-      'exp.guard.item5':'Pemeriksaan identitas & barang bawaan','exp.guard.item6':'Pengaturan lalu lintas di area perusahaan',
-      'exp.guard.item7':'Pelaporan kejadian ke atasan','exp.guard.item8':'Serah terima tugas antar shift',
-      'photos.title':'Galeri Foto','photos.subtitle':'Dokumentasi aktivitas kerja — dari Control Room, monitoring CCTV, patroli, hingga momen bersama tim keamanan.',
-      'photos.filter.all':'Semua','photos.filter.control':'Control Room','photos.filter.cctv':'CCTV','photos.filter.patrol':'Patroli','photos.filter.team':'Tim',
-      'photos.tag.control':'Control Room','photos.tag.cctv':'CCTV','photos.tag.monitor':'Monitoring','photos.tag.patrol':'Patroli','photos.tag.team':'Tim',
-      'photos.cap1':'Pusat monitoring & koordinasi keamanan','photos.cap2':'Pemantauan kamera real-time',
-      'photos.cap3':'Tampilan multi-camera monitoring','photos.cap4':'Pemeriksaan area secara berkala',
-      'photos.cap5':'Bersama tim keamanan','photos.cap6':'Konfigurasi & perawatan perangkat CCTV',
-      'photos.cap7':'Koordinasi & komunikasi dengan tim','photos.cap8':'Briefing sebelum shift dimulai',
-      'gallery.title':'Sertifikat & Pelatihan',
-      'gallery.subtitle':'8 lisensi & sertifikasi resmi dari berbagai lembaga nasional dan internasional — bukti komitmen berkelanjutan dalam pengembangan kompetensi di bidang keamanan, keselamatan kerja, kepemimpinan, dan teknologi.',
-      'contact.title':'Hubungi Saya',
-      'contact.phone':'Telepon','contact.email':'Email',
-      'contact.location':'Lokasi','contact.form.title':'Kirim Pesan',
-      'contact.form.name':'Nama Lengkap','contact.form.email':'Email',
-      'contact.form.message':'Pesan Anda...','contact.form.send':'Kirim Pesan'
+      'brand.role':'Control Room Officer',
+      'nav.home':'Home','nav.about':'About','nav.skills':'Skill',
+      'nav.portfolio':'Portfolio','nav.gallery':'Blog','nav.contact':'Contact',
+      'hero.line1':'I AM A',
+      'hero.description':'Control Room Officer di <strong>G4S</strong> yang ditempatkan di PT Dahana (Persero). Fokus pada monitoring CCTV, pengawasan situasi keamanan, komunikasi operasional, deteksi potensi risiko, serta pencatatan dan pelaporan kejadian.',
+      'hero.cta':'Learn More',
+      'about.title':'ABOUT <span>ME</span>',
+      'about.p1':'Saya <strong>ELA BOMEN HIA</strong>, saat ini bekerja sebagai <strong>Control Room Officer di G4S</strong> yang ditempatkan di lingkup industri <strong>PT Dahana (Persero)</strong>. Sebelumnya saya berkembang di PT Sigap Prima Astrea — mulai dari Security Guard, Admin Security Officer, CCTV Control Room Operator, hingga dipercaya sebagai PIC CCTV Control Room di lingkup industri PT Astra Daihatsu Motor.',
+      'about.p2':'Sebagai Control Room Officer, saya fokus pada monitoring CCTV, pengawasan situasi keamanan, komunikasi operasional, deteksi potensi risiko, serta pencatatan dan pelaporan kejadian. Setiap tugas menuntut ketelitian, kewaspadaan, respons cepat, dan koordinasi efektif untuk mendukung keamanan, keselamatan, serta kelancaran operasional perusahaan.',
+      'skills.title':'SKILL',
+      'skills.sub':'Kompetensi inti yang saya kuasai dari pengalaman langsung di lapangan industri manufaktur.',
+      'skills.s1':'CCTV Monitoring & Surveillance','skills.s1d':'Pemantauan kamera real-time, deteksi anomali, dan pelaporan kejadian secara akurat.',
+      'skills.s2':'Control Room Operations','skills.s2d':'Pengoperasian pusat kendali keamanan, monitoring multi-camera, dan koordinasi terpusat.',
+      'skills.s3':'Incident Identification & Reporting','skills.s3d':'Identifikasi insiden dan penyusunan laporan kejadian lengkap, akurat, serta tepat waktu.',
+      'skills.s4':'CCTV System Troubleshooting','skills.s4d':'Diagnosa dan perbaikan sistem CCTV serta koordinasi dengan vendor teknis.',
+      'skills.s5':'NVR/DVR Operation & Playback','skills.s5d':'Operasional NVR/DVR, playback rekaman, dan manajemen penyimpanan data.',
+      'skills.s6':'VMS & Security Application Monitoring','skills.s6d':'Pengoperasian VMS dan aplikasi keamanan untuk monitoring terintegrasi.',
+      'skills.s7':'Security System Monitoring','skills.s7d':'Pemantauan sistem keamanan terintegrasi di seluruh area industri.',
+      'skills.s8':'Emergency Response Coordination','skills.s8d':'Koordinasi cepat dan tepat dalam situasi darurat serta kondisi kontingensi.',
+      'skills.s9':'Security Communication & Coordination','skills.s9d':'Komunikasi operasional dengan tim lapangan dan pihak terkait secara efektif.',
+      'skills.s10':'Access Control Management Sistem','skills.s10d':'Pengelolaan sistem kontrol akses, visitor management, dan otorisasi area.',
+      'skills.s11':'PIDS Monitoring','skills.s11d':'Monitoring Perimeter Intrusion Detection System untuk deteksi dini gangguan.',
+      'skills.s12':'Security Administration & Reporting','skills.s12d':'Administrasi keamanan, dokumentasi, dan pelaporan berkala tim security.',
+      'exp.title':'WORK <span>EXPERIENCE</span>',
+      'exp.sub':'Perjalanan karier dari Security Guard hingga dipercaya sebagai Control Room Officer di G4S.',
+      'exp.cro.date':'Apr 2026 - Saat Ini','exp.cro.type':'Current','exp.cro.position':'Control Room Officer','exp.cro.client':'PT Dahana (Persero)',
+      'exp.cro.i1':'Monitoring CCTV & surveillance real-time','exp.cro.i2':'Pengawasan situasi keamanan industri',
+      'exp.cro.i3':'Komunikasi operasional dengan tim lapangan','exp.cro.i4':'Deteksi dini potensi risiko & ancaman',
+      'exp.cro.i5':'Pencatatan & pelaporan kejadian','exp.cro.i6':'Koordinasi cepat untuk situasi darurat',
+      'exp.pic.date':'Agu 2023 - Nov 2025','exp.pic.type':'Contract','exp.pic.position':'PIC CCTV Control Room','exp.pic.client':'PT Astra Daihatsu Motor',
+      'exp.pic.i1':'Penanggung jawab operasional CCTV Control Room','exp.pic.i2':'CCTV Monitoring seluruh area industri',
+      'exp.pic.i3':'Troubleshooting & maintenance sistem','exp.pic.i4':'Manajemen NVR/DVR & playback',
+      'exp.pic.i5':'Koordinasi dengan vendor & teknisi','exp.pic.i6':'Supervisi operator CCTV & security',
+      'exp.op.date':'Jun 2023 - Jul 2023','exp.op.type':'Contract','exp.op.position':'CCTV Control Room Operator','exp.op.client':'PT Astra Daihatsu Motor',
+      'exp.op.i1':'CCTV Monitoring & surveillance selama shift','exp.op.i2':'NVR/DVR operation & playback',
+      'exp.op.i3':'Identifikasi aktivitas mencurigakan','exp.op.i4':'Kontrol akses keluar masuk area',
+      'exp.op.i5':'Pembuatan Incident Report','exp.op.i6':'Pemantauan area rawan',
+      'exp.adm.date':'Mei 2023','exp.adm.type':'Contract','exp.adm.position':'Admin Security Officer','exp.adm.client':'PT Astra Daihatsu Motor',
+      'exp.adm.i1':'Security administration & reporting','exp.adm.i2':'Security communication & coordination',
+      'exp.adm.i3':'Pengelolaan jadwal shift & absensi','exp.adm.i4':'Penyusunan laporan harian & bulanan',
+      'exp.adm.i5':'Pengelolaan dokumen & arsip','exp.adm.i6':'Visitor management',
+      'exp.guard.date':'Apr 2023','exp.guard.type':'Contract','exp.guard.position':'Security Guard','exp.guard.client':'PT Astra Daihatsu Motor',
+      'exp.guard.i1':'Security communication & coordination','exp.guard.i2':'Emergency response coordination',
+      'exp.guard.i3':'Patroli rutin area perusahaan','exp.guard.i4':'Pengawasan keluar masuk kendaraan',
+      'exp.guard.i5':'Pemeriksaan identitas & barang','exp.guard.i6':'Pengaturan lalu lintas area',
+      'cert.title':'CERTIFICATES & <span>TRAINING</span>',
+      'cert.sub':'8 lisensi & sertifikasi resmi dari berbagai lembaga nasional dan internasional.',
+      'contact.title':'CONTACT <span>ME</span>',
+      'contact.sub':'Terbuka untuk diskusi seputar keamanan industri dan peluang kolaborasi profesional.',
+      'contact.phone':'Telepon','contact.email':'Email','contact.location':'Lokasi',
+      'footer.role':'Control Room Officer · G4S · PT Dahana (Persero)'
     },
     en: {
-      'nav.home':'Home','nav.about':'About','nav.skills':'Skills',
-      'nav.experience':'Experience','nav.photos':'Photos','nav.gallery':'Certificates','nav.contact':'Contact',
-      'hero.status':'Currently Working · Control Room Officer at G4S','hero.badge':'Control Room Officer',
-      'hero.description':'Control Room Officer at <strong>G4S</strong> assigned to PT Dahana (Persero). Focused on CCTV monitoring, security situation oversight, operational communication, potential risk detection, and incident recording & reporting. Experienced in mining & manufacturing industrial environments with strong attention to detail, alertness, and effective coordination.',
-      'hero.hire':'Contact Me','hero.photos':'View Photos',
-      'hero.trust1':'Gada Pratama Certified','hero.trust2':'5 Security Roles','hero.trust3':'3+ Years Experience',
-      'stats.experience':'Years Experience','stats.roles':'Security Roles',
-      'stats.certifications':'Certifications','stats.cameras':'Cameras Monitored',
-      'about.title':'About Me','about.badge.label':'Certified',
-      'about.description1':'I am <strong>ELA BOMEN HIA</strong>, currently working as a <strong>Control Room Officer at G4S</strong> assigned to the industrial environment of <strong>PT Dahana (Persero)</strong>. Previously I grew at <strong>PT Sigap Prima Astrea</strong> — from Security Guard, Admin Security Officer, CCTV Control Room Operator, to being trusted as PIC CCTV Control Room within PT Astra Daihatsu Motor industrial area.',
-      'about.description2':'As a Control Room Officer, I focus on CCTV monitoring, security situation oversight, operational communication, potential risk detection, and incident recording & reporting. Every task demands attention to detail, alertness, fast response, and effective coordination to support security, safety, and smooth company operations.',
-      'about.description3':'<strong>Gada Pratama</strong> certification and various international trainings (Saylor University, UniAthena, HP LIFE, Alison, Google, MindLuster, United Latino Students Association) strengthen my competence in CCTV Monitoring & Surveillance, Control Room Operation, Occupational Safety, Leadership & Teams, and Critical Thinking in the AI era.',
-      'skills.title':'Skills',
-      'skills.cctv':'CCTV Monitoring & Surveillance',
-      'skills.controlroom':'Control Room Operation',
-      'skills.troubleshoot':'CCTV System Troubleshooting',
-      'skills.nvr':'NVR/DVR Operation & Playback',
-      'skills.reporting':'Incident Reporting',
-      'skills.admin':'Security Administration & Reporting',
-      'skills.communication':'Security Communication & Coordination',
-      'skills.emergency':'Emergency Response Coordination',
-      'skills.risk':'Risk Observation & Detection',
-      'skills.access':'Access Control',
-      'experience.title':'Work Experience',
-      'experience.subtitle':'Career journey from Security Guard to trusted Control Room Officer at G4S — 5 security positions with growing responsibilities in mining and manufacturing industrial environments.',
-      'exp.cro.date':'Apr 2026 - Present · 6 mos','exp.cro.type':'Current','exp.cro.position':'Control Room Officer','exp.cro.company':'G4S','exp.cro.client':'PT Dahana (Persero)',
-      'exp.cro.desc':'As a Control Room Officer (CRO), focus on CCTV monitoring, security situation oversight, operational communication, potential risk detection, and incident recording & reporting. Every task requires attention to detail, alertness, fast response, and effective coordination to support security, safety, and smooth company operations.',
-      'exp.cro.item1':'Real-time CCTV monitoring & surveillance','exp.cro.item2':'Security situation oversight in industrial environment',
-      'exp.cro.item3':'Operational communication with field security team','exp.cro.item4':'Early detection of potential risks & security threats',
-      'exp.cro.item5':'Incident recording & reporting','exp.cro.item6':'Fast coordination for emergency situations',
-      'exp.cro.item7':'Supporting security, safety, & smooth operations','exp.cro.item8':'Contract · On-site at PT Dahana (Persero)',
-      'exp.pic.date':'Aug 2023 - Nov 2025 · 2 yr 4 mos','exp.pic.type':'Contract','exp.pic.position':'PIC CCTV Control Room','exp.pic.company':'PT Sigap Prima Astrea','exp.pic.client':'PT Astra Daihatsu Motor',
-      'exp.pic.desc':'Primary PIC of CCTV Control Room system within PT Astra Daihatsu Motor industrial area — managing, maintaining, and ensuring all CCTV devices work optimally, and acting as the coordination center for factory area security monitoring.',
-      'exp.pic.item1':'Operational PIC of CCTV Control Room','exp.pic.item2':'CCTV Monitoring & Surveillance across industrial area',
-      'exp.pic.item3':'CCTV System Troubleshooting & maintenance','exp.pic.item4':'NVR/DVR & recording playback management',
-      'exp.pic.item5':'Coordination with CCTV vendors & technicians','exp.pic.item6':'Monitoring & incident report preparation',
-      'exp.pic.item7':'Supervising CCTV operators & field security','exp.pic.item8':'Contract · Karawang, West Java, Indonesia',
-      'exp.op.date':'Jun 2023 - Jul 2023 · 2 mos','exp.op.type':'Contract','exp.op.position':'CCTV Control Room Operator','exp.op.company':'PT Sigap Prima Astrea','exp.op.client':'PT Astra Daihatsu Motor',
-      'exp.op.desc':'Operating CCTV Control Room system in real-time within PT Astra Daihatsu Motor industrial area — monitoring areas, identifying suspicious activities, NVR/DVR operation, and incident reporting.',
-      'exp.op.item1':'CCTV Monitoring & Surveillance during shifts','exp.op.item2':'NVR/DVR Operation & Playback',
-      'exp.op.item3':'Identifying suspicious activities / anomalies','exp.op.item4':'Access control in and out of company area',
-      'exp.op.item5':'Creating complete & accurate Incident Reports','exp.op.item6':'Managing & backing up CCTV recordings',
-      'exp.op.item7':'Coordinating with field security officers','exp.op.item8':'Monitoring vulnerable areas (parking, warehouse, production)',
-      'exp.adm.date':'May 2023 · 1 mo','exp.adm.type':'Contract','exp.adm.position':'Admin Security Officer','exp.adm.company':'PT Sigap Prima Astrea','exp.adm.client':'PT Astra Daihatsu Motor',
-      'exp.adm.desc':'Handling security division administration within PT Astra Daihatsu Motor industrial area — document management, shift schedules, reports, and security team operational coordination.',
-      'exp.adm.item1':'Security Administration & Reporting','exp.adm.item2':'Security Communication & Coordination',
-      'exp.adm.item3':'Shift schedule & attendance management','exp.adm.item4':'Preparing daily & monthly reports',
-      'exp.adm.item5':'Security document & archive management','exp.adm.item6':'Security equipment inventory recording',
-      'exp.adm.item7':'Post & lobby operational support','exp.adm.item8':'Guest access & visitor management',
-      'exp.guard.date':'Apr 2023 · 1 mo','exp.guard.type':'Contract','exp.guard.position':'Security Guard','exp.guard.company':'PT Sigap Prima Astrea','exp.guard.client':'PT Astra Daihatsu Motor',
-      'exp.guard.desc':'Field security officer within PT Astra Daihatsu Motor industrial area — area patrol, access control, and first response to security situations in the company environment.',
-      'exp.guard.item1':'Security Communication & Coordination','exp.guard.item2':'Emergency Response Coordination',
-      'exp.guard.item3':'Routine patrol of company area','exp.guard.item4':'Vehicle & personnel access control',
-      'exp.guard.item5':'Identity & belongings inspection','exp.guard.item6':'Traffic management in company area',
-      'exp.guard.item7':'Incident reporting to supervisors','exp.guard.item8':'Shift handover',
-      'photos.title':'Photo Gallery','photos.subtitle':'Work activity documentation — from Control Room, CCTV monitoring, patrol, to moments with the security team.',
-      'photos.filter.all':'All','photos.filter.control':'Control Room','photos.filter.cctv':'CCTV','photos.filter.patrol':'Patrol','photos.filter.team':'Team',
-      'photos.tag.control':'Control Room','photos.tag.cctv':'CCTV','photos.tag.monitor':'Monitoring','photos.tag.patrol':'Patrol','photos.tag.team':'Team',
-      'photos.cap1':'Security monitoring & coordination center','photos.cap2':'Real-time camera monitoring',
-      'photos.cap3':'Multi-camera monitoring display','photos.cap4':'Regular area inspection',
-      'photos.cap5':'Together with security team','photos.cap6':'CCTV device configuration & maintenance',
-      'photos.cap7':'Coordination & communication with team','photos.cap8':'Briefing before shift starts',
-      'gallery.title':'Certificates & Training',
-      'gallery.subtitle':'8 official licenses & certifications from various national and international institutions — proof of continuous commitment to competency development in security, occupational safety, leadership, and technology.',
-      'contact.title':'Contact Me',
-      'contact.phone':'Phone','contact.email':'Email',
-      'contact.location':'Location','contact.form.title':'Send Message',
-      'contact.form.name':'Full Name','contact.form.email':'Email',
-      'contact.form.message':'Your Message...','contact.form.send':'Send Message'
+      'brand.role':'Control Room Officer',
+      'nav.home':'Home','nav.about':'About','nav.skills':'Skill',
+      'nav.portfolio':'Portfolio','nav.gallery':'Blog','nav.contact':'Contact',
+      'hero.line1':'I AM A',
+      'hero.description':'Control Room Officer at <strong>G4S</strong> assigned to PT Dahana (Persero). Focused on CCTV monitoring, security oversight, operational communication, potential risk detection, and incident reporting.',
+      'hero.cta':'Learn More',
+      'about.title':'ABOUT <span>ME</span>',
+      'about.p1':'I am <strong>ELA BOMEN HIA</strong>, currently working as a <strong>Control Room Officer at G4S</strong> assigned to <strong>PT Dahana (Persero)</strong>. Previously grew at PT Sigap Prima Astrea — from Security Guard, Admin Security Officer, CCTV Control Room Operator, to trusted PIC CCTV Control Room within PT Astra Daihatsu Motor.',
+      'about.p2':'As a Control Room Officer, I focus on CCTV monitoring, security oversight, operational communication, potential risk detection, and incident reporting. Every task demands attention to detail, alertness, fast response, and effective coordination to support security, safety, and smooth company operations.',
+      'skills.title':'SKILL',
+      'skills.sub':'Core competencies built through hands-on experience in and manufacturing industrial environments.',
+      'skills.s1':'CCTV Monitoring & Surveillance','skills.s1d':'Real-time camera monitoring, anomaly detection, and accurate incident reporting.',
+      'skills.s2':'Control Room Operations','skills.s2d':'Security control center operation, multi-camera monitoring, and centralized coordination.',
+      'skills.s3':'Incident Identification & Reporting','skills.s3d':'Incident identification and preparation of complete, accurate, and timely reports.',
+      'skills.s4':'CCTV System Troubleshooting','skills.s4d':'Diagnosing and repairing CCTV systems, coordinating with technical vendors.',
+      'skills.s5':'NVR/DVR Operation & Playback','skills.s5d':'NVR/DVR operation, recording playback, and data storage management.',
+      'skills.s6':'VMS & Security Application Monitoring','skills.s6d':'Operating VMS and security applications for integrated monitoring.',
+      'skills.s7':'Security System Monitoring','skills.s7d':'Integrated security system monitoring across the entire industrial area.',
+      'skills.s8':'Emergency Response Coordination','skills.s8d':'Fast and precise coordination during emergency and contingency situations.',
+      'skills.s9':'Security Communication & Coordination','skills.s9d':'Effective operational communication with field teams and related parties.',
+      'skills.s10':'Access Control Management Sistem','skills.s10d':'Access control system management, visitor management, and area authorization.',
+      'skills.s11':'PIDS Monitoring','skills.s11d':'Perimeter Intrusion Detection System monitoring for early intrusion detection.',
+      'skills.s12':'Security Administration & Reporting','skills.s12d':'Security administration, documentation, and periodic team reporting.',
+      'exp.title':'WORK <span>EXPERIENCE</span>',
+      'exp.sub':'Career journey from Security Guard to trusted Control Room Officer at G4S.',
+      'exp.cro.date':'Apr 2026 - Present','exp.cro.type':'Current','exp.cro.position':'Control Room Officer','exp.cro.client':'PT Dahana (Persero)',
+      'exp.cro.i1':'Real-time CCTV monitoring & surveillance','exp.cro.i2':'Industrial security situation oversight',
+      'exp.cro.i3':'Operational communication with field team','exp.cro.i4':'Early detection of potential risks & threats',
+      'exp.cro.i5':'Incident recording & reporting','exp.cro.i6':'Fast coordination for emergency situations',
+      'exp.pic.date':'Aug 2023 - Nov 2025','exp.pic.type':'Contract','exp.pic.position':'PIC CCTV Control Room','exp.pic.client':'PT Astra Daihatsu Motor',
+      'exp.pic.i1':'Operational PIC of CCTV Control Room','exp.pic.i2':'CCTV monitoring across industrial area',
+      'exp.pic.i3':'System troubleshooting & maintenance','exp.pic.i4':'NVR/DVR & playback management',
+      'exp.pic.i5':'Coordination with vendors & technicians','exp.pic.i6':'Supervising CCTV operators & security',
+      'exp.op.date':'Jun 2023 - Jul 2023','exp.op.type':'Contract','exp.op.position':'CCTV Control Room Operator','exp.op.client':'PT Astra Daihatsu Motor',
+      'exp.op.i1':'CCTV monitoring & surveillance during shifts','exp.op.i2':'NVR/DVR operation & playback',
+      'exp.op.i3':'Identifying suspicious activities','exp.op.i4':'Access control in and out of area',
+      'exp.op.i5':'Creating Incident Reports','exp.op.i6':'Monitoring vulnerable areas',
+      'exp.adm.date':'May 2023','exp.adm.type':'Contract','exp.adm.position':'Admin Security Officer','exp.adm.client':'PT Astra Daihatsu Motor',
+      'exp.adm.i1':'Security administration & reporting','exp.adm.i2':'Security communication & coordination',
+      'exp.adm.i3':'Shift schedule & attendance management','exp.adm.i4':'Daily & monthly report preparation',
+      'exp.adm.i5':'Document & archive management','exp.adm.i6':'Visitor management',
+      'exp.guard.date':'Apr 2023','exp.guard.type':'Contract','exp.guard.position':'Security Guard','exp.guard.client':'PT Astra Daihatsu Motor',
+      'exp.guard.i1':'Security communication & coordination','exp.guard.i2':'Emergency response coordination',
+      'exp.guard.i3':'Routine patrol of company area','exp.guard.i4':'Vehicle access monitoring',
+      'exp.guard.i5':'Identity & belongings inspection','exp.guard.i6':'Traffic management in area',
+      'cert.title':'CERTIFICATES & <span>TRAINING</span>',
+      'cert.sub':'8 official licenses & certifications from national and international institutions.',
+      'contact.title':'CONTACT <span>ME</span>',
+      'contact.sub':'Open for discussions about industrial security and professional collaboration opportunities.',
+      'contact.phone':'Phone','contact.email':'Email','contact.location':'Location',
+      'footer.role':'Control Room Officer · G4S · PT Dahana (Persero)'
     }
   };
 
-  var currentLang = 'id';
-  var langToggle = $('#langToggle');
-
-  function updateLanguage(lang){
-    var dict = translations[lang];
-    if(!dict) return;
-
+  var lang = 'id', langToggle = $('#langToggle');
+  function setLang(l){
+    var d = T[l]; if(!d) return;
     $$('[data-i18n]').forEach(function(el){
-      var key = el.getAttribute('data-i18n');
-      if(dict[key] !== undefined) el.innerHTML = dict[key];
+      var k = el.getAttribute('data-i18n');
+      if(d[k] !== undefined) el.innerHTML = d[k];
     });
-    $$('[data-i18n-placeholder]').forEach(function(el){
-      var key = el.getAttribute('data-i18n-placeholder');
-      if(dict[key] !== undefined) el.placeholder = dict[key];
-    });
-
-    document.documentElement.setAttribute('lang', lang);
-
-    if(langToggle){
-      langToggle.innerHTML = '<i class="fas fa-globe" aria-hidden="true"></i><span>' +
-        (lang === 'id' ? 'EN' : 'ID') + '</span>';
-      langToggle.setAttribute('aria-label',
-        lang === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia');
-    }
+    document.documentElement.setAttribute('lang', l);
+    langToggle.textContent = l === 'id' ? 'EN' : 'ID';
+    lang = l;
   }
+  langToggle.addEventListener('click', function(){
+    setLang(lang === 'id' ? 'en' : 'id');
+  });
+  setLang('id');
 
-  if(langToggle){
-    langToggle.addEventListener('click', function(){
-      currentLang = currentLang === 'id' ? 'en' : 'id';
-      updateLanguage(currentLang);
-    });
-  }
-  updateLanguage('id');
-
-  /* YEAR DINAMIS */
-  var yearEl = $('#year');
-  if(yearEl) yearEl.textContent = new Date().getFullYear();
+  /* YEAR */
+  $('#year').textContent = new Date().getFullYear();
 
 })();
 </script>
